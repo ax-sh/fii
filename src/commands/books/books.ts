@@ -7,6 +7,7 @@ const command: GluegunCommand = {
   name: 'books',
   alias: ['book'],
   run: async (toolbox) => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     const { print, system, parameters } = toolbox
     const name = parameters.string
