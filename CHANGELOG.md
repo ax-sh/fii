@@ -6,11 +6,23 @@ All notable changes to this project will be documented in this file.
 
 ### 🐛 Bug Fixes
 
+- Add missing command to fetch all tags before running the release process
+- Fix git flow release finish command options to keep remote branch
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.8.0] - 2024-06-06
+
+### 🐛 Bug Fixes
+
 - Update release-it configuration for git flow release finish option
 
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.7.0] - 2024-06-06
 
