@@ -6,6 +6,35 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- *(types)* Add new classes and types for extended GluegunToolbox
+- Add new command to retrieve and print the repository URL
+- Add commands to create bun cli and ts projects
+- Add mk cli command
+- *(add)* Add prettier command and templates for prettier config files
+- Add prettier auto-formatting on "nr add prettier" command
+- Add commands for adding biome and prettier to toolbox
+
+### 🚜 Refactor
+
+- Update CLI extension to use ExtendedToolbox and add new functionalities
+
+### 🎨 Styling
+
+- Remove unused import and commented code, update search command in books.ts
+- Remove unnecessary import and console.log, update print message
+- Update message in spin function to include 'cli' prefix
+- Update formatting in Prettier configuration files
+- Remove unnecessary trailing comma in .prettierrc config file
+- Remove commented out code in .eslintrc.js and fix object formatting in prettier.ts
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.21.0] - 2024-06-06
+
+### 🚀 Features
+
 - Add db
 - Add push to develop branch in release script
 
@@ -22,6 +51,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.20.0] - 2024-06-06
 
