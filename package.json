@@ -12,7 +12,7 @@
     "clean-build": "rimraf -rf ./build",
     "compile": "tsc -p .",
     "copy-templates": "copyfiles ./src/templates/* ./build/templates",
-    "build": "yarn clean-build && yarn compile && yarn copy-templates",
+    "build": "bun clean-build && bun compile && bun copy-templates",
     "prepublishOnly": "yarn build",
     "format": "eslint \"**/*.{js,jsx,ts,tsx}\" --fix && prettier \"**/*.{js,jsx,ts,tsx,json}\" --write",
     "upp": "bunx npm-check-updates -i",
