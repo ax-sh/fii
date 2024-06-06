@@ -1,5 +1,5 @@
 import { GluegunCommand } from 'gluegun'
-import { execa } from "execa";
+import { execa } from 'execa'
 
 // @see https://github.com/ciehanski/libgen-cli
 // @see https://github.com/freereadorg/awesome-libgen
