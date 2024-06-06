@@ -2,6 +2,7 @@ import { GluegunCommand } from 'gluegun'
 
 const command: GluegunCommand = {
   name: 'books',
+  alias: ['book'],
   run: async (toolbox) => {
     const { print, system, parameters } = toolbox
     const name = parameters.first
