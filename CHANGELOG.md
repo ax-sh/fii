@@ -6,11 +6,22 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- Add database generation script and create history table in schema file
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.15.0] - 2024-06-06
+
+### 🚀 Features
+
 - Add query execution and logging in db module
 
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.14.0] - 2024-06-06
 
