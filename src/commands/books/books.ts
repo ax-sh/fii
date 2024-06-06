@@ -1,5 +1,6 @@
 import { GluegunCommand } from 'gluegun'
 
+// @see https://github.com/ciehanski/libgen-cli
 const command: GluegunCommand = {
   name: 'books',
   alias: ['book'],
