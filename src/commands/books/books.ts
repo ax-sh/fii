@@ -1,5 +1,4 @@
 import { GluegunCommand } from 'gluegun'
-import { execa } from 'execa'
 
 // @see https://github.com/ciehanski/libgen-cli
 // @see https://github.com/freereadorg/awesome-libgen
@@ -11,15 +10,15 @@ const command: GluegunCommand = {
     // @ts-ignore
     const { print, system, parameters } = toolbox
     const name = parameters.string
-    const cmd = `libgen-cli search ${name}`
+    const cmd = `libgen-cli search -e pdf ${name}`
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     // const execa = require('execa')
-    await execa(cmd, { shell: true, stdio: 'inherit' })
+    // await execa(cmd, { shell: true, stdio: 'inherit' })
     //
     // const books = await system.run(cmd)
     // parameters.raw
     // print.info(name)
-    // print.info(books)
+    print.info(cmd)
   },
 }
 
