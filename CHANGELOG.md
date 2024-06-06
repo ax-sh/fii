@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🎨 Styling
+
+- Update Prettier template file extension and remove unnecessary properties
+- Update trailingComma to "es5" in .prettierrc files
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.22.0] - 2024-06-06
+
 ### 🚀 Features
 
 - *(types)* Add new classes and types for extended GluegunToolbox
@@ -30,6 +41,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.21.0] - 2024-06-06
 
