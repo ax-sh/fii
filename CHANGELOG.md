@@ -4,6 +4,27 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🚀 Features
+
+- Add db
+- Add push to develop branch in release script
+
+### 🚜 Refactor
+
+- Update variable declaration to improve code readability
+
+### 📚 Documentation
+
+- Update code comments in books command file
+- Add link to drizzle guide in TODO list
+- Update links in TODO.md
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.20.0] - 2024-06-06
+
 ### 📚 Documentation
 
 - Update documentation links in books command
@@ -11,6 +32,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.19.0] - 2024-06-06
 
