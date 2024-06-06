@@ -8,8 +8,10 @@ const command: GluegunCommand = {
   run: async (toolbox) => {
     const { print, system, parameters } = toolbox
     const name = parameters.string
+    const cmd = `libgen-cli search ${name}`
+    // const execa = require('execa')
 
-    const books = await system.run(`libgen-cli search ${name}`)
+    const books = await system.run(cmd)
     // parameters.raw
     // print.info(name)
     print.info(books)
