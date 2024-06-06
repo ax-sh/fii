@@ -22,7 +22,7 @@ const command: GluegunCommand<ExtendedToolbox> = {
     for (const fileName of fileNames) {
       await template.generate({
         // directory: "CONFIGS/tailwind",
-        template: `/CONFIGS/prettier/${fileName}.ejs`,
+        template: `/CONFIGS/prettier/${fileName}`,
         target: filesystem.path('.', fileName),
       })
     }
