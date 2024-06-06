@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.3.0] - 2024-06-06
+
 ### 🐛 Bug Fixes
 
 - Update release process to push changes to master branch
@@ -11,6 +17,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.2.0] - 2024-06-06
 
