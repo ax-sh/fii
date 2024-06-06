@@ -12,7 +12,7 @@ const command: GluegunCommand<ExtendedToolbox> = {
 
     await system.run(
       'ni -D prettier pretty-quick @trivago/prettier-plugin-sort-imports',
-      { trim: true },
+      { trim: true }
     )
     await toolbox.addScriptToPackageJson('pretty', 'pretty-quick')
 
