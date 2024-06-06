@@ -8,6 +8,13 @@ All notable changes to this project will be documented in this file.
 
 - Format code with Prettier
 
+## [0.4.0] - 2024-06-06
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+- Add CHANGELOG
+
 ## [0.3.0] - 2024-06-06
 
 ### 🐛 Bug Fixes
