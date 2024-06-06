@@ -6,6 +6,20 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- Add command to fetch and display books
+- Add new 'status' command for books
+- Add alias 'book' to books command
+- Add spinner for displaying status of servers
+
+### ⚙️ Miscellaneous Tasks
+
+- Update comments and log message in books command function
+- Format code with Prettier
+
+## [0.17.0] - 2024-06-06
+
+### 🚀 Features
+
 - Add day.ts file with dayjs library and plugins
 - Import day module in fii command
 
@@ -22,6 +36,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.16.0] - 2024-06-06
 
