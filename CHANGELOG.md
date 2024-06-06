@@ -6,6 +6,21 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- Add command to kill all chrome processes
+- Add 'creators' command to display cache directory information
+
+### 🐛 Bug Fixes
+
+- Error message
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.24.0] - 2024-06-06
+
+### 🚀 Features
+
 - *(src)* Add extend command and cliAppDir function for filesystem directory access
 - Add kill commands
 
@@ -20,6 +35,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.23.0] - 2024-06-06
 
