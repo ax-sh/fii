@@ -1,6 +1,5 @@
 import { GluegunCommand } from 'gluegun'
 
-
 // @see https://github.com/ciehanski/libgen-cli
 // @see https://github.com/freereadorg/awesome-libgen
 const command: GluegunCommand = {
