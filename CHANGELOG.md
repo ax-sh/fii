@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 📚 Documentation
+
+- Update documentation links in books command
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.19.0] - 2024-06-06
+
 ### 🚀 Features
 
 - Update book command to search for books based on provided name
@@ -15,6 +25,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.18.0] - 2024-06-06
 
