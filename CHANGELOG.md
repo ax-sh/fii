@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🚀 Features
+
+- Add drizzle-kit and drizzle-orm dependencies, create new db.ts file with SQLite database integration
+- Add @types/bun dependency to devDependencies
+
+### 📚 Documentation
+
+- Update installation instructions in readme.md
+
+### 🎨 Styling
+
+- Update CLI description in readme
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.13.0] - 2024-06-06
+
 ### 🐛 Bug Fixes
 
 - Enable push to origin HEAD after successful release
@@ -11,6 +30,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.12.0] - 2024-06-06
 
