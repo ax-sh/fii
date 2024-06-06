@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🐛 Bug Fixes
+
+- Update release process to push changes to master branch
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.2.0] - 2024-06-06
+
 ### 🧪 Testing
 
 - Mark tests as todos for future implementation
@@ -12,6 +22,7 @@ All notable changes to this project will be documented in this file.
 
 - Format code with Prettier
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.1.0] - 2024-06-06
 
