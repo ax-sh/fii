@@ -6,6 +6,20 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- Update book command to search for books based on provided name
+
+### 📚 Documentation
+
+- Add reference link to the source code
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.18.0] - 2024-06-06
+
+### 🚀 Features
+
 - Add command to fetch and display books
 - Add new 'status' command for books
 - Add alias 'book' to books command
@@ -15,6 +29,7 @@ All notable changes to this project will be documented in this file.
 
 - Update comments and log message in books command function
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.17.0] - 2024-06-06
 

@@ -1,16 +1,17 @@
 import { GluegunCommand } from 'gluegun'
 
+// @see https://github.com/ciehanski/libgen-cli
 const command: GluegunCommand = {
   name: 'books',
   alias: ['book'],
   run: async (toolbox) => {
-    const { print, parameters } = toolbox
-    // const name = parameters.first
-    print.info(`parameters.raw, ${parameters.string}`)
-    // const books = await system.run('libgen-cli search')
+    const { print, system, parameters } = toolbox
+    const name = parameters.string
+
+    const books = await system.run(`libgen-cli search ${name}`)
     // parameters.raw
     // print.info(name)
-    // print.info(books)
+    print.info(books)
   },
 }
 
