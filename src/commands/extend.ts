@@ -11,7 +11,7 @@ const command: GluegunCommand<ExtendedToolbox> = {
 
     print.info(`CacheDir : ${cacheDir}`)
 
-   await system.run(`webstorm ${cliProjectPath}`)
+    await system.run(`webstorm ${cliProjectPath}`)
   },
 }
 
