@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.9.0] - 2024-06-06
+
 ### 🐛 Bug Fixes
 
 - Add missing command to fetch all tags before running the release process
@@ -12,6 +18,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.8.0] - 2024-06-06
 
