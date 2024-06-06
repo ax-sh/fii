@@ -28,6 +28,7 @@ const command: GluegunCommand<ExtendedToolbox> = {
     }
     spinner.info('Added prettier configs')
     spinner.stopAndPersist()
+    await system.run('nr prettier . --write')
   },
 }
 
