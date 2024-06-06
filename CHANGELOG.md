@@ -4,10 +4,21 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🐛 Bug Fixes
+
+- Update release-it configuration for git flow release finish option
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.7.0] - 2024-06-06
+
 ### ⚙️ Miscellaneous Tasks
 
 - Update release-it configuration to comment out unnecessary git push command
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.6.0] - 2024-06-06
 
