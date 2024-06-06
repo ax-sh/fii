@@ -16,7 +16,8 @@
     "prepublishOnly": "yarn build",
     "format": "eslint \"**/*.{js,jsx,ts,tsx}\" --fix && prettier \"**/*.{js,jsx,ts,tsx,json}\" --write",
     "upp": "bunx npm-check-updates -i",
-    "pretty": "pretty-quick"
+    "pretty": "pretty-quick",
+    "test": "bun test"
   },
   "files": [
     "build",
