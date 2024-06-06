@@ -8,7 +8,7 @@ const command: GluegunCommand<ExtendedToolbox> = {
   run: async (toolbox) => {
     const { print, filesystem, system, parameters } = toolbox
     const cliName = parameters.first
-    const spinner = print.spin(`Creating project with  ${cliName}`)
+    const spinner = print.spin(`Creating cli project with  ${cliName}`)
     const dir = await filesystem.dirAsync(cliName)
     process.chdir(dir.path())
 
