@@ -4,11 +4,13 @@ const command: GluegunCommand = {
   name: 'books',
   alias: ['book'],
   run: async (toolbox) => {
-    const { print, system, parameters } = toolbox
-    const name = parameters.first
-    const books = await system.run('libgen-cli')
-    print.info(name)
-    print.info(books)
+    const { print, parameters } = toolbox
+    // const name = parameters.first
+    print.info(`parameters.raw, ${parameters.string}`)
+    // const books = await system.run('libgen-cli search')
+    // parameters.raw
+    // print.info(name)
+    // print.info(books)
   },
 }
 
