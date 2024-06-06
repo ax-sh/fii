@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🚀 Features
+
+- *(src)* Add extend command and cliAppDir function for filesystem directory access
+- Add kill commands
+
+### 🚜 Refactor
+
+- Update import statements to use single quotes and improve code formatting
+
+### 🎨 Styling
+
+- Update import statement in types.ts
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.23.0] - 2024-06-06
+
 ### 🎨 Styling
 
 - Update Prettier template file extension and remove unnecessary properties
@@ -12,6 +31,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.22.0] - 2024-06-06
 
