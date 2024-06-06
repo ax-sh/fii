@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🐛 Bug Fixes
+
+- Enable push to origin HEAD after successful release
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.12.0] - 2024-06-06
+
 ### 🚜 Refactor
 
 - Remove generate command and model template files
@@ -11,6 +21,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.11.0] - 2024-06-06
 
