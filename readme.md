@@ -1,6 +1,6 @@
 # fii CLI
 
-A CLI for fii.
+fii custom CLI
 
 ## Installing your CLI
 
