@@ -1,5 +1,5 @@
 import { type GluegunToolbox, print } from 'gluegun'
-import { FSJetpack } from "fs-jetpack/types";
+import { type FSJetpack } from "fs-jetpack/types";
 
 export class KnownError extends Error {
   constructor(msg: string | string[]) {
