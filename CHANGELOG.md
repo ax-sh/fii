@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🚜 Refactor
+
+- Remove generate command and model template files
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.11.0] - 2024-06-06
+
 ### 🚀 Features
 
 - Add new file src/lib/index.ts
@@ -11,6 +21,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.10.0] - 2024-06-06
 
