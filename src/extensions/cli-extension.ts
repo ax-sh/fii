@@ -1,10 +1,41 @@
-import { GluegunToolbox } from 'gluegun'
+import {
+  type ExtendedToolbox,
+  KnownError,
+  UsableBinaryNotFound,
+} from '../types'
 
-// add your CLI-specific functionality here, which will then be accessible
-// to your commands
-module.exports = (toolbox: GluegunToolbox) => {
-  toolbox.foo = () => {
-    toolbox.print.info('called foo extension')
+module.exports = (toolbox: ExtendedToolbox) => {
+  const hasPnpm = toolbox.system.which('pnpm')
+  const hasNi = toolbox.system.which('ni')
+  const hasNr = toolbox.system.which('nr')
+  if (!hasPnpm) {
+    throw new Error('No pnpm available')
+  }
+  if (!hasNi || !hasNr) {
+    toolbox.print.error(
+      'Package identifier not available, use the command below to add',
+    )
+    // @see https://github.com/antfu/ni
+    toolbox.print.success('npm i -g @antfu/ni')
+    throw new UsableBinaryNotFound()
+  }
+
+  toolbox.killProcess = (processEXE: string) =>
+    toolbox.system.run(`taskkill /F /IM ${processEXE}`, { trim: true })
+
+  toolbox.addScriptToPackageJson = async (scriptName: string, cmd: string) => {
+    const script = await toolbox.system.run(
+      `pnpm pkg get scripts.${scriptName}`,
+      { trim: true },
+    )
+    const hasScript = script !== '{}'
+    if (hasScript) {
+      toolbox.print.error('`script ${scriptName} already defined Exiting`')
+      // print.spinner.stopAndPersist({ symbol: '🚨', text: '!' });
+
+      throw new KnownError(`script ${scriptName} already defined Exiting`)
+    }
+    await toolbox.system.run(`pnpm pkg set scripts.${scriptName}="${cmd}"`)
   }
 
   // enable this if you want to read configuration in from
