@@ -1,4 +1,5 @@
 import { type GluegunToolbox, print } from 'gluegun'
+import { FSJetpack } from "fs-jetpack/types";
 
 export class KnownError extends Error {
   constructor(msg: string | string[]) {
@@ -19,4 +20,5 @@ export type ExtendedToolbox = GluegunToolbox & {
   addScriptToPackageJson(scriptName: string, cmd: string): Promise<void>
   killProcess(killProcess: ProcessOptions): Promise<string>
   mkCd(dirPath: ProcessOptions): Promise<void>
+  cliAppDir(): Promise<FSJetpack>
 }

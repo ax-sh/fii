@@ -3,6 +3,7 @@ import {
   KnownError,
   UsableBinaryNotFound,
 } from '../types'
+import { filesystem } from 'gluegun'
 
 module.exports = (toolbox: ExtendedToolbox) => {
   const hasPnpm = toolbox.system.which('pnpm')
@@ -19,6 +20,8 @@ module.exports = (toolbox: ExtendedToolbox) => {
     toolbox.print.success('npm i -g @antfu/ni')
     throw new UsableBinaryNotFound()
   }
+  toolbox.cliAppDir = () =>
+    filesystem.dirAsync(filesystem.path(filesystem.homedir(), 'ax-sh-fii'))
 
   toolbox.killProcess = (processEXE: string) =>
     toolbox.system.run(`taskkill /F /IM ${processEXE}`, { trim: true })

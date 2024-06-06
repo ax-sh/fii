@@ -32,6 +32,7 @@
     "dayjs": "^1.11.11",
     "drizzle-orm": "^0.31.1",
     "execa": "^9.2.0",
+    "fs-jetpack": "^5.1.0",
     "gluegun": "latest"
   },
   "devDependencies": {
