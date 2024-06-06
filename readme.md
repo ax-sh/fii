@@ -7,6 +7,7 @@ fii custom CLI
 ```shell
     bun link fii
 ```
+
 ## Publishing to NPM
 
 To package your CLI up for NPM, do this:
