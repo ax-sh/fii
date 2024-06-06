@@ -4,9 +4,10 @@ const command: GluegunCommand = {
   name: 'status',
   run: async (toolbox) => {
     const { print, system } = toolbox
+    const spinner = print.spin('Getting status of servers')
 
     const status = await system.run('libgen-cli status')
-    print.info(status)
+    spinner.succeed(status)
   },
 }
 
