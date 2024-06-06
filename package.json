@@ -17,6 +17,7 @@
     "format": "eslint \"**/*.{js,jsx,ts,tsx}\" --fix && prettier \"**/*.{js,jsx,ts,tsx,json}\" --write",
     "upp": "bunx npm-check-updates -i",
     "pretty": "pretty-quick",
+    "db:gen": "bunx drizzle-kit generate --dialect sqlite --schema ./src/lib/db/schema.ts",
     "test": "bun test"
   },
   "files": [
