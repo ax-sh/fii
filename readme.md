@@ -1,10 +1,12 @@
 # fii CLI
 
-A CLI for fii.
+fii custom CLI
 
-## Customizing your CLI
+## Installing your CLI
 
-Check out the documentation at https://github.com/infinitered/gluegun/tree/master/docs.
+```shell
+    bun link fii
+```
 
 ## Publishing to NPM
 
