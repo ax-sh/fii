@@ -7,7 +7,7 @@ module.exports = {
     ],
     'before:beforeBump': [
       'git flow release start v${version}',
-      'echo \uD83D\uDC4A before:bump version=v${version} latestVersion=v${latestVersion}',
+      'echo \uD83D\uDC4A before:bump latestVersion=v${version} previousVersion=v${latestVersion}',
     ],
     'after:bump': [
       'git cliff -o CHANGELOG.md && git add CHANGELOG.md',
