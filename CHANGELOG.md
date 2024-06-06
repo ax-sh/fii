@@ -6,6 +6,16 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- Add query execution and logging in db module
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.14.0] - 2024-06-06
+
+### 🚀 Features
+
 - Add drizzle-kit and drizzle-orm dependencies, create new db.ts file with SQLite database integration
 - Add @types/bun dependency to devDependencies
 
@@ -20,6 +30,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.13.0] - 2024-06-06
 
