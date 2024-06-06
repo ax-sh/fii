@@ -14,7 +14,12 @@ export class KnownError extends Error {
 
 export class UsableBinaryNotFound extends Error {}
 
-type ProcessOptions = 'python.exe' | 'node.exe' | 'bun.exe' | string
+type ProcessOptions =
+  | 'python.exe'
+  | 'node.exe'
+  | 'bun.exe'
+  | 'chrome.exe'
+  | string
 
 export type ExtendedToolbox = GluegunToolbox & {
   addScriptToPackageJson(scriptName: string, cmd: string): Promise<void>
