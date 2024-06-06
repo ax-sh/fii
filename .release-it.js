@@ -18,7 +18,7 @@ module.exports = {
     'after:release': [
       'echo \uD83D\uDE4C Successfully released ${name} v${version} to ${repo.repository}.',
       // 'git push origin HEAD',
-      'git push origin refs/heads/master:master',
+      // 'git push origin refs/heads/master:master',
     ],
   },
 }

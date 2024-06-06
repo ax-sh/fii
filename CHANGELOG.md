@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### ⚙️ Miscellaneous Tasks
+
+- Update release-it configuration to comment out unnecessary git push command
+- Format code with Prettier
+
+## [0.6.0] - 2024-06-06
+
 ### 🎨 Styling
 
 - Update variable order in before:bump stage to match latestVersion first
@@ -11,6 +18,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.5.0] - 2024-06-06
 
