@@ -1,6 +1,7 @@
 module.exports = {
   hooks: {
     'before:init': [
+      'git fetch --all --tags --prune',
       'bun run pretty-quick',
       'git commit  --allow-empty -am "chore: format code with Prettier"',
       'bun run test',
@@ -18,7 +19,7 @@ module.exports = {
     'after:release': [
       'echo \uD83D\uDE4C Successfully released ${name} v${version} to ${repo.repository}.',
       // 'git push origin HEAD',
-      // 'git push origin refs/heads/master:master',
+      'git push origin refs/heads/master:master',
     ],
   },
 }
