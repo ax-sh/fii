@@ -6,11 +6,33 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- Add day.ts file with dayjs library and plugins
+- Import day module in fii command
+
+### 🐛 Bug Fixes
+
+- Update build script commands in package.json
+- Fix binary file difference in bun.lockb
+
+### 🎨 Styling
+
+- Comment out sourceMap option
+- Fix indentation and update tsconfig exclude pattern
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.16.0] - 2024-06-06
+
+### 🚀 Features
+
 - Add database generation script and create history table in schema file
 
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.15.0] - 2024-06-06
 
