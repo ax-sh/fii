@@ -9,8 +9,11 @@ module.exports = {
     'unicorn/prevent-abbreviations': 'off',
     '@typescript-eslint/array-type': 'off',
     'capitalized-comments': 'off',
+    '@typescript-eslint/member-delimiter-style': 'off',
     'n/prefer-global/process': 'off',
     '@typescript-eslint/dot-notation': 'off',
+    // makes run: async ()=>{} to async run(){}
+    'object-shorthand': 'off',
 
     '@typescript-eslint/object-curly-spacing': 'off',
     // TODO research what @typescript-eslint/prefer-nullish-coalescing does
