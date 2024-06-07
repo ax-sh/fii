@@ -6,6 +6,50 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- Add overrides for '@typescript-eslint/no-unsafe-argument' in 'src/cli.ts'
+- Disable '@typescript-eslint/dot-notation' rule
+- Disable '@typescript-eslint/member-delimiter-style' and 'object-shorthand' rules
+
+### 🐛 Bug Fixes
+
+- Newline
+- Newline
+- Newline
+- Newline
+- Newline
+- Type
+- Type
+- Type
+- Type
+- Type
+
+### 🚜 Refactor
+
+- Improve type safety in reading package.json file
+
+### 📚 Documentation
+
+- Update comments in .xo-config.js
+- Add description for the 'extend' command
+
+### 🎨 Styling
+
+- Remove unnecessary semi-colon and update type definition
+- Disable prefer-global/process rule in .xo-config.js
+- Turn off arrow-parens rule in .xo-config.js
+- Update typescript comment in books.ts file
+- Remove unnecessary array brackets from process variable in kill command
+- Update type assertion to specify the type of an object
+
+### ⚙️ Miscellaneous Tasks
+
+- Disable unicorn/catch-error-name rule in xo-config
+- Format code with Prettier
+
+## [0.30.0] - 2024-06-07
+
+### 🚀 Features
+
 - Add XO configuration file with ESLint rules
 - Ignore rule in xo
 
@@ -28,6 +72,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.29.0] - 2024-06-07
 
