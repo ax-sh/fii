@@ -19,6 +19,7 @@ module.exports = {
     '@typescript-eslint/quotes': 'off',
     '@typescript-eslint/naming-convention': 'off',
     'unicorn/prefer-optional-catch-binding': 'off',
+    'no-await-in-loop': 'off',
 
     '@typescript-eslint/object-curly-spacing': 'off',
     // TODO research what @typescript-eslint/prefer-nullish-coalescing does

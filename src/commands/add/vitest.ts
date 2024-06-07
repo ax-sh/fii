@@ -7,8 +7,12 @@ const command: GluegunCommand<ExtendedToolbox> = {
     const { print, system, filesystem } = toolbox
     const spinner = print.spin('Adding vitest')
     await system.run('ni -D vitest')
-    const { addVitestTypesToTsconfig, vitestConfigContent, sanityTest } =
-      await import('../../lib/add-vitest-types-to-tsconfig')
+    const {
+      addVitestTypesToTsconfig,
+      vitestConfigContent,
+      // basic test content for vitest
+      sanityTest,
+    } = await import('../../lib/add-vitest-types-to-tsconfig')
 
     await addVitestTypesToTsconfig('tsconfig.json')
 
