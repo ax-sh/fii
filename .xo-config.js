@@ -15,6 +15,7 @@ module.exports = {
     // makes run: async ()=>{} to async run(){}
     'object-shorthand': 'off',
     'arrow-parens': 'off',
+    'unicorn/catch-error-name': 'off',
 
     '@typescript-eslint/object-curly-spacing': 'off',
     // TODO research what @typescript-eslint/prefer-nullish-coalescing does
