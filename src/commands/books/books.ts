@@ -7,7 +7,7 @@ const command: GluegunCommand = {
   alias: ['book'],
   run: async (toolbox) => {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
+    // @ts-expect-error
     const { print, system, parameters } = toolbox
     const name = parameters.string
     const cmd = `libgen-cli search -e pdf ${name}`
