@@ -6,6 +6,33 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- Add XO configuration file with ESLint rules
+- Ignore rule in xo
+
+### 🐛 Bug Fixes
+
+- Update dependencies versions in package.json
+- Newline
+
+### 📚 Documentation
+
+- Add comment for disabling unicorn/prefer-module rule
+
+### 🎨 Styling
+
+- Remove unnecessary comment and fix typo in semicolon option
+- Add prettier option and remove unnecessary comment in .xo-config.js
+- Update prettier configuration to use comment instead of string value
+- Update xo-config to disable object-curly-spacing rule
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.29.0] - 2024-06-07
+
+### 🚀 Features
+
 - Add rimraf package to dependencies
 
 ### 🐛 Bug Fixes
@@ -15,6 +42,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.28.0] - 2024-06-07
 
