@@ -1,7 +1,7 @@
 module.exports = {
   space: true,
   semicolon:false,
-  "prettier":true,
+  // prettier:true,
   "rules": {
     "import/extensions": "off",
 
