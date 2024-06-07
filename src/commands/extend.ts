@@ -1,5 +1,5 @@
-import { GluegunCommand } from 'gluegun'
-import { ExtendedToolbox } from '../types'
+import { type GluegunCommand } from 'gluegun'
+import { type ExtendedToolbox } from '../types'
 
 const command: GluegunCommand<ExtendedToolbox> = {
   name: 'extend',
