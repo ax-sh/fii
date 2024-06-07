@@ -14,6 +14,7 @@ module.exports = {
     '@typescript-eslint/dot-notation': 'off',
     // makes run: async ()=>{} to async run(){}
     'object-shorthand': 'off',
+    'arrow-parens': 'off',
 
     '@typescript-eslint/object-curly-spacing': 'off',
     // TODO research what @typescript-eslint/prefer-nullish-coalescing does
