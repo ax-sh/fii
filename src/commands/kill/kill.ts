@@ -1,5 +1,4 @@
 import type { GluegunCommand } from 'gluegun'
-
 import type { ExtendedToolbox } from '../../types'
 
 const command: GluegunCommand<ExtendedToolbox> = {
@@ -8,13 +7,15 @@ const command: GluegunCommand<ExtendedToolbox> = {
   run: async (toolbox) => {
     const { print, parameters } = toolbox
     const process = parameters.first
-    const spinner = print.spin(`killing all ${[process]} processes`)
+    const spinner = print.spin(`killing all ${process} processes`)
 
     try {
       await toolbox.killProcess(process)
     } catch (e) {
+      console.log(e)
       return spinner.warn('Killing failed')
     }
+
     spinner.succeed('Done')
   },
 }

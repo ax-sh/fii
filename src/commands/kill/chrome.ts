@@ -1,5 +1,4 @@
 import type { GluegunCommand } from 'gluegun'
-
 import type { ExtendedToolbox } from '../../types'
 
 const command: GluegunCommand<ExtendedToolbox> = {
@@ -14,6 +13,7 @@ const command: GluegunCommand<ExtendedToolbox> = {
     } catch (e) {
       return spinner.warn('Killing failed')
     }
+
     spinner.succeed('Done')
   },
 }

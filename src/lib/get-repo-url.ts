@@ -1,7 +1,7 @@
-import { system } from 'gluegun'
 import * as path from 'node:path'
+import { system } from 'gluegun'
 
-export function getRepoUrl() {
+export async function getRepoUrl() {
   return system.run('git remote get-url origin')
 }
 

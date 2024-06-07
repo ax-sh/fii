@@ -1,9 +1,9 @@
+import { filesystem } from 'gluegun'
 import {
   type ExtendedToolbox,
   KnownError,
   UsableBinaryNotFound,
 } from '../types'
-import { filesystem } from 'gluegun'
 
 module.exports = (toolbox: ExtendedToolbox) => {
   const hasPnpm = toolbox.system.which('pnpm')
@@ -12,6 +12,7 @@ module.exports = (toolbox: ExtendedToolbox) => {
   if (!hasPnpm) {
     throw new Error('No pnpm available')
   }
+
   if (!hasNi || !hasNr) {
     toolbox.print.error(
       'Package identifier not available, use the command below to add',
@@ -20,10 +21,11 @@ module.exports = (toolbox: ExtendedToolbox) => {
     toolbox.print.success('npm i -g @antfu/ni')
     throw new UsableBinaryNotFound()
   }
-  toolbox.cliAppDir = () =>
+
+  toolbox.cliAppDir = async () =>
     filesystem.dirAsync(filesystem.path(filesystem.homedir(), '.ax-sh/.fii'))
 
-  toolbox.killProcess = (processEXE: string) =>
+  toolbox.killProcess = async (processEXE: string) =>
     toolbox.system.run(`taskkill /F /IM ${processEXE}`, { trim: true })
 
   toolbox.addScriptToPackageJson = async (scriptName: string, cmd: string) => {
@@ -38,6 +40,7 @@ module.exports = (toolbox: ExtendedToolbox) => {
 
       throw new KnownError(`script ${scriptName} already defined Exiting`)
     }
+
     await toolbox.system.run(`pnpm pkg set scripts.${scriptName}="${cmd}"`)
   }
 

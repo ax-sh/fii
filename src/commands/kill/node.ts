@@ -1,5 +1,4 @@
 import type { GluegunCommand } from 'gluegun'
-
 import type { ExtendedToolbox } from '../../types'
 
 const command: GluegunCommand<ExtendedToolbox> = {
@@ -13,9 +12,10 @@ const command: GluegunCommand<ExtendedToolbox> = {
     try {
       await toolbox.killProcess('node.exe')
       await toolbox.killProcess('bun.exe')
-    } catch (e) {
+    } catch {
       return spinner.warn('Killing failed')
     }
+
     spinner.succeed('Done')
   },
 }

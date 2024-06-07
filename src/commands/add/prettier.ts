@@ -1,5 +1,4 @@
 import { type GluegunCommand } from 'gluegun'
-
 import { type ExtendedToolbox } from '../../types'
 
 const command: GluegunCommand<ExtendedToolbox> = {
@@ -26,6 +25,7 @@ const command: GluegunCommand<ExtendedToolbox> = {
         target: filesystem.path('.', fileName),
       })
     }
+
     spinner.info('Added prettier configs')
     spinner.stopAndPersist()
     await system.run('nr prettier . --write')
