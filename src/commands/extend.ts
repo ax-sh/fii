@@ -10,7 +10,7 @@ const command: GluegunCommand<ExtendedToolbox> = {
     const cacheDir = await toolbox.cliAppDir()
     const cliProjectPath = filesystem.path(__dirname, '..', '..')
 
-    print.info(`CacheDir : ${cacheDir}`)
+    print.info(`CacheDir : ${cacheDir.path()}`)
 
     await system.run(`webstorm ${cliProjectPath}`)
   },

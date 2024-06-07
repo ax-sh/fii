@@ -1,9 +1,9 @@
+import { filesystem } from 'gluegun'
 import {
   type ExtendedToolbox,
   KnownError,
   UsableBinaryNotFound,
 } from '../types'
-import { filesystem } from 'gluegun'
 
 module.exports = (toolbox: ExtendedToolbox) => {
   const hasPnpm = toolbox.system.which('pnpm')
