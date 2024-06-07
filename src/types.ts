@@ -7,6 +7,7 @@ export class KnownError extends Error {
     if (Array.isArray(msg)) {
       message = msg.join('\n')
     }
+
     print.error(message)
     super(message)
   }
