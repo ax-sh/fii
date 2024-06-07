@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🐛 Bug Fixes
+
+- Correct CLI commands in readme for package installation
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.26.0] - 2024-06-07
+
 ### 🚀 Features
 
 - Add gh-pages command and utility functions for Vite config base property
@@ -11,6 +21,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.25.0] - 2024-06-06
 
