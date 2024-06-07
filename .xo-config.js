@@ -5,7 +5,7 @@ module.exports = {
   "rules": {
     "import/extensions": "off",
 
-    // "@typescript-eslint/semi": "off",
+    "@typescript-eslint/object-curly-spacing": "off",
     "@typescript-eslint/prefer-nullish-coalescing":"warn"
   }
 };
