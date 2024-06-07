@@ -1,4 +1,4 @@
-import { GluegunCommand } from 'gluegun'
+import { type GluegunCommand } from 'gluegun'
 
 // @see https://github.com/ciehanski/libgen-cli
 // @see https://github.com/freereadorg/awesome-libgen
@@ -11,7 +11,7 @@ const command: GluegunCommand = {
     const { print, system, parameters } = toolbox
     const name = parameters.string
     const cmd = `libgen-cli search -e pdf ${name}`
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
+
     // const execa = require('execa')
     // await execa(cmd, { shell: true, stdio: 'inherit' })
     //
