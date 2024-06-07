@@ -13,13 +13,13 @@ fii custom CLI
 To package your CLI up for NPM, do this:
 
 ```shell
-$ npm login
-$ npm whoami
-$ npm test
+$ pnpm login
+$ pnpm whoami
+$ bun test
 
-$ npm run build
+$ bun run build
 
-$ npm publish
+$ pnpm publish
 ```
 
 # License
