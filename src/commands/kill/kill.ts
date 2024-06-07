@@ -7,7 +7,7 @@ const command: GluegunCommand<ExtendedToolbox> = {
   run: async (toolbox) => {
     const { print, parameters } = toolbox
     const process = parameters.first
-    const spinner = print.spin(`killing all ${[process]} processes`)
+    const spinner = print.spin(`killing all ${process} processes`)
 
     try {
       await toolbox.killProcess(process)
