@@ -17,6 +17,8 @@ module.exports = {
     'arrow-parens': 'off',
     'unicorn/catch-error-name': 'off',
     '@typescript-eslint/quotes': 'off',
+    '@typescript-eslint/naming-convention': 'off',
+    'unicorn/prefer-optional-catch-binding': 'off',
 
     '@typescript-eslint/object-curly-spacing': 'off',
     // TODO research what @typescript-eslint/prefer-nullish-coalescing does
