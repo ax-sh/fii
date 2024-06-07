@@ -9,6 +9,7 @@ module.exports = {
     'unicorn/prevent-abbreviations': 'off',
     '@typescript-eslint/array-type': 'off',
     'capitalized-comments': 'off',
+    '@typescript-eslint/dot-notation': 'off',
 
     '@typescript-eslint/object-curly-spacing': 'off',
     // TODO research what @typescript-eslint/prefer-nullish-coalescing does
