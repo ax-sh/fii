@@ -35,6 +35,7 @@
     "fs-jetpack": "^5.1.0",
     "gluegun": "latest",
     "jsonc-parser": "^3.2.1",
+    "rimraf": "^5.0.7",
     "ts-morph": "^22.0.0"
   },
   "devDependencies": {
