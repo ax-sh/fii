@@ -12,7 +12,7 @@ const command: GluegunCommand<ExtendedToolbox> = {
     try {
       await toolbox.killProcess(process)
     } catch (e) {
-      console.log(e);
+      console.log(e)
       return spinner.warn('Killing failed')
     }
 

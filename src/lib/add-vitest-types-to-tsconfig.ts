@@ -21,9 +21,11 @@ export const vitestConfigContent = `
     });
 `
 
+type TsconfigContent = { compilerOptions: { types: string[] } }
+
 export async function addVitestTypesToTsconfig(tsconfigPath: string) {
   const data = filesystem.read(tsconfigPath)
-  const tsconfig = parse(data)
+  const tsconfig: TsconfigContent = parse(data)
   const types = tsconfig.compilerOptions.types
   if (!types) {
     const vitestTypes = ['vitest/globals']
