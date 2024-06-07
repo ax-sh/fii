@@ -33,7 +33,8 @@
     "drizzle-orm": "^0.31.1",
     "execa": "^9.2.0",
     "fs-jetpack": "^5.1.0",
-    "gluegun": "latest"
+    "gluegun": "latest",
+    "ts-morph": "^22.0.0"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
