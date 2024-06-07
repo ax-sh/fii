@@ -3,35 +3,38 @@ import {
   type ObjectLiteralExpression,
   type SourceFile,
   SyntaxKind,
+} from 'ts-morph'
 
-} from 'ts-morph';
-
-export function getViteDefineConfigCall(sourceFile: SourceFile): CallExpression {
-  const callExpressions = sourceFile.getDescendantsOfKind(SyntaxKind.CallExpression);
+export function getViteDefineConfigCall(
+  sourceFile: SourceFile,
+): CallExpression {
+  const callExpressions = sourceFile.getDescendantsOfKind(
+    SyntaxKind.CallExpression,
+  )
 
   return callExpressions.find((callExpression) => {
-    const calledExpression = callExpression.getExpression();
-    return calledExpression.getText() === 'defineConfig';
-  });
+    const calledExpression = callExpression.getExpression()
+    return calledExpression.getText() === 'defineConfig'
+  })
 }
 
 export function addBasePropertyToDefineConfig(
   value: string,
-  firstArgument: ObjectLiteralExpression
+  firstArgument: ObjectLiteralExpression,
 ) {
   const baseProperty = {
     name: 'base',
-    initializer: `"${value}"`
-  };
-  firstArgument.addPropertyAssignment(baseProperty);
-  console.log(baseProperty);
+    initializer: `"${value}"`,
+  }
+  firstArgument.addPropertyAssignment(baseProperty)
+  console.log(baseProperty)
 }
 
 export function getViteDefineConfigCallOptions<T = ObjectLiteralExpression>(
-  sourceFile: SourceFile
+  sourceFile: SourceFile,
 ) {
-  const defineConfigCall = getViteDefineConfigCall(sourceFile);
-  const [firstArgument] = defineConfigCall.getArguments();
+  const defineConfigCall = getViteDefineConfigCall(sourceFile)
+  const [firstArgument] = defineConfigCall.getArguments()
 
-  return firstArgument as T;
+  return firstArgument as T
 }
