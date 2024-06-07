@@ -6,6 +6,16 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- Add gh-pages command and utility functions for Vite config base property
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.25.0] - 2024-06-06
+
+### 🚀 Features
+
 - Add command to kill all chrome processes
 - Add 'creators' command to display cache directory information
 
@@ -16,6 +26,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.24.0] - 2024-06-06
 
