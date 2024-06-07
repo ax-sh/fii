@@ -14,6 +14,7 @@ const command: GluegunCommand<ExtendedToolbox> = {
     } catch (e) {
       return spinner.warn('Killing failed')
     }
+
     spinner.succeed('Done')
   },
 }
