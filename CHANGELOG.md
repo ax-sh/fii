@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🚀 Features
+
+- Add vitest command for adding vitest test framework and configuration files
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.27.0] - 2024-06-07
+
 ### 🐛 Bug Fixes
 
 - Correct CLI commands in readme for package installation
@@ -11,6 +21,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.26.0] - 2024-06-07
 

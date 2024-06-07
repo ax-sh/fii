@@ -1,6 +1,6 @@
 {
   "name": "fii",
-  "version": "0.27.0",
+  "version": "0.28.0",
   "description": "fii CLI",
   "private": true,
   "types": "build/types/types.d.ts",
@@ -34,6 +34,7 @@
     "execa": "^9.2.0",
     "fs-jetpack": "^5.1.0",
     "gluegun": "latest",
+    "jsonc-parser": "^3.2.1",
     "ts-morph": "^22.0.0"
   },
   "devDependencies": {
