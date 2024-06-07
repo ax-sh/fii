@@ -6,11 +6,26 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- Add rimraf package to dependencies
+
+### 🐛 Bug Fixes
+
+- Fix typo in CLI extension file path
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.28.0] - 2024-06-07
+
+### 🚀 Features
+
 - Add vitest command for adding vitest test framework and configuration files
 
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.27.0] - 2024-06-07
 
