@@ -9,6 +9,7 @@ module.exports = {
     'unicorn/prevent-abbreviations': 'off',
 
     '@typescript-eslint/object-curly-spacing': 'off',
-    '@typescript-eslint/prefer-nullish-coalescing': 'warn',
+    // TODO research what @typescript-eslint/prefer-nullish-coalescing does
+    '@typescript-eslint/prefer-nullish-coalescing': 'off',
   },
 }
