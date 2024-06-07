@@ -1,5 +1,4 @@
 import type { GluegunCommand } from 'gluegun'
-
 import type { ExtendedToolbox } from '../../types'
 
 const command: GluegunCommand<ExtendedToolbox> = {
@@ -21,6 +20,7 @@ const command: GluegunCommand<ExtendedToolbox> = {
       })
       return
     }
+
     await system.run('ni -D gh-pages')
 
     await addBaseOnViteConfig(filesystem.path(viteConfigPath))
