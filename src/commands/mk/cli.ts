@@ -51,11 +51,12 @@ const sqlite = new Database("sqlite.db");
 export const db = drizzle(sqlite);`
     src.write('db.ts', dbContent)
 
-    await system.run('ni yargs drizzle-orm')
+    await system.run('ni yargs drizzle-orm fs-jetpack rimraf')
     await system.run('ni -D @types/yargs drizzle-kit')
 
     spinner.succeed(`Done ${dir.path()}`)
   },
 }
+
 
 module.exports = command
