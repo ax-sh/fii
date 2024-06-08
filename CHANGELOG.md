@@ -6,6 +6,16 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- Add dotenv-cli package to the project and update test scripts
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.34.0] - 2024-06-08
+
+### 🚀 Features
+
 - Update dependencies for better performance
 
 ### 🎨 Styling
@@ -15,6 +25,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.33.0] - 2024-06-08
 
