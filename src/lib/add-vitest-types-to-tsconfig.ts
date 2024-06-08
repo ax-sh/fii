@@ -2,23 +2,24 @@ import { filesystem } from 'gluegun'
 import { applyEdits, modify, parse } from 'jsonc-parser'
 
 export const sanityTest = `
-      function sum(a: number, b: number) {return a + b}
+function sum(a: number, b: number) { return a + b }
       
-      test('adds 1 + 2 to equal 3', async () => {
-        expect(sum(1, 2)).toBe(3)
-      })`
+test('adds 1 + 2 to equal 3', async () => {
+  expect(sum(1, 2)).toBe(3)
+})`
 
 export const vitestConfigContent = `
-    import { configDefaults, defineConfig } from 'vitest/config';
+import { defineConfig } from 'vitest/config';
 
-    export default defineConfig({
-      plugins: [
+export default defineConfig({
+  plugins: [
 
-      ],
-      test: {
-        globals: true,
-      }
-    });
+  ],
+  test: {
+    environment:'node',
+    globals: true,
+  }
+});
 `
 
 type TsconfigContent = { compilerOptions: { types: string[] } }
