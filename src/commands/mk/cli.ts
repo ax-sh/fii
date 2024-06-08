@@ -58,5 +58,4 @@ export const db = drizzle(sqlite);`
   },
 }
 
-
 module.exports = command
