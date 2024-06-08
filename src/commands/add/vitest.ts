@@ -6,7 +6,7 @@ const command: GluegunCommand<ExtendedToolbox> = {
   run: async (toolbox) => {
     const { print, system, filesystem } = toolbox
     const spinner = print.spin('Adding vitest')
-    await system.run('ni -D vitest')
+    await system.run('ni -D vitest dotenv-cli')
     const {
       addVitestTypesToTsconfig,
       vitestConfigContent,
@@ -29,7 +29,8 @@ const command: GluegunCommand<ExtendedToolbox> = {
     filesystem.write(vitestConfigPath, vitestConfigContent)
     filesystem.write('sum.test.ts', sanityTest)
 
-    await toolbox.addScriptToPackageJson('test', 'vitest run')
+    await toolbox.addScriptToPackageJson('test', 'dotenv -- vitest run')
+    // await toolbox.addScriptToPackageJson('test', 'vitest run')
     await toolbox.addScriptToPackageJson('test:watch', 'vitest')
     await toolbox.addScriptToPackageJson('coverage', 'vitest run --coverage')
 
