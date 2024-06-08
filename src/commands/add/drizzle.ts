@@ -8,7 +8,7 @@ const command: GluegunCommand<ExtendedToolbox> = {
     const spinner = print.spin('Adding drizzle')
 
     await system.run('ni drizzle-orm')
-    await system.run('ni -D drizzle-kit')
+    await system.run('ni -D drizzle-kit @faker-js/faker')
 
     const fileName = 'schema.ts'
 

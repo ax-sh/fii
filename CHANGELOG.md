@@ -6,6 +6,17 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- Add faker with drizzle
+- Add faker with drizzle
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.32.0] - 2024-06-08
+
+### 🚀 Features
+
 - *(cli)* Add database setup and schema for sqlite using drizzle-orm
 - Add new 'drizzle' command to the project's CLI
 - Update drizzle command to use proper generation syntax
@@ -14,6 +25,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.31.0] - 2024-06-07
 
