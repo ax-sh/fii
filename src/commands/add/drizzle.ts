@@ -10,8 +10,8 @@ const command: GluegunCommand<ExtendedToolbox> = {
     await system.run('ni drizzle-orm')
     await system.run('ni -D drizzle-kit')
     await toolbox.addScriptToPackageJson(
-      'format',
-      'nlx drizzle-kit generate:sqlite --schema ./src/lib/db/schema.ts',
+      'drizzle:generate',
+      'nlx drizzle-kit generate --dialect sqlite --schema ./src/lib/db/schema.ts',
     )
 
     spinner.succeed('Added drizzle')
