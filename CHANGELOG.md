@@ -6,6 +6,19 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- *(cli)* Add database setup and schema for sqlite using drizzle-orm
+- Add new 'drizzle' command to the project's CLI
+- Update drizzle command to use proper generation syntax
+- Add template generation for drizzle schema
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.31.0] - 2024-06-07
+
+### 🚀 Features
+
 - Add overrides for '@typescript-eslint/no-unsafe-argument' in 'src/cli.ts'
 - Disable '@typescript-eslint/dot-notation' rule
 - Disable '@typescript-eslint/member-delimiter-style' and 'object-shorthand' rules
@@ -45,6 +58,7 @@ All notable changes to this project will be documented in this file.
 
 - Disable unicorn/catch-error-name rule in xo-config
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.30.0] - 2024-06-07
 

@@ -44,9 +44,15 @@ const command: GluegunCommand<ExtendedToolbox> = {
     filesystem.write('index.ts', indexCMD)
     const src = await filesystem.dirAsync('src')
     src.write('command.ts', cliCmd)
+    const dbContent = `import { drizzle } from "drizzle-orm/bun-sqlite";
+import { Database } from "bun:sqlite";
 
-    await system.run('ni yargs')
-    await system.run('ni -D @types/yargs')
+const sqlite = new Database("sqlite.db");
+export const db = drizzle(sqlite);`
+    src.write('db.ts', dbContent)
+
+    await system.run('ni yargs drizzle-orm')
+    await system.run('ni -D @types/yargs drizzle-kit')
 
     spinner.succeed(`Done ${dir.path()}`)
   },
