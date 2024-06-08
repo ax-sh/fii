@@ -6,12 +6,27 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- Update dependencies for better performance
+
+### 🎨 Styling
+
+- Format code for better readability
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.33.0] - 2024-06-08
+
+### 🚀 Features
+
 - Add faker with drizzle
 - Add faker with drizzle
 
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.32.0] - 2024-06-08
 
