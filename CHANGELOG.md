@@ -6,11 +6,22 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- Add lodash
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.35.0] - 2024-06-08
+
+### 🚀 Features
+
 - Add dotenv-cli package to the project and update test scripts
 
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.34.0] - 2024-06-08
 
