@@ -1,6 +1,6 @@
 {
   "name": "fii",
-  "version": "0.37.0",
+  "version": "0.38.0",
   "description": "fii CLI",
   "private": true,
   "types": "build/types/types.d.ts",
@@ -8,7 +8,8 @@
     "fii": "bin/fii"
   },
   "scripts": {
-    "release": "dotenv -v GIT_MERGE_AUTOEDIT=no release-it -- minor --no-git.push --no-git.requireUpstream --ci",
+    "release": "dotenv -v GIT_MERGE_AUTOEDIT=no release-it -- minor --ci",
+    "released": "dotenv -v GIT_MERGE_AUTOEDIT=no release-it -- minor --no-git.push --no-git.requireUpstream --ci",
     "clean-build": "rimraf -rf ./build",
     "compile": "tsc -p .",
     "copy-templates": "copyfiles ./src/templates/* ./build/templates",
