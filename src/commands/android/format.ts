@@ -1,5 +1,3 @@
-
-
 import { type GluegunCommand } from 'gluegun'
 // https://chatgpt.com/c/50e14c29-fe89-4825-9dc1-da19a1b90d10
 const command: GluegunCommand = {
