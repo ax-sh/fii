@@ -4,16 +4,17 @@ import type { ExtendedToolbox } from '../../types'
 const command: GluegunCommand<ExtendedToolbox> = {
   name: 'eslint',
   run: async (toolbox) => {
-    const { print, system } = toolbox
+    const { print, system , template, filesystem} = toolbox
     const spinner = print.spin('Adding eslint')
 
     await system.run(
       'ni -D eslint eslint-config-prettier eslint-plugin-prettier eslint-plugin-unicorn',
     )
-    // await toolbox.addScriptToPackageJson(
-    //   'format',
-    //   'nlx @biomejs/biome format --write ./src',
-    // )
+    const fileName = 'eslint.config.mjs'
+    await template.generate({
+      template: `/CONFIGS/eslint/${fileName}`,
+      target: filesystem.path('.', 'src', fileName),
+    });
 
     spinner.succeed('Added eslint')
   },
