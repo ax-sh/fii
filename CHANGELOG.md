@@ -6,11 +6,22 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- Enable GitHub release in .release-it configuration
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.38.0] - 2024-06-09
+
+### 🚀 Features
+
 - Add new script for releasing with different options
 
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.37.0] - 2024-06-09
 
