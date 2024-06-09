@@ -6,11 +6,22 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- Add android status command to format project status
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.36.0] - 2024-06-08
+
+### 🚀 Features
+
 - Add lodash
 
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.35.0] - 2024-06-08
 
