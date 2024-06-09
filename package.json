@@ -1,6 +1,6 @@
 {
   "name": "fii",
-  "version": "0.40.0",
+  "version": "0.41.0",
   "description": "fii CLI",
   "private": true,
   "types": "build/types/types.d.ts",
@@ -53,6 +53,7 @@
     "eslint": "^9.4.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-unicorn": "^53.0.0",
     "husky": "^5.1.3",
     "prettier": "^3.3.1",
     "pretty-quick": "^4.0.0",
