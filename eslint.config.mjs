@@ -1,5 +1,6 @@
 import pluginJs from '@eslint/js'
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
+
 export default [
   pluginJs.configs.recommended,
   eslintPluginPrettierRecommended,
