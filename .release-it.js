@@ -24,7 +24,7 @@ module.exports = {
       'git push origin refs/heads/develop:develop',
     ],
   },
-  "github": {
-    "release": true
-  }
+  github: {
+    release: true,
+  },
 }
