@@ -6,6 +6,21 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- Add eslint command and configuration files
+- Add eslint-plugin-unicorn to eslint config and dev dependencies
+
+### 🎨 Styling
+
+- Remove unnecessary dev dependency from package.json
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.40.0] - 2024-06-09
+
+### 🚀 Features
+
 - Add eslint configuration and update @eslint/js dependency
 
 ### 🐛 Bug Fixes
@@ -25,6 +40,7 @@ All notable changes to this project will be documented in this file.
 - Formatting
 - Formatting
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.39.0] - 2024-06-09
 
