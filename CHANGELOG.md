@@ -6,11 +6,36 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- Add eslint configuration and update @eslint/js dependency
+
+### 🐛 Bug Fixes
+
+- Update drizzle-kit version to 0.22.6
+- Update eslint version to 9.4.0
+- Update eslint command in format script to fix all files
+
+### 🎨 Styling
+
+- Fix typo in ignored file extension
+
+### ⚙️ Miscellaneous Tasks
+
+- Remove unused cmd
+- Rename eslint config file to .eslintrc.js
+- Formatting
+- Formatting
+- Format code with Prettier
+
+## [0.39.0] - 2024-06-09
+
+### 🚀 Features
+
 - Enable GitHub release in .release-it configuration
 
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.38.0] - 2024-06-09
 
