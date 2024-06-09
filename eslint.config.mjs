@@ -7,6 +7,6 @@ export default [
   eslintPluginPrettierRecommended,
   eslintConfigPrettier,
   {
-    ignores: ['.config/*', 'build/', '.xo-config.js', '.*.j s'],
+    ignores: ['.config/*', 'build/', '.xo-config.js', '.*.js'],
   },
 ]
