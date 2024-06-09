@@ -4,7 +4,8 @@ module.exports = {
       'git fetch --all --tags --prune',
       'bun run pretty-quick',
       'git commit  --allow-empty -am "chore: format code with Prettier"',
-      'bun run test',
+      'nr eslint',
+      'nr test',
     ],
     'before:beforeBump': [
       'git flow release start v${version}',

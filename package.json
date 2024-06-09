@@ -1,6 +1,6 @@
 {
   "name": "fii",
-  "version": "0.41.0",
+  "version": "0.42.0",
   "description": "fii CLI",
   "private": true,
   "types": "build/types/types.d.ts",
@@ -34,6 +34,7 @@
     "@faker-js/faker": "^8.4.1",
     "dayjs": "^1.11.11",
     "drizzle-orm": "^0.31.2",
+    "eslint-plugin-sonarjs": "^1.0.3",
     "execa": "^9.2.0",
     "fs-jetpack": "^5.1.0",
     "gluegun": "latest",

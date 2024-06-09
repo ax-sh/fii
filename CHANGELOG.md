@@ -6,6 +6,21 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- Add eslint config file generation
+- Add eslint-plugin-sonarjs to eslint config and package.json
+
+### 🐛 Bug Fixes
+
+- Update test script to use "nr test" instead of "bun run test"
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.41.0] - 2024-06-09
+
+### 🚀 Features
+
 - Add eslint command and configuration files
 - Add eslint-plugin-unicorn to eslint config and dev dependencies
 
@@ -16,6 +31,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.40.0] - 2024-06-09
 
