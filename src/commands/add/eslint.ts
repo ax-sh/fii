@@ -4,7 +4,7 @@ import type { ExtendedToolbox } from '../../types'
 const command: GluegunCommand<ExtendedToolbox> = {
   name: 'eslint',
   run: async (toolbox) => {
-    const { print, system , template, filesystem} = toolbox
+    const { print, system, template, filesystem } = toolbox
     const spinner = print.spin('Adding eslint')
 
     await system.run(
@@ -14,7 +14,7 @@ const command: GluegunCommand<ExtendedToolbox> = {
     await template.generate({
       template: `/CONFIGS/eslint/${fileName}`,
       target: filesystem.path('.', 'src', fileName),
-    });
+    })
 
     spinner.succeed('Added eslint')
   },
