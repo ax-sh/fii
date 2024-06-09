@@ -7,8 +7,9 @@ const command: GluegunCommand<ExtendedToolbox> = {
     const { print, system } = toolbox
     const spinner = print.spin('Adding eslint')
 
-
-    await system.run('ni -D eslint eslint-config-prettier eslint-plugin-prettier')
+    await system.run(
+      'ni -D eslint eslint-config-prettier eslint-plugin-prettier eslint-plugin-unicorn',
+    )
     // await toolbox.addScriptToPackageJson(
     //   'format',
     //   'nlx @biomejs/biome format --write ./src',
