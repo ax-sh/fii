@@ -6,11 +6,22 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- Add new script for releasing with different options
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.37.0] - 2024-06-09
+
+### 🚀 Features
+
 - Add android status command to format project status
 
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.36.0] - 2024-06-08
 
