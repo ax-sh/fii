@@ -1,7 +1,7 @@
-import { db } from './db'
-import * as schema from './schema'
 import { faker } from '@faker-js/faker'
 import { sql } from 'drizzle-orm'
+import { db } from './db'
+import * as schema from './schema'
 
 async function main() {
   await db.insert(schema.history).values([
@@ -12,4 +12,5 @@ async function main() {
   ])
   console.log(`Seeding complete.`)
 }
+
 void main()
