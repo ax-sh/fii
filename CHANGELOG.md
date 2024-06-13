@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🐛 Bug Fixes
+
+- Enable git push for master branch in release script
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.54.0] - 2024-06-13
+
 ### 🚀 Features
 
 - *(cli)* Add functionality to fetch and display remote version info
@@ -12,6 +22,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.53.0] - 2024-06-13
 
