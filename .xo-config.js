@@ -27,6 +27,10 @@ module.exports = {
   },
   overrides: [
     {
+      files: 'src/templates/**',
+      rules: { 'unicorn/prefer-top-level-await': 'off' },
+    },
+    {
       files: 'src/cli.ts',
       rules: {
         '@typescript-eslint/no-unsafe-argument': 'off',
