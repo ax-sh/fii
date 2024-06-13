@@ -19,6 +19,10 @@ const command: GluegunCommand = {
     process.chdir(installedPath)
     spinner.info(`Installing clsx and prettier!`)
     await system.run('bun i && ni clsx && fii add prettier')
+    const gitInit = await system.run(
+      `git flow init -d && git add . && git commit -m init`,
+    )
+    spinner.succeed(gitInit)
 
     // spinner.info('Adding prettier and tailwind');
     spinner.succeed(`Created App ${appName}`)
