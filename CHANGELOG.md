@@ -6,6 +6,17 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- Add config file
+- Add description to the release command
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.51.0] - 2024-06-13
+
+### 🚀 Features
+
 - Add command.ts.ejs
 - Update types
 - Update command generation logic
@@ -22,6 +33,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.50.0] - 2024-06-13
 
