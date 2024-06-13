@@ -6,6 +6,17 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- *(cli)* Add functionality to fetch and display remote version info
+- Add husky subcommand
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.53.0] - 2024-06-13
+
+### 🚀 Features
+
 - Add husky subcommand
 - Add husky subcommand
 
@@ -17,6 +28,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.52.0] - 2024-06-13
 
