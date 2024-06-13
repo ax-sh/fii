@@ -6,11 +6,22 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- Add lodash command to install lodash package and its type definitions
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.43.0] - 2024-06-09
+
+### 🚀 Features
+
 - Update command name to 'format' with aliases 'fmt' and 'f'
 
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.42.0] - 2024-06-09
 
