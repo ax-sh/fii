@@ -6,12 +6,29 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- Add husky subcommand
+- Add husky subcommand
+
+### 🐛 Bug Fixes
+
+- Update dependencies versions in package.json
+- Add system to toolbox and run command to echo ni -D husky
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.52.0] - 2024-06-13
+
+### 🚀 Features
+
 - Add config file
 - Add description to the release command
 
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.51.0] - 2024-06-13
 
