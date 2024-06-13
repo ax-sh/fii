@@ -22,8 +22,10 @@ module.exports = (toolbox: ExtendedToolbox) => {
     throw new UsableBinaryNotFound()
   }
 
-  toolbox.cliAppDir = async () =>
-    filesystem.dirAsync(filesystem.path(filesystem.homedir(), '.ax-sh/.fii'))
+  toolbox.cliAppDir = async (...paths: string[]) =>
+    filesystem.dirAsync(
+      filesystem.path(filesystem.homedir(), '.ax-sh/.fii', ...paths),
+    )
 
   toolbox.killProcess = async (processEXE: string) =>
     toolbox.system.run(`taskkill /F /IM ${processEXE}`, { trim: true })

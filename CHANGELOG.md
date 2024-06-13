@@ -6,12 +6,34 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- Add command.ts.ejs
+- Update types
+- Update command generation logic
+- Add msw subcommand
+
+### 🐛 Bug Fixes
+
+- Fix trimming of command name and add validation for empty name
+
+### 🎨 Styling
+
+- Update print method to print.success for consistency
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.50.0] - 2024-06-13
+
+### 🚀 Features
+
 - Add rule to disable 'unicorn/prefer-top-level-await' for files in 'src/templates/**'
 
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.49.0] - 2024-06-13
 
