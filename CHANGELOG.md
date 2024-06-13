@@ -6,6 +6,21 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- Add release command in Vite setup script
+
+### 🎨 Styling
+
+- Remove unused import and update console message
+- Update formatting and add missing semicolons to msw-helpers file
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.56.0] - 2024-06-13
+
+### 🚀 Features
+
 - Add vite subcommand
 - Improve vite project setup by installing additional dependencies and changing directory
 - Add tailwind templates
@@ -20,6 +35,7 @@ All notable changes to this project will be documented in this file.
 
 - Remove old eslint file
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.55.0] - 2024-06-13
 

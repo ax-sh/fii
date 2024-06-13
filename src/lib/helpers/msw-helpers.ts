@@ -25,6 +25,7 @@ export const endMessage = `
 // https://mswjs.io/docs/integrations/browser
 // add where required
 
+// .main.tsx
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import React from 'react';
@@ -58,14 +59,25 @@ enableMocking().then(() => {
   );
 });
 
+// .main.tsx
+
+// App.tsx
 import { useQuery } from '@tanstack/react-query';
-import axios from 'axios'
+import axios from 'axios';
 
 function useGetQuery() {
-    const api = axios.create({baseURL: '/api/'});
-    const fetchUser = () => api.get('/user').then((x) => x.data);
-    return useQuery({ queryKey: ['get'], queryFn: fetchUser });
+  const api = axios.create({ baseURL: '/api/' });
+  const fetchUser = () => api.get('/user').then((x) => x.data);
+  return useQuery({ queryKey: ['get'], queryFn: fetchUser });
 }
+function App() {
+  const { data } = useGetQuery();
+  const json = <pre>{JSON.stringify(data, null, 4)}</pre>
+  return json;
+}
+
+export default App
+// App.tsx
 ` as const
 
 export const dbTemplate = `

@@ -18,7 +18,9 @@ const command: GluegunCommand = {
     spinner.info(`Created vite app [${appName}]!`)
     process.chdir(installedPath)
     spinner.info(`Installing clsx and prettier!`)
-    await system.run('bun i && ni clsx && fii add prettier && fii add tailwind')
+    await system.run(
+      'bun i && ni clsx && fii add prettier && fii add tailwind && fii add release',
+    )
     const gitInit = await system.run(
       `git flow init -d && git add . && git commit -m init`,
     )
