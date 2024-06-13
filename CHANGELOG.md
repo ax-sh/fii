@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🚀 Features
+
+- Add vite subcommand
+- Improve vite project setup by installing additional dependencies and changing directory
+- Add tailwind templates
+- Add tailwind subcommand
+- Update Vite installation command to include Tailwind CSS
+
+### 🚜 Refactor
+
+- Rename files in vite commands folder
+
+### ⚙️ Miscellaneous Tasks
+
+- Remove old eslint file
+- Format code with Prettier
+
+## [0.55.0] - 2024-06-13
+
 ### 🐛 Bug Fixes
 
 - Enable git push for master branch in release script
@@ -11,6 +30,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.54.0] - 2024-06-13
 
