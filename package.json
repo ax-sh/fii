@@ -1,6 +1,6 @@
 {
   "name": "fii",
-  "version": "0.46.0",
+  "version": "0.47.0",
   "description": "fii CLI",
   "private": true,
   "types": "build/types/types.d.ts",
