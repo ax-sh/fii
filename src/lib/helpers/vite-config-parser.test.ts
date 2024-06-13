@@ -16,15 +16,15 @@ describe(getViteDefineConfigCall.name, () => {
     plugins: [react()]
   })
   `
-  const codeAfterAddingBase = `
-  import { defineConfig } from 'vite'
-  import react from '@vitejs/plugin-react-swc'
-
-  export default defineConfig({
-    plugins: [react()],
- base:"foo"
-  })
-  `
+ //  const codeAfterAddingBase = `
+ //  import { defineConfig } from 'vite'
+ //  import react from '@vitejs/plugin-react-swc'
+ //
+ //  export default defineConfig({
+ //    plugins: [react()],
+ // base:"foo"
+ //  })
+ //  `
   it('should get DefineConfig', async () => {
     const project = new Project()
     const sourceFile = project.createSourceFile(
