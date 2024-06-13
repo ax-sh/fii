@@ -1,0 +1,13 @@
+import type { GluegunCommand } from 'gluegun'
+
+const command: GluegunCommand = {
+  name: '<%= props.name %>',
+  run: async (toolbox) => {
+    const { print, parameters } = toolbox
+    const name = parameters.first
+
+    print.info(`Todo <%= props.name %> ${name}`)
+  },
+}
+
+module.exports = command
