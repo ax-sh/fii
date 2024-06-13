@@ -28,8 +28,8 @@ const command: GluegunCommand = {
 
     // spinner.info('Adding prettier and tailwind');
     spinner.succeed(`Created App ${appName}`)
-    print.info(`webstorm ${installedPath}`);
-    await system.run(`webstorm ${installedPath}`);
+    print.info(`webstorm ${installedPath}`)
+    await system.run(`webstorm ${installedPath}`)
   },
 }
 
