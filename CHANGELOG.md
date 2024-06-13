@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🐛 Bug Fixes
+
+- Update success message for adding release
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.44.0] - 2024-06-13
+
 ### 🚀 Features
 
 - Add lodash command to install lodash package and its type definitions
@@ -11,6 +21,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.43.0] - 2024-06-09
 
