@@ -1,0 +1,15 @@
+import { faker } from '@faker-js/faker';
+import { HttpResponse, http } from 'msw';
+
+// https://www.npmjs.com/package/@faker-js/faker
+// Intercept "GET https://example.com/user" requests...
+const userHandler = http.get('api/user', () => {
+  // ...and respond to them using this JSON response.
+  return HttpResponse.json({
+    id: faker.string.uuid(),
+    firstName: faker.person.firstName(),
+    lastName: faker.person.lastName()
+  });
+});
+
+export const handlers = [userHandler];
