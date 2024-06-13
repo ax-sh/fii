@@ -4,9 +4,20 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🚀 Features
+
+- Add cli for bunx gitignore -types
+
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+
+## [0.47.0] - 2024-06-13
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+- Add CHANGELOG
 
 ## [0.46.0] - 2024-06-13
 
