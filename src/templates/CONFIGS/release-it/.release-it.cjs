@@ -1,4 +1,4 @@
-module.exports =  {
+module.exports = {
   github: {
     release: false,
   },
@@ -29,9 +29,7 @@ module.exports =  {
     pushRepo: '',
   },
   hooks: {
-    'before:init': [
-      'nr eslint'
-    ],
+    'before:init': ['nr eslint'],
     'before:beforeBump': [
       'git flow release start v${version}',
       'echo \uD83D\uDC4A ${name} before:bump latestVersion=v${version} previousVersion=v${latestVersion}',
@@ -49,5 +47,5 @@ module.exports =  {
       // 'git push origin refs/heads/master:master',
       // 'git push origin refs/heads/develop:develop',
     ],
-  }
+  },
 }

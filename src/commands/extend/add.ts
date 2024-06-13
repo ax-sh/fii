@@ -7,8 +7,6 @@ const command: GluegunCommand<ExtendedToolbox> = {
   run: async (toolbox) => {
     const { print } = toolbox
     print.info('Tools generate and add new script for fii add subcommand')
-
-
   },
 }
 

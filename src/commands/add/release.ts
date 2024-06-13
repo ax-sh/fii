@@ -5,14 +5,14 @@ const command: GluegunCommand<ExtendedToolbox> = {
   name: 'release',
   alias: ['release-it'],
   run: async (toolbox) => {
-    const { print, system,template, filesystem } = toolbox
+    const { print, system, template, filesystem } = toolbox
     const spinner = print.spin('Adding release-it')
     await toolbox.addScriptToPackageJson(
       'release',
       'dotenv -v DEBUG=1 release-it -- minor --no-git.push --no-git.requireUpstream --ci',
     )
     await system.run('ni -D dotenv-cli release-it')
-    const fileName = ".release-it.cjs"
+    const fileName = '.release-it.cjs'
     await template.generate({
       template: `/CONFIGS/release-it/${fileName}`,
       target: filesystem.path('.', fileName),
