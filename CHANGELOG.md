@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🚀 Features
+
+- Add rule to disable 'unicorn/prefer-top-level-await' for files in 'src/templates/**'
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+- Format code with Prettier
+
+## [0.49.0] - 2024-06-13
+
 ### 🚜 Refactor
 
 - Update eslint configuration to export an array of eslintConfigs
@@ -11,6 +22,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.48.0] - 2024-06-13
 
