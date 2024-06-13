@@ -13,7 +13,7 @@ const command: GluegunCommand<ExtendedToolbox> = {
     )
     await system.run('ni -D dotenv-cli release-it')
 
-    spinner.succeed('Added lodash')
+    spinner.succeed('Added release')
   },
 }
 
