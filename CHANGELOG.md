@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.46.0] - 2024-06-13
+
 ### 🚀 Features
 
 - Add release-it configuration file with git, npm, github, and gitlab settings
@@ -18,6 +24,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.45.0] - 2024-06-13
 
