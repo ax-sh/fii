@@ -7,7 +7,6 @@ const command: GluegunCommand = {
     const name = parameters.first
 
     print.error(`Todo vite ${name}`)
-
   },
 }
 
