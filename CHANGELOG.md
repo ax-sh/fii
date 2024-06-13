@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🚜 Refactor
+
+- Update eslint configuration to export an array of eslintConfigs
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.48.0] - 2024-06-13
+
 ### 🚀 Features
 
 - Add cli for bunx gitignore -types
@@ -11,6 +21,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.47.0] - 2024-06-13
 
