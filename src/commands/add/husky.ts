@@ -6,6 +6,7 @@ const command: GluegunCommand = {
     const { print, system } = toolbox
 
     // https://typicode.github.io/husky/
+    // https://typicode.github.io/husky/get-started.html
 
     print.info(`Todo Add husky`)
     await system.run('ni -D husky')

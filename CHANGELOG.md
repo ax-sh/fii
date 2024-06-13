@@ -6,6 +6,16 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- Add webstorm launch command in vite/m.ts
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.57.0] - 2024-06-13
+
+### 🚀 Features
+
 - Add release command in Vite setup script
 
 ### 🎨 Styling
@@ -16,6 +26,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.56.0] - 2024-06-13
 
