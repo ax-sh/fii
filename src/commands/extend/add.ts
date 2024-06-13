@@ -8,7 +8,7 @@ const command: GluegunCommand<ExtendedToolbox> = {
     const { print, template, parameters, filesystem } = toolbox
     const name = parameters.first.trim()
     if (!name) {
-      throw new KnownError("No command name found.");
+      throw new KnownError('No command name found.')
     }
 
     const cliProjectPath = filesystem.path(__dirname, '..', '..', '..')

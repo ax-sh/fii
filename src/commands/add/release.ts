@@ -4,7 +4,7 @@ import type { ExtendedToolbox } from '../../types'
 const command: GluegunCommand<ExtendedToolbox> = {
   name: 'release',
   alias: ['release-it'],
-  description:"Adds release-it and dotenv-cli to work with git-flow locally",
+  description: 'Adds release-it and dotenv-cli to work with git-flow locally',
   run: async (toolbox) => {
     const { print, system, template, filesystem } = toolbox
     const spinner = print.spin('Adding release-it')
