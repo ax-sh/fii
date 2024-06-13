@@ -2,11 +2,13 @@ import pluginJs from '@eslint/js'
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 import eslintConfigPrettier from 'eslint-config-prettier'
 
-export default [
+const ignores = {
+  ignores: ['.config/*', 'build/', '.xo-config.js', '.*.js'],
+}
+const eslintConfigs = [
   pluginJs.configs.recommended,
   eslintPluginPrettierRecommended,
   eslintConfigPrettier,
-  {
-    ignores: ['.config/*', 'build/', '.xo-config.js', '.*.js'],
-  },
+  ignores,
 ]
+export default eslintConfigs

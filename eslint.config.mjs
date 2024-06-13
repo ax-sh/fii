@@ -16,7 +16,7 @@ const unicorn = {
   },
 }
 
-export default [
+const eslintConfigs = [
   pluginJs.configs.recommended,
   sonarjs.configs.recommended,
   unicorn,
@@ -26,3 +26,5 @@ export default [
     ignores: ['.config/*', 'build/', '.xo-config.js', '.*.js'],
   },
 ]
+
+export default eslintConfigs
