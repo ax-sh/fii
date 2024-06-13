@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🚀 Features
+
+- Add release-it configuration file with git, npm, github, and gitlab settings
+- Add release-it configuration settings for GitHub, npm, and git tasks
+- Add new 'add' command for extending functionality and update file structure
+- Add template generation for release-it configuration file
+
+### 📚 Documentation
+
+- Update release-it configuration comments
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.45.0] - 2024-06-13
+
 ### 🐛 Bug Fixes
 
 - Update success message for adding release
@@ -11,6 +28,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.44.0] - 2024-06-13
 
