@@ -19,9 +19,7 @@ const command: GluegunCommand<ExtendedToolbox> = {
       target,
       props: { name },
     })
-    print.success(
-      `Generated subcommand fii extend add ${name}`,
-    )
+    print.success(`Generated subcommand fii extend add ${name}`)
   },
 }
 

@@ -13,12 +13,12 @@ const userHandler = http.get('api/user', () => {
 }); 
 
 export const handlers = [userHandler];
-` as const;
+` as const
 
 export const browserTemplate = `import { setupWorker } from 'msw/browser'
 import { handlers } from './handlers'
  
-export const worker = setupWorker(...handlers)` as const;
+export const worker = setupWorker(...handlers)` as const
 
 export const endMessage = `
 // https://mswjs.io/docs/integrations/node
@@ -66,7 +66,7 @@ function useGetQuery() {
     const fetchUser = () => api.get('/user').then((x) => x.data);
     return useQuery({ queryKey: ['get'], queryFn: fetchUser });
 }
-` as const;
+` as const
 
 export const dbTemplate = `
 import { factory, primaryKey } from '@mswjs/data'
@@ -82,4 +82,4 @@ export const db = factory({
     type:String
   },
 })
-` as const;
+` as const
