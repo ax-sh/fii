@@ -9,3 +9,5 @@ https://balamurugan16.hashnode.dev/blazingly-fast-cli-with-bun
 
 Add cli for
 bunx gitignore -types
+
+aws s3api list-buckets | jq
