@@ -16,3 +16,4 @@ bunx gitignore -types
 aws s3 mb s3://abc123
 aws s3api list-buckets | jq
 aws s3 cp /tmp/hello.txt s3://abc123/hello.txt --acl public-read
+https://docs.localstack.cloud/user-guide/aws/cloudfront/
