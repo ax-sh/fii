@@ -13,7 +13,7 @@ const command: GluegunCommand<ExtendedToolbox> = {
     const fileName = 'eslint.config.mjs'
     await template.generate({
       template: `/CONFIGS/eslint/${fileName}`,
-      target: filesystem.path('.', 'src', fileName),
+      target: filesystem.path('.', fileName),
     })
 
     spinner.succeed('Added eslint')
