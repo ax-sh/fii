@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🐛 Bug Fixes
+
+- Update AWS S3 bucket names in CLI commands
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.60.0] - 2024-06-14
+
 ### 🚀 Features
 
 - Add AWS S3 commands to TODO list
@@ -12,6 +22,7 @@ All notable changes to this project will be documented in this file.
 
 - Format code with Prettier
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.59.0] - 2024-06-14
 
