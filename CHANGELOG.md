@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🚀 Features
+
+- Add global node configuration in eslint config
+- Add .npmrc template for GitHub npm package registry
+
+### 📚 Documentation
+
+- Update .npmrc.ejs with additional comments and instructions
+
+### 🎨 Styling
+
+- Remove unnecessary semicolons and comments from eslint configuration
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.61.0] - 2024-06-14
+
 ### 🐛 Bug Fixes
 
 - Update AWS S3 bucket names in CLI commands
@@ -11,6 +30,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.60.0] - 2024-06-14
 
