@@ -1,7 +1,9 @@
 import { Project } from 'ts-morph'
 import { getRepoBaseName } from './get-repo-url'
-import { addBasePropertyToDefineConfig, getViteDefineConfigCallOptions } from "./helpers/vite-config-parser";
-
+import {
+  addBasePropertyToDefineConfig,
+  getViteDefineConfigCallOptions,
+} from './helpers/vite-config-parser'
 
 export async function addBaseOnViteConfig(viteConfigPath: string) {
   const project = new Project()
