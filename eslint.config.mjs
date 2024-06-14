@@ -3,10 +3,14 @@ import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 import eslintConfigPrettier from 'eslint-config-prettier'
 import eslintPluginUnicorn from 'eslint-plugin-unicorn'
 import sonarjs from 'eslint-plugin-sonarjs'
+// import globals from "./src/commands/kill/node";
 
 const unicorn = {
   languageOptions: {
     ecmaVersion: 2024,
+    // globals: {
+    //   ...globals.node,
+    // },
   },
   plugins: {
     unicorn: eslintPluginUnicorn,
