@@ -4,6 +4,26 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🐛 Bug Fixes
+
+- Tests
+- Tests
+- Extend code
+
+### 📚 Documentation
+
+- Update TODO.md with vitest snapshot update instructions
+
+### 🎨 Styling
+
+- Remove extra newline at end of file
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.58.0] - 2024-06-13
+
 ### 🚀 Features
 
 - Add webstorm launch command in vite/m.ts
@@ -11,6 +31,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.57.0] - 2024-06-13
 

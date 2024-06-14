@@ -3,7 +3,7 @@ import { getRepoBaseName } from './get-repo-url'
 import {
   addBasePropertyToDefineConfig,
   getViteDefineConfigCallOptions,
-} from './vite-config-parser'
+} from './helpers/vite-config-parser'
 
 export async function addBaseOnViteConfig(viteConfigPath: string) {
   const project = new Project()
