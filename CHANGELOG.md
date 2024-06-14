@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 📚 Documentation
+
+- Add instructions for cleaning up Docker resources in TODO file
+- Update TODO.md with docker-compose commands and explanations
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.63.0] - 2024-06-14
+
 ### 🚀 Features
 
 - Add linting scripts to package.json
@@ -16,6 +27,7 @@ All notable changes to this project will be documented in this file.
 
 - Format code with Prettier
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.62.0] - 2024-06-14
 
