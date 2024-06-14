@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🚀 Features
+
+- Add AWS S3 commands to TODO list
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+- Format code with Prettier
+
+## [0.59.0] - 2024-06-14
+
 ### 🐛 Bug Fixes
 
 - Tests
@@ -21,6 +32,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.58.0] - 2024-06-13
 
