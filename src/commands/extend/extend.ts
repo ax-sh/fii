@@ -7,10 +7,10 @@ const command: GluegunCommand<ExtendedToolbox> = {
   run: async (toolbox) => {
     const { print, system, filesystem } = toolbox
     print.info('Tools for development')
-    const cacheDir = await toolbox.cliAppDir()
-    const cliProjectPath = filesystem.path(__dirname, '..', '..')
+    // const cacheDir = await toolbox.cliAppDir()
+    const cliProjectPath = filesystem.path(__dirname, '..', '..', '..')
 
-    print.info(`CacheDir : ${cacheDir.path()}`)
+    // print.info(`CacheDir : ${cacheDir.path()}`)
 
     await system.run(`webstorm ${cliProjectPath}`)
   },
