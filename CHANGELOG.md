@@ -6,6 +6,21 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- Add linting scripts to package.json
+
+### 📚 Documentation
+
+- Update .npmrc.ejs with pnpm login instructions
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+- Format code with Prettier
+
+## [0.62.0] - 2024-06-14
+
+### 🚀 Features
+
 - Add global node configuration in eslint config
 - Add .npmrc template for GitHub npm package registry
 
@@ -20,6 +35,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.61.0] - 2024-06-14
 
