@@ -19,7 +19,9 @@
     "upp": "bunx npm-check-updates -i",
     "pretty": "pretty-quick",
     "db:gen": "bunx drizzle-kit generate --dialect sqlite --schema ./src/lib/db/schema.ts",
-    "test": "bun test"
+    "test": "bun test",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix"
   },
   "files": [
     "build",
