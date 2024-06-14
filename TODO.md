@@ -18,3 +18,8 @@ aws s3api list-buckets | jq
 aws s3 cp hello.txt s3://abc123-2024/hello.txt --acl public-read
 aws s3api get-bucket-policy --bucket abc123-2024
 https://docs.localstack.cloud/user-guide/aws/cloudfront/
+
+
+This removes all the containers, networks, volumes and images defined in the docker-compose.
+
+docker-compose down -v --rmi all
