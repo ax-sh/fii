@@ -2,7 +2,8 @@ import {
   type CallExpression,
   type ObjectLiteralExpression,
   type SourceFile,
-  SyntaxKind, ts
+  SyntaxKind,
+  ts,
 } from 'ts-morph'
 
 export function getViteDefineConfigCall(
@@ -47,4 +48,24 @@ export function getViteConfigPlugins(sourceFile: SourceFile) {
     .asKindOrThrow(ts.SyntaxKind.PropertyAssignment)
     .getInitializerIfKindOrThrow(ts.SyntaxKind.ArrayLiteralExpression)
   return pluginsArray
+}
+
+export function addImportsToViteConfig(
+  sourceFile: SourceFile,
+  newImports: { name: string; moduleSpecifier: string }[],
+) {
+  newImports.forEach((imp) => {
+    sourceFile.addImportDeclaration({
+      namedImports: [imp.name],
+      moduleSpecifier: imp.moduleSpecifier,
+    })
+  })
+}
+export function getImportsToViteConfig(sourceFile: SourceFile) {
+  return sourceFile.getImportDeclarations().map((decl) => ({
+    moduleSpecifier: decl.getModuleSpecifierValue(),
+    namedImports: decl
+      .getNamedImports()
+      .map((namedImport) => namedImport.getName()),
+  }))
 }
