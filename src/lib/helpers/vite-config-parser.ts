@@ -2,7 +2,7 @@ import {
   type CallExpression,
   type ObjectLiteralExpression,
   type SourceFile,
-  SyntaxKind,
+  SyntaxKind, ts
 } from 'ts-morph'
 
 export function getViteDefineConfigCall(
@@ -37,4 +37,14 @@ export function getViteDefineConfigCallOptions<T = ObjectLiteralExpression>(
   const [firstArgument] = defineConfigCall.getArguments()
 
   return firstArgument as T
+}
+
+export function getViteConfigPlugins(sourceFile: SourceFile) {
+  const configObject = getViteDefineConfigCallOptions(sourceFile)
+  const pluginsArray = configObject
+    .asKindOrThrow(ts.SyntaxKind.ObjectLiteralExpression)
+    .getPropertyOrThrow('plugins')
+    .asKindOrThrow(ts.SyntaxKind.PropertyAssignment)
+    .getInitializerIfKindOrThrow(ts.SyntaxKind.ArrayLiteralExpression)
+  return pluginsArray
 }
