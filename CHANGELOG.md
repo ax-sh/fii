@@ -6,12 +6,32 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- Add npmrc file
+- Update config
+- Switch to tsx
+- Update packages
+- Switch to tsx for speed
+- Add paths subcommand
+- Add paths subcommand
+- Add BrowserCookiesSingleton import from @ax-sh/browser-cookies
+
+### ⚙️ Miscellaneous Tasks
+
+- Fix formatting
+- Format files
+- Format code with Prettier
+
+## [0.69.0] - 2024-06-16
+
+### 🚀 Features
+
 - Add prettier scripts to package.json and update npmrc documentation
 - Add prettier:fix script to package.json and use it before eslint in release-it configuration file
 
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.68.0] - 2024-06-16
 
