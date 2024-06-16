@@ -6,7 +6,7 @@ const command: GluegunCommand<ExtendedToolbox> = {
   run: async (toolbox) => {
     // @ts-expect-error
     const { print, system } = toolbox
-    const spinner = print.spin("Adding vite-pages")
+    const spinner = print.spin('Adding vite-pages')
 
     spinner.succeed(`Added vite-pages`)
     // await system.run('ni -D vite-plugin-pages')
