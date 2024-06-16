@@ -17,7 +17,7 @@ if (wantsCompiled || !devMode) {
   // require(`${__dirname}/../src/cli`).run(process.argv);
 
   // tsx alternative
-  (async () => {
+  ;(async () => {
     const tsx = await import('tsx')
     tsx.initialize({ project: `${__dirname}/../tsconfig.json` })
     const { default: cli } = await import('../src/cli')

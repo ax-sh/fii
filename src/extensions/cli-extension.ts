@@ -1,7 +1,7 @@
+import { BrowserCookiesSingleton } from '@ax-sh/browser-cookies'
 import { filesystem } from 'gluegun'
 
 import { type ExtendedToolbox, KnownError, UsableBinaryNotFound } from '../types'
-import { BrowserCookiesSingleton } from '@ax-sh/browser-cookies'
 
 module.exports = async (toolbox: ExtendedToolbox) => {
   const hasPnpm = toolbox.system.which('pnpm')
