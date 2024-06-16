@@ -6,12 +6,33 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- Add function to retrieve and modify Vite config plugins array
+- Add functions to parse and modify Vite config imports
+- Add spinner for adding <%= props.name %> in command template
+- Add vite plugin vite-pages
+
+### 🚜 Refactor
+
+- Improve code formatting in vite-config-parser test files
+- Update type definition for GluegunCommand to include ExtendedToolbox
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+- Format code with Prettier
+- Format code with Prettier
+
+## [0.65.0] - 2024-06-16
+
+### 🚀 Features
+
 - Add oxlint as a devDependency in package.json
 - Add eslint-plugin-security to improve code security
 
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.64.0] - 2024-06-14
 
