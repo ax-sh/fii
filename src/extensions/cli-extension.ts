@@ -1,6 +1,7 @@
 import { filesystem } from 'gluegun'
 
 import { type ExtendedToolbox, KnownError, UsableBinaryNotFound } from '../types'
+import { BrowserCookiesSingleton } from '@ax-sh/browser-cookies'
 
 module.exports = async (toolbox: ExtendedToolbox) => {
   const hasPnpm = toolbox.system.which('pnpm')
@@ -39,7 +40,7 @@ module.exports = async (toolbox: ExtendedToolbox) => {
   const pythonPath = 'C:/Users/USER/miniconda3/python.exe'
   process.env.PYTHON_BIN = pythonPath
 
-  const { BrowserCookiesSingleton } = await import('@ax-sh/browser-cookies')
+  // const { BrowserCookiesSingleton } = await import('@ax-sh/browser-cookies')
   toolbox.loadBrowser = BrowserCookiesSingleton.instance
 
   // enable this if you want to read configuration in from
