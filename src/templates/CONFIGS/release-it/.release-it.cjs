@@ -29,7 +29,7 @@ module.exports = {
     pushRepo: '',
   },
   hooks: {
-    'before:init': ['nr eslint'],
+    'before:init': ['nr prettier:fix', 'nr eslint'],
     'before:beforeBump': [
       'git flow release start v${version}',
       'echo \uD83D\uDC4A ${name} before:bump latestVersion=v${version} previousVersion=v${latestVersion}',

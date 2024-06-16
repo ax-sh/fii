@@ -18,6 +18,7 @@
     "format": "eslint --fix && prettier \"**/*.{js,jsx,ts,tsx,json}\" --write",
     "upp": "bunx npm-check-updates -i",
     "pretty": "pretty-quick",
+    "prettier:fix": "prettier . --write",
     "db:gen": "bunx drizzle-kit generate --dialect pglite --schema ./src/lib/db/schema.ts",
     "test": "bun test",
     "lint": "eslint",
