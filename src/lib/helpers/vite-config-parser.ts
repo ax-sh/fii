@@ -3,7 +3,9 @@ import {
   type ObjectLiteralExpression,
   type SourceFile,
   SyntaxKind,
+  ts,
 } from 'ts-morph'
+import * as prettier from 'prettier'
 
 export function getViteDefineConfigCall(
   sourceFile: SourceFile,
@@ -37,4 +39,40 @@ export function getViteDefineConfigCallOptions<T = ObjectLiteralExpression>(
   const [firstArgument] = defineConfigCall.getArguments()
 
   return firstArgument as T
+}
+
+export function getViteConfigPlugins(sourceFile: SourceFile) {
+  const configObject = getViteDefineConfigCallOptions(sourceFile)
+  const pluginsArray = configObject
+    .asKindOrThrow(ts.SyntaxKind.ObjectLiteralExpression)
+    .getPropertyOrThrow('plugins')
+    .asKindOrThrow(ts.SyntaxKind.PropertyAssignment)
+    .getInitializerIfKindOrThrow(ts.SyntaxKind.ArrayLiteralExpression)
+  return pluginsArray
+}
+
+export function addImportsToViteConfig(
+  sourceFile: SourceFile,
+  newImports: { name: string; moduleSpecifier: string }[],
+) {
+  newImports.forEach((imp) => {
+    sourceFile.addImportDeclaration({
+      namedImports: [imp.name],
+      moduleSpecifier: imp.moduleSpecifier,
+    })
+  })
+}
+export function getImportsToViteConfig(sourceFile: SourceFile) {
+  return sourceFile.getImportDeclarations().map((decl) => ({
+    moduleSpecifier: decl.getModuleSpecifierValue(),
+    namedImports: decl
+      .getNamedImports()
+      .map((namedImport) => namedImport.getName()),
+  }))
+}
+
+export function formatSourceFile(sourceFile: SourceFile) {
+  return prettier.format(sourceFile.getFullText(), {
+    parser: 'typescript',
+  })
 }
