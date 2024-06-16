@@ -2,7 +2,7 @@ module.exports = {
   hooks: {
     'before:init': [
       'git fetch --all --tags --prune',
-      'bun run pretty-quick',
+      'nr prettier:fix',
       'git commit  --allow-empty -am "chore: format code with Prettier"',
       'nr eslint',
       'nr test',
