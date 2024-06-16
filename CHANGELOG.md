@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🚀 Features
+
+- Add tsx
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.67.0] - 2024-06-16
+
 ### 🚜 Refactor
 
 - Update import path for ExtendedToolbox in command template
@@ -15,6 +25,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.66.0] - 2024-06-16
 
