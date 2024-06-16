@@ -4,6 +4,7 @@ import eslintConfigPrettier from 'eslint-config-prettier'
 import eslintPluginUnicorn from 'eslint-plugin-unicorn'
 import sonarjs from 'eslint-plugin-sonarjs'
 // import globals from "./src/commands/kill/node";
+import pluginSecurity from 'eslint-plugin-security'
 
 const unicorn = {
   languageOptions: {
@@ -12,6 +13,7 @@ const unicorn = {
     //   ...globals.node,
     // },
   },
+
   plugins: {
     unicorn: eslintPluginUnicorn,
   },
@@ -23,6 +25,7 @@ const unicorn = {
 const eslintConfigs = [
   pluginJs.configs.recommended,
   sonarjs.configs.recommended,
+  pluginSecurity.configs.recommended,
   unicorn,
   eslintPluginPrettierRecommended,
   eslintConfigPrettier,
