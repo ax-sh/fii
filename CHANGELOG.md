@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🚀 Features
+
+- Add oxlint as a devDependency in package.json
+- Add eslint-plugin-security to improve code security
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.64.0] - 2024-06-14
+
 ### 📚 Documentation
 
 - Add instructions for cleaning up Docker resources in TODO file
@@ -12,6 +23,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.63.0] - 2024-06-14
 
