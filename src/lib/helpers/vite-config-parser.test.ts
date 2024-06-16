@@ -1,5 +1,6 @@
 import { Project } from 'ts-morph'
 
+import { getRepoBaseName } from '../get-repo-url'
 import {
   addBasePropertyToDefineConfig,
   addImportsToViteConfig,
@@ -9,7 +10,6 @@ import {
   getViteDefineConfigCall,
   getViteDefineConfigCallOptions,
 } from './vite-config-parser'
-import { getRepoBaseName } from '../get-repo-url'
 
 function makeBasicSourceFile() {
   const code = `
@@ -21,13 +21,9 @@ function makeBasicSourceFile() {
   })
   `
   const project = new Project()
-  const sourceFile = project.createSourceFile(
-    './__test__vite__config__.ts',
-    code,
-    {
-      overwrite: true,
-    },
-  )
+  const sourceFile = project.createSourceFile('./__test__vite__config__.ts', code, {
+    overwrite: true,
+  })
   return sourceFile
 }
 
@@ -51,13 +47,9 @@ describe(getViteDefineConfigCall.name, () => {
   //  `
   it('should get DefineConfig', async () => {
     const project = new Project()
-    const sourceFile = project.createSourceFile(
-      './__test__vite__config__.ts',
-      code,
-      {
-        overwrite: true,
-      },
-    )
+    const sourceFile = project.createSourceFile('./__test__vite__config__.ts', code, {
+      overwrite: true,
+    })
 
     const firstArgument = getViteDefineConfigCallOptions(sourceFile)
     const value = 'foo'
@@ -76,9 +68,7 @@ describe(getViteDefineConfigCall.name, () => {
     const sourceFile = makeBasicSourceFile()
     const pluginsArray = getViteConfigPlugins(sourceFile)
     pluginsArray.addElement('newFunction()')
-    const plugins = pluginsArray
-      .getElements()
-      .map((element) => element.getText())
+    const plugins = pluginsArray.getElements().map((element) => element.getText())
     expect(plugins).toContain('newFunction()')
   })
   test('addImportsToViteConfig should add new import statements', async () => {

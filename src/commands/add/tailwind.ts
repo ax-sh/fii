@@ -13,13 +13,7 @@ const command: GluegunCommand = {
 
     const fileName = 'tailwind.config.js'
     const cssFileName = 'index.css'
-    const configPath = filesystem.path(
-      __dirname,
-      '..',
-      '..',
-      'templates',
-      'CONFIGS',
-    )
+    const configPath = filesystem.path(__dirname, '..', '..', 'templates', 'CONFIGS')
     console.log(configPath, filesystem.isDirectory(configPath))
     await template.generate({
       // directory: "CONFIGS/tailwind",

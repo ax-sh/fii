@@ -1,4 +1,5 @@
 import type { GluegunCommand } from 'gluegun'
+
 import type { ExtendedToolbox } from '../../types'
 
 const command: GluegunCommand<ExtendedToolbox> = {
@@ -7,9 +8,7 @@ const command: GluegunCommand<ExtendedToolbox> = {
     const { print, system, filesystem } = toolbox
     const spinner = print.spin('Adding gh-pages')
 
-    const { addBaseOnViteConfig } = await import(
-      '../../lib/add-base-on-vite-config'
-    )
+    const { addBaseOnViteConfig } = await import('../../lib/add-base-on-vite-config')
 
     const viteConfigPath = 'vite.config.ts'
 
@@ -24,10 +23,7 @@ const command: GluegunCommand<ExtendedToolbox> = {
     await system.run('ni -D gh-pages')
 
     await addBaseOnViteConfig(filesystem.path(viteConfigPath))
-    await toolbox.addScriptToPackageJson(
-      'deploy',
-      'pnpm build && gh-pages -d dist',
-    )
+    await toolbox.addScriptToPackageJson('deploy', 'pnpm build && gh-pages -d dist')
     spinner.succeed('Added gh-pages')
   },
 }

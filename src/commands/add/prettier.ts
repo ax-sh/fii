@@ -1,4 +1,5 @@
 import { type GluegunCommand } from 'gluegun'
+
 import { type ExtendedToolbox } from '../../types'
 
 const command: GluegunCommand<ExtendedToolbox> = {
@@ -9,10 +10,9 @@ const command: GluegunCommand<ExtendedToolbox> = {
 
     const spinner = print.spin('Adding prettier deps')
 
-    await system.run(
-      'ni -D prettier pretty-quick @trivago/prettier-plugin-sort-imports',
-      { trim: true },
-    )
+    await system.run('ni -D prettier pretty-quick @trivago/prettier-plugin-sort-imports', {
+      trim: true,
+    })
     await toolbox.addScriptToPackageJson('prettier', 'prettier . --check')
     await toolbox.addScriptToPackageJson('prettier:fix', 'prettier . --write')
     await toolbox.addScriptToPackageJson('pretty', 'pretty-quick')

@@ -7,17 +7,17 @@ const command: GluegunCommand = {
   run: async (toolbox) => {
     const { print, system, filesystem } = toolbox
     const spinner = print.spin('Adding MSW and Faker')
-    const { handlerTemplate, browserTemplate, endMessage, dbTemplate } =
-      await import('../../lib/helpers/msw-helpers')
+    const { handlerTemplate, browserTemplate, endMessage, dbTemplate } = await import(
+      '../../lib/helpers/msw-helpers'
+    )
 
     await system.run(
-      'ni -D msw-auto-mock msw@latest @mswjs/data @faker-js/faker @tanstack/eslint-plugin-query',
+      'ni -D msw-auto-mock msw@latest @mswjs/data @faker-js/faker @tanstack/eslint-plugin-query'
     )
     await system.run('ni @tanstack/react-query axios')
     await system.run('nr msw init ./public --save')
     const mockFolder = filesystem.dir('mocks')
-    if (mockFolder.exists('handlers.ts'))
-      throw new KnownError('handlers.ts exists exiting')
+    if (mockFolder.exists('handlers.ts')) throw new KnownError('handlers.ts exists exiting')
 
     mockFolder.write('handlers.ts', handlerTemplate)
     mockFolder.write('browser.ts', browserTemplate)

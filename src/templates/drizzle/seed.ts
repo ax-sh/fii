@@ -1,5 +1,6 @@
 import { faker } from '@faker-js/faker'
 import { sql } from 'drizzle-orm'
+
 import { db } from './db'
 import * as schema from './schema'
 

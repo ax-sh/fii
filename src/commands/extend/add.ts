@@ -1,4 +1,5 @@
 import { type GluegunCommand } from 'gluegun'
+
 import { type ExtendedToolbox, KnownError } from '../../types'
 
 const command: GluegunCommand<ExtendedToolbox> = {
