@@ -1,4 +1,5 @@
 import type { GluegunCommand } from 'gluegun'
+
 import type { ExtendedToolbox } from '../../types'
 
 const command: GluegunCommand<ExtendedToolbox> = {
@@ -19,7 +20,7 @@ const command: GluegunCommand<ExtendedToolbox> = {
     })
     await toolbox.addScriptToPackageJson(
       'drizzle:generate',
-      'nlx drizzle-kit generate --dialect sqlite --schema ./src/lib/db/schema.ts',
+      'nlx drizzle-kit generate --dialect sqlite --schema ./src/lib/db/schema.ts'
     )
 
     spinner.succeed('Added drizzle')
