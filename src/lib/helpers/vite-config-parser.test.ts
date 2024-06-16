@@ -1,8 +1,9 @@
 import { Project } from 'ts-morph'
-import prettier from 'prettier'
+
 import {
   addBasePropertyToDefineConfig,
   addImportsToViteConfig,
+  formatSourceFile,
   getImportsToViteConfig,
   getViteConfigPlugins,
   getViteDefineConfigCall,
@@ -97,9 +98,7 @@ describe(getViteDefineConfigCall.name, () => {
       moduleSpecifier: './anotherFunction',
       namedImports: ['anotherFunction'],
     })
-    const formattedText = await prettier.format(sourceFile.getFullText(), {
-      parser: 'typescript',
-    })
+    const formattedText = await formatSourceFile(sourceFile)
     console.log(formattedText)
   })
 })

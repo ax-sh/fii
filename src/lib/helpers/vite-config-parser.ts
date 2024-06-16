@@ -5,6 +5,7 @@ import {
   SyntaxKind,
   ts,
 } from 'ts-morph'
+import * as prettier from 'prettier'
 
 export function getViteDefineConfigCall(
   sourceFile: SourceFile,
@@ -68,4 +69,10 @@ export function getImportsToViteConfig(sourceFile: SourceFile) {
       .getNamedImports()
       .map((namedImport) => namedImport.getName()),
   }))
+}
+
+export function formatSourceFile(sourceFile: SourceFile) {
+  return prettier.format(sourceFile.getFullText(), {
+    parser: 'typescript',
+  })
 }
