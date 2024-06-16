@@ -1,6 +1,6 @@
 {
   "name": "fii",
-  "version": "0.67.0",
+  "version": "0.68.0",
   "description": "fii CLI",
   "private": true,
   "types": "build/types/types.d.ts",
@@ -65,6 +65,7 @@
     "pretty-quick": "^4.0.0",
     "release-it": "^17.3.0",
     "ts-node": "^10.9.2",
+    "tsx": "^4.15.5",
     "typescript": "~5.4.5",
     "xo": "^0.58.0"
   },
