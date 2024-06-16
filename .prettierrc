@@ -13,12 +13,6 @@
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true,
 
-  "importOrder": [
-    "<THIRD_PARTY_MODULES>",
-    "^@core/(.*)$",
-    "^@app/(.*)$",
-    "^icon(.*)",
-    "^[./]"
-  ],
+  "importOrder": ["<THIRD_PARTY_MODULES>", "^@core/(.*)$", "^@app/(.*)$", "^icon(.*)", "^[./]"],
   "endOfLine": "lf"
 }

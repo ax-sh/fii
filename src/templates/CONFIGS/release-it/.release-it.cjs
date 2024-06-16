@@ -1,3 +1,5 @@
+// https://github.com/release-it/release-it/blob/main/config/release-it.json
+
 module.exports = {
   github: {
     release: false,
@@ -29,14 +31,18 @@ module.exports = {
     pushRepo: '',
   },
   hooks: {
-    'before:init': ['nr prettier:fix', 'nr eslint'],
+    'before:init': [
+      'nr prettier:fix',
+      'git commit --allow-empty -am "ci: format files before release"',
+      'nr eslint',
+    ],
     'before:beforeBump': [
       'git flow release start v${version}',
       'echo \uD83D\uDC4A ${name} before:bump latestVersion=v${version} previousVersion=v${latestVersion}',
     ],
     'after:bump': [
       'git cliff -o CHANGELOG.md && git add CHANGELOG.md',
-      'git commit  --allow-empty -am "chore: add CHANGELOG"',
+      'git commit  --allow-empty -am "ci: add CHANGELOG"',
       'git flow release finish -n',
       // equivalent 'git flow release finish v${version} -m "Release v${version}" -n -p -F --keepremote',
       'echo \uD83D\uDC4A ${name} after:bump version=v${version} latestVersion=v${latestVersion}',
@@ -48,4 +54,4 @@ module.exports = {
       // 'git push origin refs/heads/develop:develop',
     ],
   },
-}
+};
