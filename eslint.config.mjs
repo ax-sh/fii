@@ -1,10 +1,10 @@
 import pluginJs from '@eslint/js'
-import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 import eslintConfigPrettier from 'eslint-config-prettier'
-import eslintPluginUnicorn from 'eslint-plugin-unicorn'
-import sonarjs from 'eslint-plugin-sonarjs'
+import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 // import globals from "./src/commands/kill/node";
 import pluginSecurity from 'eslint-plugin-security'
+import sonarjs from 'eslint-plugin-sonarjs'
+import eslintPluginUnicorn from 'eslint-plugin-unicorn'
 
 const unicorn = {
   languageOptions: {
@@ -30,7 +30,7 @@ const eslintConfigs = [
   eslintPluginPrettierRecommended,
   eslintConfigPrettier,
   {
-    ignores: ['.config/*', 'build/', '.xo-config.js', '.*.js'],
+    ignores: ['.config/*', 'build/', 'dist/', '.xo-config.js', '.*.js'],
   },
 ]
 

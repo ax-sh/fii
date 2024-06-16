@@ -1,4 +1,5 @@
 import type { GluegunCommand } from 'gluegun'
+
 import type { ExtendedToolbox } from '../../types'
 
 const command: GluegunCommand<ExtendedToolbox> = {
@@ -15,10 +16,7 @@ const command: GluegunCommand<ExtendedToolbox> = {
     await toolbox.addScriptToPackageJson('dev', 'bun --hot index.ts')
     await toolbox.addScriptToPackageJson('dev:watch', 'bun --watch index.ts')
     type PackageJsonType = Record<string, any>
-    const packageJson = filesystem.read(
-      'package.json',
-      'json',
-    ) as PackageJsonType
+    const packageJson = filesystem.read('package.json', 'json') as PackageJsonType
     packageJson['bin'] = {
       [cliName]: './index.ts',
     }
@@ -51,9 +49,7 @@ const sqlite = new Database("sqlite.db");
 export const db = drizzle(sqlite);`
     src.write('db.ts', dbContent)
 
-    await system.run(
-      'ni yargs drizzle-orm fs-jetpack rimraf dotenv-cli lodash @types/lodash',
-    )
+    await system.run('ni yargs drizzle-orm fs-jetpack rimraf dotenv-cli lodash @types/lodash')
     await system.run('ni -D @types/yargs drizzle-kit')
 
     spinner.succeed(`Done ${dir.path()}`)

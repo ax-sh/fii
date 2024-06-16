@@ -1,11 +1,9 @@
+import { BrowserCookiesSingleton } from '@ax-sh/browser-cookies'
 import { filesystem } from 'gluegun'
-import {
-  type ExtendedToolbox,
-  KnownError,
-  UsableBinaryNotFound,
-} from '../types'
 
-module.exports = (toolbox: ExtendedToolbox) => {
+import { type ExtendedToolbox, KnownError, UsableBinaryNotFound } from '../types'
+
+module.exports = async (toolbox: ExtendedToolbox) => {
   const hasPnpm = toolbox.system.which('pnpm')
   const hasNi = toolbox.system.which('ni')
   const hasNr = toolbox.system.which('nr')
@@ -14,27 +12,20 @@ module.exports = (toolbox: ExtendedToolbox) => {
   }
 
   if (!hasNi || !hasNr) {
-    toolbox.print.error(
-      'Package identifier not available, use the command below to add',
-    )
+    toolbox.print.error('Package identifier not available, use the command below to add')
     // @see https://github.com/antfu/ni
     toolbox.print.success('npm i -g @antfu/ni')
     throw new UsableBinaryNotFound()
   }
 
   toolbox.cliAppDir = async (...paths: string[]) =>
-    filesystem.dirAsync(
-      filesystem.path(filesystem.homedir(), '.ax-sh/.fii', ...paths),
-    )
+    filesystem.dirAsync(filesystem.path(filesystem.homedir(), '.ax-sh/.fii', ...paths))
 
   toolbox.killProcess = async (processEXE: string) =>
     toolbox.system.run(`taskkill /F /IM ${processEXE}`, { trim: true })
 
   toolbox.addScriptToPackageJson = async (scriptName: string, cmd: string) => {
-    const script = await toolbox.system.run(
-      `pnpm pkg get scripts.${scriptName}`,
-      { trim: true },
-    )
+    const script = await toolbox.system.run(`pnpm pkg get scripts.${scriptName}`, { trim: true })
     const hasScript = script !== '{}'
     if (hasScript) {
       toolbox.print.error(`script ${scriptName} already defined Exiting`)
@@ -45,6 +36,12 @@ module.exports = (toolbox: ExtendedToolbox) => {
 
     await toolbox.system.run(`pnpm pkg set scripts.${scriptName}="${cmd}"`)
   }
+
+  const pythonPath = 'C:/Users/USER/miniconda3/python.exe'
+  process.env.PYTHON_BIN = pythonPath
+
+  // const { BrowserCookiesSingleton } = await import('@ax-sh/browser-cookies')
+  toolbox.loadBrowser = BrowserCookiesSingleton.instance
 
   // enable this if you want to read configuration in from
   // the current folder's package.json (in a "fii" property),

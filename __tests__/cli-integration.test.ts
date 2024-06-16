@@ -1,9 +1,8 @@
-import { system, filesystem } from 'gluegun'
+import { filesystem, system } from 'gluegun'
 
 const src = filesystem.path(__dirname, '..')
 
-const cli = async (cmd) =>
-  system.run('node ' + filesystem.path(src, 'bin', 'fii') + ` ${cmd}`)
+const cli = async (cmd) => system.run('node ' + filesystem.path(src, 'bin', 'fii') + ` ${cmd}`)
 
 test.todo('outputs version', async () => {
   const output = await cli('--version')

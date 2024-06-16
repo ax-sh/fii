@@ -1,3 +1,4 @@
+import * as prettier from 'prettier'
 import {
   type CallExpression,
   type ObjectLiteralExpression,
@@ -5,14 +6,9 @@ import {
   SyntaxKind,
   ts,
 } from 'ts-morph'
-import * as prettier from 'prettier'
 
-export function getViteDefineConfigCall(
-  sourceFile: SourceFile,
-): CallExpression {
-  const callExpressions = sourceFile.getDescendantsOfKind(
-    SyntaxKind.CallExpression,
-  )
+export function getViteDefineConfigCall(sourceFile: SourceFile): CallExpression {
+  const callExpressions = sourceFile.getDescendantsOfKind(SyntaxKind.CallExpression)
 
   return callExpressions.find((callExpression) => {
     const calledExpression = callExpression.getExpression()
@@ -22,7 +18,7 @@ export function getViteDefineConfigCall(
 
 export function addBasePropertyToDefineConfig(
   value: string,
-  firstArgument: ObjectLiteralExpression,
+  firstArgument: ObjectLiteralExpression
 ) {
   const baseProperty = {
     name: 'base',
@@ -33,7 +29,7 @@ export function addBasePropertyToDefineConfig(
 }
 
 export function getViteDefineConfigCallOptions<T = ObjectLiteralExpression>(
-  sourceFile: SourceFile,
+  sourceFile: SourceFile
 ) {
   const defineConfigCall = getViteDefineConfigCall(sourceFile)
   const [firstArgument] = defineConfigCall.getArguments()
@@ -53,7 +49,7 @@ export function getViteConfigPlugins(sourceFile: SourceFile) {
 
 export function addImportsToViteConfig(
   sourceFile: SourceFile,
-  newImports: { name: string; moduleSpecifier: string }[],
+  newImports: { name: string; moduleSpecifier: string }[]
 ) {
   newImports.forEach((imp) => {
     sourceFile.addImportDeclaration({
@@ -65,9 +61,7 @@ export function addImportsToViteConfig(
 export function getImportsToViteConfig(sourceFile: SourceFile) {
   return sourceFile.getImportDeclarations().map((decl) => ({
     moduleSpecifier: decl.getModuleSpecifierValue(),
-    namedImports: decl
-      .getNamedImports()
-      .map((namedImport) => namedImport.getName()),
+    namedImports: decl.getNamedImports().map((namedImport) => namedImport.getName()),
   }))
 }
 
