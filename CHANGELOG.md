@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🚜 Refactor
+
+- Update import path for ExtendedToolbox in command template
+
+### 🎨 Styling
+
+- Update string interpolation to use backticks
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.66.0] - 2024-06-16
+
 ### 🚀 Features
 
 - Add function to retrieve and modify Vite config plugins array
@@ -21,6 +35,7 @@ All notable changes to this project will be documented in this file.
 - Format code with Prettier
 - Format code with Prettier
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.65.0] - 2024-06-16
 
