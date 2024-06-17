@@ -9,7 +9,7 @@ const command: GluegunCommand<ExtendedToolbox> = {
     const spinner = print.spin('Adding eslint')
 
     await system.run(
-      'ni -D eslint eslint-config-prettier eslint-plugin-prettier eslint-plugin-unicorn typescript-eslint globals'
+      'ni -D eslint eslint-config-prettier eslint-plugin-prettier eslint-plugin-unicorn typescript-eslint globals @eslint/js eslint-plugin-sonarjs eslint-plugin-security'
     )
     const fileName = 'eslint.config.mjs'
     await template.generate({
