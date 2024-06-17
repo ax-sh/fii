@@ -3,7 +3,7 @@ module.exports = {
     'before:init': [
       'git fetch --all --tags --prune',
       'nr prettier:fix',
-      'git commit  --allow-empty -am "chore: format code with Prettier"',
+      'git commit  --allow-empty -am "ci: format code with Prettier"',
       'nr eslint',
       'nr test',
     ],
@@ -13,7 +13,7 @@ module.exports = {
     ],
     'after:bump': [
       'git cliff -o CHANGELOG.md && git add CHANGELOG.md',
-      'git commit  --allow-empty -am "chore: add CHANGELOG"',
+      'git commit  --allow-empty -am "ci: add CHANGELOG"',
       'git flow release publish',
       'git flow release finish v${version} -m "Release v${version}" -n -p -F --keepremote',
       'echo \uD83D\uDC4A after:bump version=v${version} latestVersion=v${latestVersion}',
