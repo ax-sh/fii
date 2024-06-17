@@ -21,10 +21,9 @@ function makeBasicSourceFile() {
   })
   `
   const project = new Project()
-  const sourceFile = project.createSourceFile('./__test__vite__config__.ts', code, {
+  return project.createSourceFile('./__test__vite__config__.ts', code, {
     overwrite: true,
   })
-  return sourceFile
 }
 
 describe(getViteDefineConfigCall.name, () => {
