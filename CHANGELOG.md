@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🚀 Features
+
+- Add  '@typescript-eslint/consistent-type-imports': 'error',
+
+### 🎨 Styling
+
+- Update import to use 'type' for BrowserCookiesSingleton
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.71.0] - 2024-06-17
+
 ### 🚜 Refactor
 
 - Update eslint imports and configurations to use the latest packages and settings
@@ -12,6 +26,7 @@ All notable changes to this project will be documented in this file.
 
 - Update commit messages to indicate CI process for formatting and changelog addition
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.70.0] - 2024-06-16
 
