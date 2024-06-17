@@ -15,8 +15,9 @@ const command: GluegunCommand<ExtendedToolbox> = {
     await system.run('bun init -y')
     await toolbox.addScriptToPackageJson('dev', 'bun --hot index.ts')
     await toolbox.addScriptToPackageJson('dev:watch', 'bun --watch index.ts')
-    type PackageJsonType = Record<string, any>
+    type PackageJsonType = Record<string, unknown>
     const packageJson = filesystem.read('package.json', 'json') as PackageJsonType
+
     packageJson['bin'] = {
       [cliName]: './index.ts',
     }

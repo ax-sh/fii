@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🚜 Refactor
+
+- Update eslint imports and configurations to use the latest packages and settings
+
+### ⚙️ Miscellaneous Tasks
+
+- Update commit messages to indicate CI process for formatting and changelog addition
+- Format code with Prettier
+
+## [0.70.0] - 2024-06-16
+
 ### 🚀 Features
 
 - Add npmrc file
@@ -20,6 +31,7 @@ All notable changes to this project will be documented in this file.
 - Fix formatting
 - Format files
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.69.0] - 2024-06-16
 

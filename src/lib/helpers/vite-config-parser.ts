@@ -39,12 +39,11 @@ export function getViteDefineConfigCallOptions<T = ObjectLiteralExpression>(
 
 export function getViteConfigPlugins(sourceFile: SourceFile) {
   const configObject = getViteDefineConfigCallOptions(sourceFile)
-  const pluginsArray = configObject
+  return configObject
     .asKindOrThrow(ts.SyntaxKind.ObjectLiteralExpression)
     .getPropertyOrThrow('plugins')
     .asKindOrThrow(ts.SyntaxKind.PropertyAssignment)
     .getInitializerIfKindOrThrow(ts.SyntaxKind.ArrayLiteralExpression)
-  return pluginsArray
 }
 
 export function addImportsToViteConfig(

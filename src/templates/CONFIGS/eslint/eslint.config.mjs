@@ -1,10 +1,11 @@
-import pluginJs from '@eslint/js'
+import eslint from '@eslint/js'
 import eslintConfigPrettier from 'eslint-config-prettier'
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 import pluginSecurity from 'eslint-plugin-security'
 import sonarjs from 'eslint-plugin-sonarjs'
 import eslintPluginUnicorn from 'eslint-plugin-unicorn'
 import globals from 'globals'
+import tseslint from 'typescript-eslint'
 
 const unicorn = {
   languageOptions: {
@@ -23,7 +24,8 @@ const unicorn = {
 }
 
 const eslintConfigs = [
-  pluginJs.configs.recommended,
+  eslint.configs.recommended,
+  ...tseslint.configs.recommended,
   sonarjs.configs.recommended,
   pluginSecurity.configs.recommended,
   unicorn,
