@@ -1,4 +1,4 @@
-import { BrowserCookiesSingleton } from '@ax-sh/browser-cookies'
+import type { BrowserCookiesSingleton } from '@ax-sh/browser-cookies'
 import { type FSJetpack } from 'fs-jetpack/types'
 import { type GluegunToolbox, print } from 'gluegun'
 
