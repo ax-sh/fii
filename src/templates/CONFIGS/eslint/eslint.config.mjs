@@ -20,6 +20,7 @@ const unicorn = {
   },
   rules: {
     'unicorn/better-regex': 'error',
+    '@typescript-eslint/consistent-type-imports': 'error',
   },
 }
 
