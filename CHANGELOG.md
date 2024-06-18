@@ -6,11 +6,22 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- Add  '@typescript-eslint/consistent-type-imports': 'error',
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.73.0] - 2024-06-17
+
+### 🚀 Features
+
 - Add new ESLint plugins and Vite plugin for pages
 
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.72.0] - 2024-06-17
 
