@@ -6,11 +6,27 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- Add commitlint
+- Add ping subcommand
+
+### 🚜 Refactor
+
+- Update module.exports to export default in .release-it.mjs
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.74.0] - 2024-06-18
+
+### 🚀 Features
+
 - Add  '@typescript-eslint/consistent-type-imports': 'error',
 
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.73.0] - 2024-06-17
 

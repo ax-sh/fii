@@ -1,6 +1,6 @@
 // https://github.com/release-it/release-it/blob/main/config/release-it.json
 
-module.exports = {
+export default {
   github: {
     release: false,
   },
@@ -34,7 +34,7 @@ module.exports = {
     'before:init': [
       'nr prettier:fix',
       'git commit --allow-empty -am "ci: format files before release"',
-      'nr eslint',
+      'nr lint',
     ],
     'before:beforeBump': [
       'git flow release start v${version}',

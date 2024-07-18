@@ -14,7 +14,7 @@ const command: GluegunCommand<ExtendedToolbox> = {
       'dotenv -v DEBUG=1 release-it -- minor --no-git.push --no-git.requireUpstream --ci'
     )
     await system.run('ni -D dotenv-cli release-it')
-    const fileName = '.release-it.cjs'
+    const fileName = '.release-it.mjs'
     await template.generate({
       template: `/CONFIGS/release-it/${fileName}`,
       target: filesystem.path('.', fileName),
