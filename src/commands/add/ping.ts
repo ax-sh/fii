@@ -1,5 +1,6 @@
 import type { GluegunCommand } from 'gluegun'
-import { type ExtendedToolbox } from  '../../types'
+
+import { type ExtendedToolbox } from '../../types'
 
 const command: GluegunCommand<ExtendedToolbox> = {
   name: 'ping',
