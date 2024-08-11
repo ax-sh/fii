@@ -6,6 +6,16 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- *(commands)* Add 'pny' command to kill all node and python processes
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.75.0] - 2024-07-18
+
+### 🚀 Features
+
 - Add commitlint
 - Add ping subcommand
 
@@ -16,6 +26,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.74.0] - 2024-06-18
 
