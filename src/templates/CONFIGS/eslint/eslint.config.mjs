@@ -5,7 +5,8 @@ import pluginSecurity from 'eslint-plugin-security'
 import sonarjs from 'eslint-plugin-sonarjs'
 import eslintPluginUnicorn from 'eslint-plugin-unicorn'
 import globals from 'globals'
-import tseslint from 'typescript-eslint'
+import tseslint from 'typescript-eslint';
+import compat from "eslint-plugin-compat";
 
 const unicorn = {
   languageOptions: {
@@ -25,6 +26,7 @@ const unicorn = {
 }
 
 const eslintConfigs = [
+  compat.configs["flat/recommended"],
   eslint.configs.recommended,
   ...tseslint.configs.recommended,
   sonarjs.configs.recommended,
