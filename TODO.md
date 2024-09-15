@@ -27,3 +27,5 @@ docker-compose down -v --rmi all
 
 "--rmi all" is for all the images
 ```
+
+pnpm install git+ssh://git@github.com:ax-sh/browser-cookies.git

@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 📚 Documentation
+
+- Update todo
+
+### ⚙️ Miscellaneous Tasks
+
+- Update dependencies in package.json to latest versions
+- Update package versions and file modes
+- Update dependencies in package.json
+- *(eslint)* Update eslint config imports and formatting
+- Format code with Prettier
+- Format code with Prettier
+- Format code with Prettier
+- Format code with Prettier
+- Format code with Prettier
+
+## [0.76.0] - 2024-08-11
+
 ### 🚀 Features
 
 - *(commands)* Add 'pny' command to kill all node and python processes
@@ -11,6 +29,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.75.0] - 2024-07-18
 

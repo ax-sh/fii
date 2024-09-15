@@ -1,5 +1,6 @@
 import eslint from '@eslint/js'
 import eslintConfigPrettier from 'eslint-config-prettier'
+import compat from 'eslint-plugin-compat'
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 import pluginSecurity from 'eslint-plugin-security'
 import sonarjs from 'eslint-plugin-sonarjs'
@@ -7,6 +8,7 @@ import eslintPluginUnicorn from 'eslint-plugin-unicorn'
 import globals from 'globals'
 import tseslint from 'typescript-eslint'
 
+// typescript-eslint
 const unicorn = {
   languageOptions: {
     ecmaVersion: 2024,
@@ -25,6 +27,7 @@ const unicorn = {
 }
 
 const eslintConfigs = [
+  compat.configs['flat/recommended'],
   eslint.configs.recommended,
   ...tseslint.configs.recommended,
   sonarjs.configs.recommended,
