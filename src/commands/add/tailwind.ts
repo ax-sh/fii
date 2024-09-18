@@ -7,7 +7,7 @@ const command: GluegunCommand = {
     const spinner = print.spin('Adding tailwind deps')
 
     await system.run('ni -D tailwindcss postcss autoprefixer')
-    await system.run('nr tailwindcss init -p')
+    await system.run('nlx tailwindcss init -p')
     spinner.info('Added tailwind deps')
     spinner.stopAndPersist()
 
