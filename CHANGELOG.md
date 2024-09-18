@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🚀 Features
+
+- Add @cspell/eslint-plugin dependency and config
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.77.0] - 2024-09-15
+
 ### 📚 Documentation
 
 - Update todo
@@ -19,6 +29,7 @@ All notable changes to this project will be documented in this file.
 - Format code with Prettier
 - Format code with Prettier
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.76.0] - 2024-08-11
 
