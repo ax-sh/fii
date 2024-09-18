@@ -1,3 +1,4 @@
+import cspellConfigs from '@cspell/eslint-plugin/configs'
 import eslint from '@eslint/js'
 import eslintConfigPrettier from 'eslint-config-prettier'
 import compat from 'eslint-plugin-compat'
@@ -27,6 +28,7 @@ const unicorn = {
 }
 
 const eslintConfigs = [
+  cspellConfigs.recommended,
   compat.configs['flat/recommended'],
   eslint.configs.recommended,
   ...tseslint.configs.recommended,
