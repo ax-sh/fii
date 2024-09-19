@@ -15,7 +15,7 @@ const command: GluegunCommand<ExtendedToolbox> = {
     if (filesystem.isNotFile(viteConfigPath)) {
       spinner.stopAndPersist({
         symbol: '🚨',
-        text: 'Not vite project vite.config.ts not found!',
+        text: 'Not a vite project vite.config.ts not found!',
       })
       return
     }
