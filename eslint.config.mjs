@@ -21,6 +21,7 @@ const unicorn = {
   rules: {
     'unicorn/better-regex': 'error',
     '@typescript-eslint/consistent-type-imports': 'error',
+    'sonarjs/todo-tag': 'off', // in production release maybe turn it on
   },
 }
 

@@ -1,5 +1,5 @@
 import * as gh from './get-repo-url'
-import * as github from './helpers/github-utils'
+import * as github from './helpers/git-utils'
 
 describe('getRepoBaseName', () => {
   it('should correctly get repo url', async () => {

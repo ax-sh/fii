@@ -12,7 +12,7 @@ const command: GluegunCommand<ExtendedToolbox> = {
     try {
       await toolbox.killProcess('chrome.exe')
     } catch (e) {
-      return spinner.warn('Killing failed')
+      return spinner.warn(`Killing failed ${e.message}`)
     }
 
     spinner.succeed('Done')

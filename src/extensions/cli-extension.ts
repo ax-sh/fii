@@ -29,7 +29,6 @@ module.exports = async (toolbox: ExtendedToolbox) => {
     const hasScript = script !== '{}'
     if (hasScript) {
       toolbox.print.error(`script ${scriptName} already defined Exiting`)
-      // print.spinner.stopAndPersist({ symbol: '🚨', text: '!' });
 
       throw new KnownError(`script ${scriptName} already defined Exiting`)
     }

@@ -1,6 +1,6 @@
 import * as path from 'node:path'
 
-import { getRepoUrl } from './helpers/github-utils'
+import { getRepoUrl } from './helpers/git-utils'
 
 export async function getRepoBaseName() {
   const url = await getRepoUrl()

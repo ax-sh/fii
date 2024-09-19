@@ -20,7 +20,6 @@ const command: GluegunCommand = {
     const gitInit = await system.run(`git flow init -d && git add . && git commit -m init`)
     spinner.succeed(gitInit)
 
-    // spinner.info('Adding prettier and tailwind');
     spinner.succeed(`Created App ${appName}`)
     print.info(`webstorm ${installedPath}`)
     await system.run(`webstorm ${installedPath}`)

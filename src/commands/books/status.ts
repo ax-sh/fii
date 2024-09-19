@@ -7,11 +7,13 @@ const command: GluegunCommand = {
   run: async (toolbox) => {
     const { print, system } = toolbox
     const spinner = print.spin('Getting status of servers')
-    // `libgen-cli search -e pdf ${name}`
-    // const execa = require('execa')
-    // await execa(cmd, { shell: true, stdio: 'inherit' })
-    //
-    // const books = await system.run(cmd)
+    /**
+     * `libgen-cli search -e pdf ${name}`
+     * const execa = require('execa')
+     * await execa(cmd, { shell: true, stdio: 'inherit' })
+     *
+     * const books = await system.run(cmd)
+     */
     const status = await system.run('libgen-cli status')
     spinner.succeed(status)
   },
