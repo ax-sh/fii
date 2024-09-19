@@ -14,4 +14,4 @@ async function main() {
   console.log(`Seeding complete.`)
 }
 
-void main()
+main()

@@ -1,5 +1,5 @@
 import puppeteer from 'puppeteer-extra'
-// @ts-expect-error todo fix this weird import error
+//@ts-expect-error todo fix this weird import error
 import * as StealthPlugin from 'puppeteer-extra-plugin-stealth'
 
 export async function getStealthBrowser() {

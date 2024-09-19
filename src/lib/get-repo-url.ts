@@ -1,11 +1,20 @@
-import { system } from 'gluegun'
 import * as path from 'node:path'
 
-export async function getRepoUrl() {
-  return system.run('git remote get-url origin')
-}
+import { getRepoUrl } from './helpers/git-utils'
 
 export async function getRepoBaseName() {
   const url = await getRepoUrl()
-  return path.parse(url).base.trim()
+  const parsed = path.parse(url)
+  /**
+   * {
+   *   root: '',
+   *   dir: 'https://github.com/ax-sh',
+   *   base: 'fii',
+   *   ext: '',
+   *   name: 'fii',
+   * }
+   */
+  const repoName = parsed.name.trim()
+
+  return repoName
 }

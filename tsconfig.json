@@ -15,7 +15,8 @@
     "target": "es2018",
     "declaration": true,
     "declarationDir": "build/types",
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "types": ["vitest/globals"]
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "src/**/*.spec.ts", "src/**/*.test.ts"]

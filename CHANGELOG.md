@@ -6,11 +6,51 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- *(commands)* Add threejs command for library integration
+- Add vitest config
+- Add index tests
+- *(cli-extension)* Add Python binary detection logic
+
+### 🐛 Bug Fixes
+
+- *(add tailwind)* Update command to use nlx for init
+- *(gh-pages)* Correct error message for vite project check
+
+### 🚜 Refactor
+
+- Clean up code and update comments across files
+- Move git flow init to helper function
+- *(index.ts)* Streamline import and function syntax
+
+### 🧪 Testing
+
+- Add tests for getRepoBaseName and getRepoUrl
+- *(get-repo-url)* Update tests for repo URL functionality
+- *(get-repo-url)* Add tests for getRepoUrl function
+- *(get-repo-url)* Update tests for repo URL functionality
+- Update test framework to use vitest
+
+### ⚙️ Miscellaneous Tasks
+
+- Update dependencies in package.json
+- Format code with Prettier
+- Format code with Prettier
+- Format code with Prettier
+
+### Build
+
+- Add vitest dependency and update tsconfig types
+
+## [0.78.0] - 2024-09-18
+
+### 🚀 Features
+
 - Add @cspell/eslint-plugin dependency and config
 
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.77.0] - 2024-09-15
 

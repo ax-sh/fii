@@ -9,4 +9,3 @@ export const db = drizzle(sqlite)
 const query = sql`select "hello world" as text`
 const result = db.get<{ text: string }[]>(query)
 console.log(result.length, result[0])
-// console.log(db);
