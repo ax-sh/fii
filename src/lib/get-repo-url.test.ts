@@ -1,24 +1,24 @@
 import * as gh from './get-repo-url'
-import * as github from './helpers/git-utils'
+import * as git from './helpers/git-utils'
 
 describe('getRepoBaseName', () => {
   it('should correctly get repo url', async () => {
-    const baseName = await gh.getRepoBaseName()
+    const baseName = gh.getRepoBaseName()
 
     console.log(baseName)
-    expect(baseName).resolves.toBe('https://github.com/ax-sh/fii')
+    await expect(baseName).resolves.toBe('fii')
   })
   it('should correctly get mocked repo url', async () => {
-    const getRepoUrlSpy = vi.spyOn(github, 'getRepoUrl')
-    getRepoUrlSpy.mockResolvedValue('https://github.com/ax-sh/fii.git')
-    const baseName = await gh.getRepoBaseName()
+    const getRepoUrlSpy = vi.spyOn(git, 'getRepoUrl')
+    getRepoUrlSpy.mockResolvedValue('hhttps://github.com/ax-sh/portfolio.git')
+    const repoName = gh.getRepoBaseName()
     expect(getRepoUrlSpy).toHaveBeenCalledTimes(1)
-    console.log(baseName)
-    expect(baseName).resolves.toBe('https://github.com/ax-sh/fii')
+
+    await expect(repoName).resolves.toBe('portfolio')
   })
 
   it.skip('should correctly get mocked repo url v2', async () => {
-    vi.mocked(github.getRepoUrl).mockResolvedValue('https://github.com/ax-sh/portfolio.git')
+    vi.mocked(git.getRepoUrl).mockResolvedValue('https://github.com/ax-sh/portfolio.git')
 
     const baseName = await gh.getRepoBaseName()
     // Assert
@@ -29,6 +29,6 @@ describe('getRepoBaseName', () => {
     // expect(gh.getRepoUrl).toHaveBeenCalled()
 
     console.log(baseName)
-    await expect(github.getRepoUrl()).resolves.toBe('https://github.com/ax-sh/portfolio')
+    await expect(git.getRepoUrl()).resolves.toBe('https://github.com/ax-sh/portfolio')
   })
 })

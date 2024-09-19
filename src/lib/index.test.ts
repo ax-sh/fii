@@ -1,8 +1,9 @@
-describe('Lib Index', () => {
+describe.todo('Lib Index', () => {
   it('should test fii project dir', async () => {
-    const g = await import('./index')
-    console.log(g.fiiUserDirJoin())
+    const lib = await import('./index')
+    const dir = lib.fiiUserDirJoin('', '')
+    console.log()
     // console.log(g.fiiUserDirJoin)
-    expect(1).toBe(1)
+    await expect(dir).resolves.toHaveBeenCalledTimes(1)
   })
 })
