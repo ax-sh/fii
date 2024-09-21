@@ -6,6 +6,38 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- Add biome config
+- Add react-testing-config command
+- *(react/testing)* Add react testing library support
+- Add update command
+
+### 🚜 Refactor
+
+- Simplify import addition in vite config parser
+- Update filesystem import to use os module
+
+### 🧪 Testing
+
+- Add initial tests for react-utils functions
+- *(react-utils)* Add test for tsconfig types addition
+- *(git)* Add tests for git status functionality
+
+### ⚙️ Miscellaneous Tasks
+
+- Update pip install command in update.ts
+- Add conventional changelog dependency to package.json
+- Format code with Prettier
+- Add changelog command for git cliff
+- Format code with Prettier
+
+### Build
+
+- Add simple-git dependency to package.json
+
+## [0.80.0] - 2024-09-21
+
+### 🚀 Features
+
 - Add config command
 - Add python outdated command
 - Add python update command
@@ -25,6 +57,7 @@ All notable changes to this project will be documented in this file.
 - Remove husky pre-commit hook configuration
 - Format code with Prettier
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.79.0] - 2024-09-19
 
