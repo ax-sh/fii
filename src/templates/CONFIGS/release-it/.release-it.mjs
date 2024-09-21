@@ -3,6 +3,8 @@
  https://github.com/release-it/release-it/blob/main/docs/github-releases.md
  https://github.com/settings/tokens/new?scopes=repo&description=release-it
 **/
+
+/** @type {import('release-it').Config} */
 export default {
   github: {
     release: false,
@@ -11,7 +13,8 @@ export default {
     publish: false,
   },
   git: {
-    changelog: 'git log --pretty=format:"* %s (%h)" ${from}...${to}',
+    // changelog: 'git log --pretty=format:"* %s (%h)" ${from}...${to}',
+    changelog: 'git cliff --unreleased',
     requireCleanWorkingDir: true,
     requireBranch: false,
     requireUpstream: true,
@@ -35,6 +38,7 @@ export default {
   },
   hooks: {
     'before:init': [
+      'which git-cliff',
       'nr prettier:fix',
       'git commit --allow-empty -am "ci: format files before release"',
       'nr lint',

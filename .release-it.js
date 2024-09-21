@@ -1,3 +1,10 @@
+/**
+ https://github.com/release-it/release-it/blob/main/config/release-it.json
+ https://github.com/release-it/release-it/blob/main/docs/github-releases.md
+ https://github.com/settings/tokens/new?scopes=repo&description=release-it
+**/
+
+/** @type {import('release-it').Config} */
 module.exports = {
   git: {
     changelog: 'git cliff --unreleased',
