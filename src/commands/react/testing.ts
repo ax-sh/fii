@@ -4,12 +4,14 @@ import { type ExtendedToolbox } from '../../types'
 
 const command: GluegunCommand<ExtendedToolbox> = {
   name: 'testing',
+  description: 'Adds react testing lib with vitest',
   run: async (toolbox) => {
-    const { print, system } = toolbox
-    const reactTesting = await import('../../lib/helpers/react-utils')
+    const { print } = toolbox
 
     const spinner = print.spin(`Adding react testing lib`)
-    await system.run('ni -D @testing-library/react @testing-library/jest-dom')
+    const reactTesting = await import('../../lib/helpers/react-utils')
+    await reactTesting.addDeps()
+    await reactTesting.setupTsTypes()
 
     spinner.succeed(`Added react testing lib testing`)
   },
