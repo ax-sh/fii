@@ -1,6 +1,6 @@
 module.exports = {
   git: {
-    changelog: 'git cliff -l',
+    changelog: 'git cliff --unreleased',
   },
   hooks: {
     'before:init': [

@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### ⚙️ Miscellaneous Tasks
+
+- Update changelog command for unreleased changes
+- Format code with Prettier
+
+## [0.81.0] - 2024-09-21
+
 ### 🚀 Features
 
 - Add biome config
@@ -29,6 +36,7 @@ All notable changes to this project will be documented in this file.
 - Format code with Prettier
 - Add changelog command for git cliff
 - Format code with Prettier
+- Add CHANGELOG
 
 ### Build
 
