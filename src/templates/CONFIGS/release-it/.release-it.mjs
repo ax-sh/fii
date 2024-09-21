@@ -1,8 +1,10 @@
 /**
  https://github.com/release-it/release-it/blob/main/config/release-it.json
  https://github.com/release-it/release-it/blob/main/docs/github-releases.md
- https://github.com/settings/tokens/new?scopes=repo&description=release-it
-**/
+ @gen token with scope https://github.com/settings/tokens/new?scopes=repo&description=release-it
+
+ @see docs https://github.com/release-it/release-it/blob/main/docs/configuration.md
+ **/
 
 /** @type {import('release-it').Config} */
 export default {
