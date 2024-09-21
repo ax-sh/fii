@@ -3,7 +3,7 @@
  https://github.com/release-it/release-it/blob/main/docs/github-releases.md
  @gen token with scope https://github.com/settings/tokens/new?scopes=repo&description=release-it
 
- @see docs https://github.com/release-it/release-it/blob/main/docs/configuration.md
+ @docs docs https://github.com/release-it/release-it/blob/main/docs/configuration.md
  **/
 
 /** @type {import('release-it').Config} */
