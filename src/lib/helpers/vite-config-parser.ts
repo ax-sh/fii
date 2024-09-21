@@ -50,12 +50,12 @@ export function addImportsToViteConfig(
   sourceFile: SourceFile,
   newImports: { name: string; moduleSpecifier: string }[]
 ) {
-  newImports.forEach((imp) => {
+  for (const newImport of newImports) {
     sourceFile.addImportDeclaration({
-      namedImports: [imp.name],
-      moduleSpecifier: imp.moduleSpecifier,
+      namedImports: [newImport.name],
+      moduleSpecifier: newImport.moduleSpecifier,
     })
-  })
+  }
 }
 export function getImportsToViteConfig(sourceFile: SourceFile) {
   return sourceFile.getImportDeclarations().map((decl) => ({

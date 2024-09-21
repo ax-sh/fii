@@ -1,4 +1,7 @@
 module.exports = {
+  git: {
+    changelog: 'git cliff -l',
+  },
   hooks: {
     'before:init': [
       'git fetch --all --tags --prune',
