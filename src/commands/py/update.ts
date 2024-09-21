@@ -16,7 +16,9 @@ const command: GluegunCommand<ExtendedToolbox> = {
     print.info(out)
     out = await system.run('pip install pipx SQLAlchemy Faker -U')
     print.info(out)
-    out = await system.run('pip install tqdm pandas pillow numpy  -U')
+    out = await system.run('pip install ell-ai -U')
+    print.info(out)
+    out = await system.run('pip install tqdm pandas pillow numpy -U')
     print.info(out)
 
     spinner.succeed(`Pip libs updated`)
