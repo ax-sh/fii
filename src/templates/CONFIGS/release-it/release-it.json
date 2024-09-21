@@ -1,4 +1,5 @@
 {
+  "$schema": "https://unpkg.com/release-it@17/schema/release-it.json",
   "hooks": {},
   "git": {
     "changelog": "git log --pretty=format:\"* %s (%h)\" ${from}...${to}",

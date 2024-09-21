@@ -4,10 +4,23 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 📚 Documentation
+
+- *(release-it)* Update documentation links and types
+- Update token generation and documentation links
+- Update documentation links and add schema reference
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.82.0] - 2024-09-21
+
 ### ⚙️ Miscellaneous Tasks
 
 - Update changelog command for unreleased changes
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.81.0] - 2024-09-21
 
