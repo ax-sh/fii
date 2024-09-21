@@ -6,4 +6,7 @@ describe('reactUtils', () => {
     const o = setupVitest()
     console.log(o)
   })
+  it('should add types to tsconfig', () => {
+    // "types": ["vitest/globals", "@testing-library/jest-dom"],
+  })
 })
