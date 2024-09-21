@@ -6,6 +6,30 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- Add config command
+- Add python outdated command
+- Add python update command
+- Add more comments
+
+### 🐛 Bug Fixes
+
+- Resolve dayjs import error in index.ts
+
+### 🚜 Refactor
+
+- Make compilerOptions optional in tsconfig type
+- Update config command and reorganize imports
+
+### ⚙️ Miscellaneous Tasks
+
+- Remove husky pre-commit hook configuration
+- Format code with Prettier
+- Format code with Prettier
+
+## [0.79.0] - 2024-09-19
+
+### 🚀 Features
+
 - *(commands)* Add threejs command for library integration
 - Add vitest config
 - Add index tests
@@ -36,6 +60,7 @@ All notable changes to this project will be documented in this file.
 - Format code with Prettier
 - Format code with Prettier
 - Format code with Prettier
+- Add CHANGELOG
 
 ### Build
 

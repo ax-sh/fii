@@ -1,5 +1,8 @@
-// https://github.com/release-it/release-it/blob/main/config/release-it.json
-
+/**
+ https://github.com/release-it/release-it/blob/main/config/release-it.json
+ https://github.com/release-it/release-it/blob/main/docs/github-releases.md
+ https://github.com/settings/tokens/new?scopes=repo&description=release-it
+**/
 export default {
   github: {
     release: false,
