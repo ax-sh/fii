@@ -1,12 +1,14 @@
+import * as jetpack from 'fs-jetpack'
 import { filesystem } from 'gluegun'
 
-import day from './day'
+// import { type FSJetpack } from 'fs-jetpack/types'
+// import day from './day'
+//
+// export function elapsedDuration(date: Date) {
+//   return day.duration(day(date).diff())
+// }
 
-export function elapsedDuration(date: Date) {
-  return day.duration(day(date).diff())
-}
+export const fiiUserDirJoin = async (...paths: string[]) =>
+  jetpack.dirAsync(jetpack.path(filesystem.homedir(), '.ax-sh/.fii', ...paths))
 
-const fiiUserDirJoin = async (...paths: string[]) =>
-  filesystem.dirAsync(filesystem.path(filesystem.homedir(), '.ax-sh/.fii', ...paths))
-
-module.exports = { fiiUserDirJoin }
+export const cliProjectPath = jetpack.path(__dirname, '..', '..')

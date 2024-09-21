@@ -1,5 +1,6 @@
 import type { GluegunCommand } from 'gluegun'
 
+import { cliProjectPath } from '../lib'
 import { type ExtendedToolbox } from '../types'
 
 const command: GluegunCommand<ExtendedToolbox> = {
@@ -7,7 +8,8 @@ const command: GluegunCommand<ExtendedToolbox> = {
   run: async (toolbox) => {
     const { print } = toolbox
 
-    print.info(`Show config`)
+    print.info(`FII config`)
+    print.info(cliProjectPath)
     // await system.run('echo ni -D husky')
   },
 }
