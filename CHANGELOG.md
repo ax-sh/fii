@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### ⚙️ Miscellaneous Tasks
+
+- Update dependencies in package.json
+- Format code with Prettier
+
+## [0.84.0] - 2024-09-22
+
 ### 🚀 Features
 
 - *(cli)* Add script management to package.json functionality
@@ -28,6 +35,7 @@ All notable changes to this project will be documented in this file.
 
 - Format code with Prettier
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.83.0] - 2024-09-21
 
