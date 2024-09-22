@@ -1,7 +1,7 @@
 import * as path from 'node:path'
 import { Project, ScriptKind } from 'ts-morph'
 
-import { formatSourceFile } from '../ts-mod'
+import { formatSourceFile } from './ts-mod'
 import {
   addBasePropertyToDefineConfig,
   addImportsToViteConfig,

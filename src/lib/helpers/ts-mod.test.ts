@@ -3,8 +3,8 @@ import * as os from 'os'
 import * as path from 'path'
 import { Project, SyntaxKind } from 'ts-morph'
 
-import { getViteConfigPlugins, getViteConfigTest } from './helpers/vite-config-parser'
 import { createSourceFile, formatSourceFile, parseJsonObject } from './ts-mod'
+import { getViteConfigPlugins, getViteConfigTest } from './vite-config-parser'
 
 describe('File operations', () => {
   let tempFilePath: string

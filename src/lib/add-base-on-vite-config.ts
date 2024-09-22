@@ -1,9 +1,9 @@
 import { getRepoBaseName } from './get-repo-url'
+import { openAsSourceFile } from './helpers/ts-mod'
 import {
   addBasePropertyToDefineConfig,
   getViteDefineConfigCallOptions,
 } from './helpers/vite-config-parser'
-import { openAsSourceFile } from './ts-mod'
 
 export async function addBaseOnViteConfig(viteConfigPath: string) {
   const sourceFile = openAsSourceFile(viteConfigPath)
