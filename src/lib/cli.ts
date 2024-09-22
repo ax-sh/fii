@@ -5,13 +5,13 @@ import { KnownError } from '../types'
 export function packageJsonScript(commandName: string) {
   const opts = { trim: true }
   function set(cmd: string) {
-    return system.run(`pnpm pkg set scripts.${commandName}="${cmd}"`, opts)
+    return system.run(`npm pkg set scripts.${commandName}="${cmd}"`, opts)
   }
   function get() {
-    return system.run(`pnpm pkg get scripts.${commandName}`, opts)
+    return system.run(`npm pkg get scripts.${commandName}`, opts)
   }
   function remove() {
-    return system.run(`pnpm pkg remove scripts.${commandName}`, opts)
+    return system.run(`npm pkg remove scripts.${commandName}`, opts)
   }
   async function isAvailable() {
     const result = await get()
