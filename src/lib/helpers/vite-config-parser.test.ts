@@ -1,4 +1,5 @@
-import { Project } from 'ts-morph'
+import path from 'node:path'
+import { Project, ScriptKind } from 'ts-morph'
 
 import {
   addBasePropertyToDefineConfig,
@@ -19,9 +20,11 @@ function makeBasicSourceFile() {
     plugins: [react()]
   })
   `
+  const resolvedPath = './__test__vite__config__.ts'
   const project = new Project()
-  return project.createSourceFile('./__test__vite__config__.ts', code, {
+  return project.createSourceFile(resolvedPath, code, {
     overwrite: true,
+    scriptKind: path.extname(resolvedPath) === '.ts' ? ScriptKind.TS : ScriptKind.JS,
   })
 }
 
