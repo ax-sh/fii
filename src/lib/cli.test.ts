@@ -9,7 +9,7 @@ describe('cli', () => {
     const cli = await import('./cli')
     const systemSpy = vi.spyOn(system, 'run')
     // systemSpy.mockResolvedValueOnce('3')
-    systemSpy.mockImplementation((cmd, options) => {
+    systemSpy.mockImplementation((cmd) => {
       if (cmd.includes('npm pkg get')) {
         return Promise.resolve('{}')
       }
