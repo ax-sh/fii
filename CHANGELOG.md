@@ -4,6 +4,33 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🚀 Features
+
+- *(cli)* Add script management to package.json functionality
+
+### 🐛 Bug Fixes
+
+- *(cli)* Replace pnpm with npm in script commands
+
+### 🚜 Refactor
+
+- *(git-utils)* Trim output of git flow init command
+
+### 🧪 Testing
+
+- *(cli)* Update tests for packageJsonScript function
+- *(cli)* Add tests for cli script functions
+- *(cli)* Update implementation in cli tests and functions
+- *(cli)* Update test descriptions and add new cases
+- *(cli)* Update systemSpy implementation in tests
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+- Format code with Prettier
+
+## [0.83.0] - 2024-09-21
+
 ### 📚 Documentation
 
 - *(release-it)* Update documentation links and types
@@ -13,6 +40,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.82.0] - 2024-09-21
 
