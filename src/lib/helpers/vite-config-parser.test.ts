@@ -1,4 +1,4 @@
-import path from 'node:path'
+import * as path from 'node:path'
 import { Project, ScriptKind } from 'ts-morph'
 
 import {
