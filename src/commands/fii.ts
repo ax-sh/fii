@@ -4,7 +4,7 @@ const command: GluegunCommand = {
   name: 'fii',
   run: async (toolbox) => {
     const { print } = toolbox
-    print.info('Tools for development')
+    print.success('Fii workflow helper for development')
     print.printCommands(toolbox)
   },
 }
