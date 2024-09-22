@@ -1,4 +1,3 @@
-import * as prettier from 'prettier'
 import {
   type CallExpression,
   type ObjectLiteralExpression,
@@ -70,10 +69,4 @@ export function getImportsToViteConfig(sourceFile: SourceFile) {
     moduleSpecifier: decl.getModuleSpecifierValue(),
     namedImports: decl.getNamedImports().map((namedImport) => namedImport.getName()),
   }))
-}
-
-export function formatSourceFile(sourceFile: SourceFile) {
-  return prettier.format(sourceFile.getFullText(), {
-    parser: 'typescript',
-  })
 }

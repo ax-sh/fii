@@ -1,10 +1,12 @@
 import * as path from 'node:path'
+import * as prettier from 'prettier'
 import {
   Expression,
   ObjectLiteralExpression,
   Project,
   PropertyAssignment,
   ScriptKind,
+  type SourceFile,
   SyntaxKind,
   ts,
 } from 'ts-morph'
@@ -83,4 +85,10 @@ export function parseJsonObject(initializer: Expression<ts.Expression>) {
 
   console.log(parsedObject, objectLiteral.getFullText())
   return parsedObject
+}
+
+export function formatSourceFile(sourceFile: SourceFile) {
+  return prettier.format(sourceFile.getFullText(), {
+    parser: 'typescript',
+  })
 }

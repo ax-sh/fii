@@ -1,11 +1,10 @@
 import * as fs from 'fs'
 import * as os from 'os'
 import * as path from 'path'
-import { format } from 'prettier'
 import { Project, SyntaxKind } from 'ts-morph'
 
 import { getViteConfigPlugins, getViteConfigTest } from './helpers/vite-config-parser'
-import { createSourceFile, parseJsonObject } from './ts-mod'
+import { createSourceFile, formatSourceFile, parseJsonObject } from './ts-mod'
 
 describe('File operations', () => {
   let tempFilePath: string
@@ -40,17 +39,6 @@ describe('File operations', () => {
 
       if (initializer) {
         console.log(parseJsonObject(initializer))
-        //   const jsonString = initializer.getText()
-        //   try {
-        //     console.log(jsonString)
-        //     // Remove the surrounding quotes if present
-        //     // const cleanJsonString = jsonString.replace(/^['"]|['"]$/g, '')
-        //     // const jsonObject = JSON.parse(cleanJsonString)
-        //     // console.log('Parsed JSON:', jsonObject)
-        //     // console.log('Value of "voo":', jsonObject.voo)
-        //   } catch (error) {
-        //     console.error('Error parsing JSON:', error)
-        //   }
       } else {
         console.log('Initializer not found')
       }
@@ -129,10 +117,9 @@ describe('File operations', () => {
       initializer: "'new_value'",
     })
 
-    // Get the modified source code
-    const updatedSourceCode = sourceFile.getFullText()
+    // Get the modified source code and
     // Format using Prettier
-    const formattedContent = await format(updatedSourceCode, { parser: 'typescript' })
+    const formattedContent = await formatSourceFile(sourceFile)
 
     console.log(formattedContent)
     // Check if the plugin was added correctly
