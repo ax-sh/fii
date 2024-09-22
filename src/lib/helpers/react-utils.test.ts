@@ -9,4 +9,17 @@ describe('reactUtils', () => {
   it('should add types to tsconfig', () => {
     // "types": ["vitest/globals", "@testing-library/jest-dom"],
   })
+  it('should add react to vitest plugins', () => {
+    const config = `import { defineConfig } from 'vitest/config';
+
+export default defineConfig({
+  plugins: [],
+  test: {
+    environment: 'node',
+    globals: true,
+  },
+});
+`
+    console.log(config, '<<<')
+  })
 })

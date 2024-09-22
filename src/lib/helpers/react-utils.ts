@@ -2,13 +2,13 @@ import { filesystem, system } from 'gluegun'
 
 import { KnownError } from '../../types'
 
-export function addRTLToVitest() {
+export async function addRTLToVitest() {
   const vitestFilePath = 'vitest.config.ts'
   const hasVitestConfig = filesystem.isFile(vitestFilePath)
   if (!hasVitestConfig) {
     console.log('No Vitest config found.')
     console.log('Creating Vitest configuration with defaults')
-    setupVitest()
+    await setupVitest()
   }
   console.log(vitestFilePath)
 }
@@ -22,5 +22,5 @@ export async function addDeps() {
 }
 
 export function setupVitest() {
-  return 'todo'
+  return system.run('fii add vitest')
 }
