@@ -5,5 +5,5 @@ export async function getRepoUrl() {
 }
 
 export async function gitFlowInit() {
-  return system.run(`git flow init -d && git add . && git commit -m init`)
+  return system.run('git flow init -d && git add . && git commit -m init', { trim: true })
 }

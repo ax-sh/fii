@@ -1,12 +1,14 @@
 import { filesystem } from 'gluegun'
 
-import { type ExtendedToolbox, KnownError, UsableBinaryNotFound } from '../types'
+import { type ExtendedToolbox, UsableBinaryNotFound } from '../types'
 
 module.exports = async (toolbox: ExtendedToolbox) => {
   const hasPnpm = toolbox.system.which('pnpm')
   const hasNi = toolbox.system.which('ni')
   const hasNr = toolbox.system.which('nr')
   const hasPython = toolbox.system.which('python')
+  const cli = await import('../lib/cli')
+
   if (hasPython) {
     process.env.PYTHON_BIN = hasPython
   }
@@ -28,17 +30,7 @@ module.exports = async (toolbox: ExtendedToolbox) => {
   toolbox.killProcess = async (processEXE: string) =>
     toolbox.system.run(`taskkill /F /IM ${processEXE}`, { trim: true })
 
-  toolbox.addScriptToPackageJson = async (scriptName: string, cmd: string) => {
-    const script = await toolbox.system.run(`pnpm pkg get scripts.${scriptName}`, { trim: true })
-    const hasScript = script !== '{}'
-    if (hasScript) {
-      toolbox.print.error(`script ${scriptName} already defined Exiting`)
-
-      throw new KnownError(`script ${scriptName} already defined Exiting`)
-    }
-
-    await toolbox.system.run(`pnpm pkg set scripts.${scriptName}="${cmd}"`)
-  }
+  toolbox.addScriptToPackageJson = cli.addScriptToPackageJson
 
   // const { BrowserCookiesSingleton } = await import('@ax-sh/browser-cookies/dist/browser-cookies.js')
   // console.log(BrowserCookiesSingleton)
