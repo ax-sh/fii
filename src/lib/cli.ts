@@ -2,17 +2,21 @@ import { system } from 'gluegun'
 
 import { KnownError } from '../types'
 
-export function packageScript(commandName: string) {
+export function packageJsonScript(commandName: string) {
+  const opts = { trim: true }
   function set(cmd: string) {
-    return system.run(`pnpm pkg set scripts.${commandName}="${cmd}"`)
+    return system.run(`pnpm pkg set scripts.${commandName}="${cmd}"`, opts)
   }
   function get() {
-    return system.run(`pnpm pkg get scripts.${commandName}`, { trim: true })
+    return system.run(`pnpm pkg get scripts.${commandName}`, opts)
   }
   function remove() {
-    return system.run(`pnpm pkg remove scripts.${commandName}`, { trim: true })
+    return system.run(`pnpm pkg remove scripts.${commandName}`, opts)
   }
-  return { set, get, remove }
+  async function isAvailable() {
+    return (await get()) !== '{}'
+  }
+  return { set, get, remove, isAvailable }
 }
 
 export async function addScriptToPackageJson(scriptName: string, cmd: string) {
