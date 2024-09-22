@@ -11,7 +11,8 @@ export function packageJsonScript(commandName: string) {
     return system.run(`npm pkg get scripts.${commandName}`, opts)
   }
   function remove() {
-    return system.run(`npm pkg remove scripts.${commandName}`, opts)
+    return system.run(`npm pkg delete scripts.${commandName}`, opts)
+    // return system.run(`npm pkg remove scripts.${commandName}`, opts)
   }
   async function isAvailable() {
     const result = await get()

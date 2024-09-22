@@ -5,7 +5,7 @@ describe('cli', () => {
   beforeEach(() => {
     vi.clearAllMocks()
   })
-  it('should test spy', async () => {
+  it('dry run test and check commands order', async () => {
     const cli = await import('./cli')
     const systemSpy = vi.spyOn(system, 'run')
     // systemSpy.mockResolvedValueOnce('3')
@@ -23,7 +23,7 @@ describe('cli', () => {
     console.log(o)
     systemSpy.mockClear()
   })
-  it('should check if script exists in package.json', async () => {
+  it('check if script exists in package.json', async () => {
     const cli = await import('./cli')
     vi.mocked(system).run.mockImplementation(() => Promise.resolve('{d}'))
     const script = cli.packageJsonScript('test')
@@ -49,21 +49,21 @@ describe('cli', () => {
     console.log(await out)
     systemSpy.mockClear()
   })
-  // it.only('should check if has all required property ', async () => {
-  //   const cli = await import('./cli')
-  //   const script = cli.packageJsonScript('mooooooo')
-  //   await script.set('dooo')
-  //   console.log(await script.isAvailable())
-  //   // expect(Object.keys(script)).toHaveProperty('set', 'get', 'remove')
-  //   console.log(Object.keys(script))
-  // })
-  // it('should add new script to package.json', async () => {
-  //   const cli = await import('./cli')
-  //   console.log(await cli.addScriptToPackageJson('moo', 'cow'))
-  // })
-  // it.fails('should fail if script exists', async () => {
-  //   const cli = await import('./cli')
-  //   console.log(await cli.addScriptToPackageJson('moo', 'cow'))
-  //   console.log(await cli.addScriptToPackageJson('moo', 'dog'))
-  // })
+  it('should check if has all required property ', async () => {
+    const cli = await import('./cli')
+    const script = cli.packageJsonScript('mooooooo')
+    const keys = Object.keys(script)
+    expect(keys).toMatchObject(['set', 'get', 'remove', 'isAvailable'])
+  })
+
+  it.fails('should fail if script exists', async () => {
+    const cli = await import('./cli')
+    const cmd = 'moooo'
+    try {
+      console.log(await cli.addScriptToPackageJson(cmd, 'cow'))
+      console.log(await cli.addScriptToPackageJson(cmd, 'dog'))
+    } finally {
+      await cli.packageJsonScript(cmd).remove()
+    }
+  })
 })
