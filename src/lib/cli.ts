@@ -14,7 +14,8 @@ export function packageJsonScript(commandName: string) {
     return system.run(`pnpm pkg remove scripts.${commandName}`, opts)
   }
   async function isAvailable() {
-    return (await get()) !== '{}'
+    const result = await get()
+    return result !== '{}'
   }
   return { set, get, remove, isAvailable }
 }

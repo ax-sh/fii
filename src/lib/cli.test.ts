@@ -10,11 +10,10 @@ describe('cli', () => {
     const systemSpy = vi.spyOn(system, 'run')
     // systemSpy.mockResolvedValueOnce('3')
     systemSpy.mockImplementation((cmd, options) => {
-      if (cmd.startsWith('pnpm pkg get')) {
-        console.log(options)
+      if (cmd.includes('npm pkg get')) {
         return Promise.resolve('{}')
       }
-      if (cmd.startsWith('pnpm pkg set')) {
+      if (cmd.includes('pnpm pkg set')) {
         return Promise.resolve(null)
       }
     })
