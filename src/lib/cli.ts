@@ -20,11 +20,11 @@ export function packageJsonScript(commandName: string) {
 }
 
 export async function addScriptToPackageJson(scriptName: string, cmd: string) {
-  const script = await system.run(`pnpm pkg get scripts.${scriptName}`, { trim: true })
-  const hasScript = script !== '{}'
+  const script = packageJsonScript(scriptName)
+  const hasScript = await script.isAvailable()
   if (hasScript) {
     throw new KnownError(`script ${scriptName} already defined Exiting`)
   }
 
-  return await system.run(`pnpm pkg set scripts.${scriptName}="${cmd}"`)
+  return script.set(cmd)
 }

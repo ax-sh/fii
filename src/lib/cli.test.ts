@@ -1,15 +1,40 @@
 import { system } from 'gluegun'
 
-// vi.mock('gluegun/system', { spy: true })
+vi.mock('gluegun', { spy: true })
 describe('cli', () => {
+  beforeEach(() => {
+    vi.clearAllMocks()
+  })
+  it('should test spy', async () => {
+    const cli = await import('./cli')
+    const systemSpy = vi.spyOn(system, 'run')
+    // systemSpy.mockResolvedValueOnce('3')
+    systemSpy.mockImplementation((cmd, options) => {
+      if (cmd.startsWith('pnpm pkg get')) {
+        console.log(options)
+        return Promise.resolve('{}')
+      }
+      if (cmd.startsWith('pnpm pkg set')) {
+        return Promise.resolve(null)
+      }
+    })
+
+    // systemSpy.mockResolvedValueOnce(null)
+    const o = await cli.addScriptToPackageJson('hoo', 'dd')
+    console.log(o)
+    systemSpy.mockClear()
+  })
   it('should check if script exists in package.json', async () => {
     const cli = await import('./cli')
+    vi.mocked(system).run.mockImplementation(() => Promise.resolve('{d}'))
     const script = cli.packageJsonScript('test')
     const has = await script.isAvailable()
+    console.log(script.get())
     expect(has).toBeTruthy()
   })
 
   it.fails('fail if script exists in package.json', async () => {
+    vi.mocked(system).run.mockImplementation(() => Promise.reject('{d}'))
     const cli = await import('./cli')
     const script = cli.packageJsonScript('fooo')
     const has = await script.isAvailable()
@@ -23,6 +48,7 @@ describe('cli', () => {
     expect(systemSpy).toHaveBeenCalledTimes(1)
     expect(systemSpy).toHaveBeenCalledWith('echo fooo', { trim: true })
     console.log(await out)
+    systemSpy.mockClear()
   })
   // it.only('should check if has all required property ', async () => {
   //   const cli = await import('./cli')
