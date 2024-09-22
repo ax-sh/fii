@@ -1,9 +1,10 @@
 import * as fs from 'fs'
 import * as os from 'os'
 import * as path from 'path'
+import { format } from 'prettier'
 import { Project, SyntaxKind } from 'ts-morph'
 
-import { getViteConfigPlugins } from './helpers/vite-config-parser'
+import { getViteConfigPlugins, getViteConfigTest } from './helpers/vite-config-parser'
 import { createSourceFile, parseJsonObject } from './ts-mod'
 
 describe('File operations', () => {
@@ -82,7 +83,7 @@ describe('File operations', () => {
   //   })
 
   // use below for adding to plugins
-  it('should add moo() to vitest plugins', () => {
+  it('should add newFunction() to vitest plugins', () => {
     const sourceCode = `
   import { defineConfig } from 'vitest/config';
 
@@ -105,5 +106,36 @@ describe('File operations', () => {
     console.log(updatedSourceCode)
     // Check if the plugin was added correctly
     expect(updatedSourceCode).toContain('plugins: [newFunction()],')
+  })
+
+  it('should add new property() to vitest test', async () => {
+    const sourceCode = `
+  import { defineConfig } from 'vitest/config';
+
+  export default defineConfig({
+    plugins: [],
+    test: {
+      environment: 'node',
+      globals: true,
+    },
+  });
+  `
+
+    const project = new Project({ useInMemoryFileSystem: true })
+    const sourceFile = project.createSourceFile('__test___vi___.ts', sourceCode)
+    const testSection = getViteConfigTest(sourceFile)
+    testSection.addPropertyAssignment({
+      name: 'newProperty',
+      initializer: "'new_value'",
+    })
+
+    // Get the modified source code
+    const updatedSourceCode = sourceFile.getFullText()
+    // Format using Prettier
+    const formattedContent = await format(updatedSourceCode, { parser: 'typescript' })
+
+    console.log(formattedContent)
+    // Check if the plugin was added correctly
+    expect(formattedContent).toContain('newProperty: "new_value"')
   })
 })

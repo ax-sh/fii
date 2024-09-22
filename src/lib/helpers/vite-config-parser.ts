@@ -46,6 +46,14 @@ export function getViteConfigPlugins(sourceFile: SourceFile) {
     .getInitializerIfKindOrThrow(ts.SyntaxKind.ArrayLiteralExpression)
 }
 
+export function getViteConfigTest(sourceFile: SourceFile) {
+  const configObject = getViteDefineConfigCallOptions(sourceFile)
+  return configObject
+    .getPropertyOrThrow('test')
+    .asKindOrThrow(ts.SyntaxKind.PropertyAssignment)
+    .getInitializerIfKindOrThrow(ts.SyntaxKind.ObjectLiteralExpression)
+}
+
 export function addImportsToViteConfig(
   sourceFile: SourceFile,
   newImports: { name: string; moduleSpecifier: string }[]
