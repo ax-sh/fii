@@ -4,7 +4,7 @@ import * as path from 'path'
 import { Project, SyntaxKind } from 'ts-morph'
 
 import { getViteConfigPlugins } from './helpers/vite-config-parser'
-import { createSourceFile } from './ts-mod'
+import { createSourceFile, parseJsonObject } from './ts-mod'
 
 describe('File operations', () => {
   let tempFilePath: string
@@ -30,11 +30,32 @@ describe('File operations', () => {
     console.log(content)
   })
   it('should test ts file content', async () => {
-    const sourceFile = createSourceFile('___vi___.ts', `const theme = {}`)
+    const sourceFile = await createSourceFile('___vi___.ts', `const theme = {m:4}`)
     // Find the variable declaration
     const variableDeclaration = sourceFile.getFirstDescendantByKind(SyntaxKind.VariableDeclaration)
+    const varName = variableDeclaration.getName()
+    if (varName === 'theme') {
+      const initializer = variableDeclaration.getInitializer()
 
-    console.log(variableDeclaration)
+      if (initializer) {
+        console.log(parseJsonObject(initializer))
+        //   const jsonString = initializer.getText()
+        //   try {
+        //     console.log(jsonString)
+        //     // Remove the surrounding quotes if present
+        //     // const cleanJsonString = jsonString.replace(/^['"]|['"]$/g, '')
+        //     // const jsonObject = JSON.parse(cleanJsonString)
+        //     // console.log('Parsed JSON:', jsonObject)
+        //     // console.log('Value of "voo":', jsonObject.voo)
+        //   } catch (error) {
+        //     console.error('Error parsing JSON:', error)
+        //   }
+      } else {
+        console.log('Initializer not found')
+      }
+    } else {
+      console.log('Variable declaration "theme" not found')
+    }
   })
   //   temp dis
   //   it('should add react to vitest plugins', () => {
@@ -60,6 +81,7 @@ describe('File operations', () => {
   //     console.log(defineConfigCall)
   //   })
 
+  // use below for adding to plugins
   it('should add moo() to vitest plugins', () => {
     const sourceCode = `
   import { defineConfig } from 'vitest/config';
@@ -82,6 +104,6 @@ describe('File operations', () => {
     const updatedSourceCode = sourceFile.getFullText()
     console.log(updatedSourceCode)
     // Check if the plugin was added correctly
-    // expect(updatedSourceCode).toContain('plugins: [moo()],')
+    expect(updatedSourceCode).toContain('plugins: [newFunction()],')
   })
 })

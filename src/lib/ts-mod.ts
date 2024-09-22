@@ -1,7 +1,13 @@
-import * as fs from 'node:fs'
-import * as os from 'node:os'
 import * as path from 'node:path'
-import { Project, ScriptKind } from 'ts-morph'
+import {
+  Expression,
+  ObjectLiteralExpression,
+  Project,
+  PropertyAssignment,
+  ScriptKind,
+  SyntaxKind,
+  ts,
+} from 'ts-morph'
 
 export function openAsSourceFile(filePath: string) {
   const project = new Project({ compilerOptions: {} })
@@ -21,4 +27,60 @@ export async function createSourceFile(tempFile: string, input: string) {
   })
 
   return sourceFile
+}
+
+export const parseValue = (value: Expression): unknown => {
+  switch (value.getKind()) {
+    case SyntaxKind.NumericLiteral:
+      return Number(value.getText())
+    case SyntaxKind.StringLiteral:
+      return (value as any).getLiteralText()
+    case SyntaxKind.TrueKeyword:
+      return true
+    case SyntaxKind.FalseKeyword:
+      return false
+    default:
+      return value.getText()
+  }
+}
+
+export function parseJsonObject(initializer: Expression<ts.Expression>) {
+  const objectLiteral = initializer as ObjectLiteralExpression
+  // Create an object to store the parsed properties
+  // const parsedObject: Record<string, unknown> = {}
+  const properties = objectLiteral.getProperties()
+  // properties.forEach((property) => {
+  //   if (property.isKind(SyntaxKind.PropertyAssignment)) {
+  //     const name = property.getName()
+  //     const value = property.getInitializer()
+  //     console.log(name, value, 999)
+  //
+  //     if (value) {
+  //       if (value.isKind(SyntaxKind.NumericLiteral)) {
+  //         parsedObject[name] = Number(value.getText())
+  //       } else if (value.isKind(SyntaxKind.StringLiteral)) {
+  //         parsedObject[name] = value.getLiteralText()
+  //       } else if (value.isKind(SyntaxKind.TrueKeyword) || value.isKind(SyntaxKind.FalseKeyword)) {
+  //         parsedObject[name] = value.getText() === 'true'
+  //       } else {
+  //         // For other types, store as string (you might want to handle more types)
+  //         parsedObject[name] = value.getText()
+  //       }
+  //     }
+  //   }
+  // })
+  const parsedObject: Record<string, any> = Object.fromEntries(
+    properties
+      .filter((property): property is PropertyAssignment =>
+        property.isKind(SyntaxKind.PropertyAssignment)
+      )
+      .map((property) => {
+        const name = property.getName()
+        const value = property.getInitializer()
+        return [name, value ? parseValue(value) : undefined]
+      })
+  )
+
+  console.log(parsedObject, objectLiteral.getFullText())
+  return parsedObject
 }
