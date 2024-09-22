@@ -21,9 +21,11 @@ function makeBasicSourceFile() {
   })
   `
   const resolvedPath = './__test__vite__config__.ts'
-  const project = new Project()
+  const project = new Project({ compilerOptions: {} })
   return project.createSourceFile(resolvedPath, code, {
     overwrite: true,
+    // Note: .js and .mjs can still be valid for TS projects.
+    // We can't infer TypeScript from config.tsx.
     scriptKind: path.extname(resolvedPath) === '.ts' ? ScriptKind.TS : ScriptKind.JS,
   })
 }
