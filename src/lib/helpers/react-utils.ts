@@ -1,7 +1,7 @@
 import { filesystem, system } from 'gluegun'
 
 import { KnownError } from '../../types'
-import { formatSourceFile, openAsSourceFile } from './ts-mod'
+import { openAsSourceFile } from './ts-mod'
 import { getViteConfigTest } from './vite-config-parser'
 
 export async function addSetupTestsFile() {
@@ -23,9 +23,12 @@ export async function addRTLToVitest() {
     await setupVitest()
   }
   const sourceFile = openAsSourceFile(vitestFilePath)
+
+  sourceFile.formatText()
   const testProp = getViteConfigTest(sourceFile)
   const setupTestsFile = await addSetupTestsFile()
   const o = { environment: 'jsdom', setupFiles: setupTestsFile }
+
   for (const name in o) {
     const initializer = `'${o[name]}'`
     testProp.addPropertyAssignment({
@@ -33,7 +36,7 @@ export async function addRTLToVitest() {
       initializer,
     })
   }
-  await sourceFile.formatText()
+  sourceFile.formatText()
 
   // const updated = await formatSourceFile(sourceFile)
   console.log(vitestFilePath, sourceFile.getText())
