@@ -1,6 +1,8 @@
 import { filesystem, system } from 'gluegun'
 
 import { KnownError } from '../../types'
+import { formatSourceFile, openAsSourceFile } from './ts-mod'
+import { getViteConfigTest } from './vite-config-parser'
 
 export async function addSetupTestsFile() {
   const setupTestsFilePath = 'src/testing/setup-tests.ts'
@@ -9,7 +11,7 @@ export async function addSetupTestsFile() {
     throw new KnownError(`File ${setupTestsFilePath} already exists`)
   }
   filesystem.write(setupTestsFilePath, `import '@testing-library/jest-dom/vitest';`)
-  console.log(setupTestsFilePath, hasFile)
+  return setupTestsFilePath
 }
 
 export async function addRTLToVitest() {
@@ -20,7 +22,21 @@ export async function addRTLToVitest() {
     console.log('Creating Vitest configuration with defaults')
     await setupVitest()
   }
-  console.log(vitestFilePath)
+  const sourceFile = openAsSourceFile(vitestFilePath)
+  const testProp = getViteConfigTest(sourceFile)
+  const setupTestsFile = await addSetupTestsFile()
+  const o = { environment: 'jsdom', setupFiles: setupTestsFile }
+  for (const name in o) {
+    const initializer = `'${o[name]}'`
+    testProp.addPropertyAssignment({
+      name,
+      initializer,
+    })
+  }
+  await sourceFile.formatText()
+
+  // const updated = await formatSourceFile(sourceFile)
+  console.log(vitestFilePath, sourceFile.getText())
 }
 
 export async function setupTsTypes() {
