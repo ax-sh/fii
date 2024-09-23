@@ -16,7 +16,9 @@ export function packageJsonScript(commandName: string) {
       case 'npm':
         return system.run(`${pm} pkg delete scripts.${commandName}`, opts)
       case 'pnpm':
-        return system.run(`npm pkg remove scripts.${commandName}`, opts)
+        return system.run(`${pm} pkg remove scripts.${commandName}`, opts)
+      default:
+        throw new KnownError('Not implemented')
     }
   }
   async function isAvailable() {
