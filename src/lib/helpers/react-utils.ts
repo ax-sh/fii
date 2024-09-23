@@ -2,6 +2,16 @@ import { filesystem, system } from 'gluegun'
 
 import { KnownError } from '../../types'
 
+export async function addSetupTestsFile() {
+  const setupTestsFilePath = 'src/testing/setup-tests.ts'
+  const hasFile = filesystem.isFile(setupTestsFilePath)
+  if (hasFile) {
+    throw new KnownError(`File ${setupTestsFilePath} already exists`)
+  }
+  filesystem.write(setupTestsFilePath, `import '@testing-library/jest-dom/vitest';`)
+  console.log(setupTestsFilePath, hasFile)
+}
+
 export async function addRTLToVitest() {
   const vitestFilePath = 'vitest.config.ts'
   const hasVitestConfig = filesystem.isFile(vitestFilePath)

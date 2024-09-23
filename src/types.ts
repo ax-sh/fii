@@ -1,19 +1,18 @@
 import type { BrowserCookiesSingleton } from '@ax-sh/browser-cookies'
 import type { FSJetpack } from 'fs-jetpack/types'
 import { type GluegunToolbox, print } from 'gluegun'
-import { dim } from 'kolorist'
+import { bgRed, dim, white } from 'kolorist'
 
 // import { version } from '../pa'
 import type { addScriptToPackageJson } from './lib/cli'
 
 export class KnownError extends Error {
-  constructor(msg: string | string[]) {
-    let message: string
-    if (Array.isArray(msg)) {
-      message = msg.join('\n')
+  constructor(message: string | string[]) {
+    if (Array.isArray(message)) {
+      message = message.join('\n')
     }
 
-    print.error(message)
+    print.error(`${bgRed(white('[KnownError]'))}: ${message}`)
     super(message)
   }
 }

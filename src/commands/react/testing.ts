@@ -12,6 +12,7 @@ const command: GluegunCommand<ExtendedToolbox> = {
     const reactTesting = await import('../../lib/helpers/react-utils')
     // await reactTesting.addDeps()
     await reactTesting.addRTLToVitest()
+    await reactTesting.addSetupTestsFile()
     // await reactTesting.setupTsTypes()
 
     spinner.succeed(`Added react testing lib testing`)
