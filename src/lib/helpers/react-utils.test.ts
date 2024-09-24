@@ -1,4 +1,7 @@
+import { bgGreen } from 'kolorist'
+
 import { setupVitest } from './react-utils'
+import { createMemorySourceFile } from './ts-mod'
 
 // see https://allmaddesigns.com/set-up-react-testing-library-in-vite/
 describe('reactUtils', () => {
@@ -9,18 +12,21 @@ describe('reactUtils', () => {
   it('should add types to tsconfig', () => {
     // "types": ["vitest/globals", "@testing-library/jest-dom"],
   })
-  it('should add react to vitest plugins', () => {
-    const config = `
-    import { defineConfig } from 'vitest/config';
+  it('should add react to vitest plugins', async () => {
+    const script = `
+/// <reference types="vitest" />
+import { defineConfig } from 'vite'
 
 export default defineConfig({
-  plugins: [],
   test: {
-    environment: 'node',
     globals: true,
+    // ... Specify options here.
   },
-});
+})
 `
-    console.log(config, '<<<')
+    const sourceFile = await createMemorySourceFile('____vitest', script)
+
+    sourceFile.formatText()
+    console.log(bgGreen(sourceFile.getFullText()), '<<<')
   })
 })
