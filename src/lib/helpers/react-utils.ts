@@ -1,8 +1,8 @@
 import { filesystem, system } from 'gluegun'
+import { SyntaxKind } from 'ts-morph'
 
 import { KnownError } from '../../types'
 import { openAsSourceFile } from './ts-mod'
-import { getViteConfigTest } from './vite-config-parser'
 
 export async function addSetupTestsFile() {
   const setupTestsFilePath = 'src/testing/setup-tests.ts'
@@ -16,30 +16,48 @@ export async function addSetupTestsFile() {
 
 export async function addRTLToVitest() {
   const vitestFilePath = 'vitest.config.ts'
-  const hasVitestConfig = filesystem.isFile(vitestFilePath)
-  if (!hasVitestConfig) {
-    console.log('No Vitest config found.')
-    console.log('Creating Vitest configuration with defaults')
-    await setupVitest()
-  }
   const sourceFile = openAsSourceFile(vitestFilePath)
-
+  const objLiteral = sourceFile.getFirstDescendantByKindOrThrow(SyntaxKind.ObjectLiteralExpression)
+  // Find the "test" property
+  const testProp = objLiteral.getPropertyOrThrow('test')
+  // Get the object literal inside "test"
+  const testObjLiteral = testProp.getFirstDescendantByKindOrThrow(
+    SyntaxKind.ObjectLiteralExpression
+  )
+  // Add a new property and format the result
+  testObjLiteral.addPropertyAssignment({
+    name: 'newProp',
+    initializer: "'newValue'",
+  })
+  // Format the entire file to ensure no extra commas
   sourceFile.formatText()
-  const testProp = getViteConfigTest(sourceFile)
-  const setupTestsFile = await addSetupTestsFile()
-  const o = { environment: 'jsdom', setupFiles: setupTestsFile }
 
-  for (const name in o) {
-    const initializer = `'${o[name]}'`
-    testProp.addPropertyAssignment({
-      name,
-      initializer,
-    })
-  }
-  sourceFile.formatText()
+  console.log(sourceFile.getText())
 
-  // const updated = await formatSourceFile(sourceFile)
-  console.log(vitestFilePath, sourceFile.getText())
+  // const hasVitestConfig = filesystem.isFile(vitestFilePath)
+  // if (!hasVitestConfig) {
+  //   console.log('No Vitest config found.')
+  //   console.log('Creating Vitest configuration with defaults')
+  //   await setupVitest()
+  // }
+  // const sourceFile = openAsSourceFile(vitestFilePath)
+  //
+  // sourceFile.formatText()
+  // const testProp = getViteConfigTest(sourceFile)
+  // const setupTestsFile = await addSetupTestsFile()
+  // const o = { environment: 'jsdom', setupFiles: setupTestsFile }
+  //
+  // for (const name in o) {
+  //   const initializer = `'${o[name]}'`
+  //   testProp.addPropertyAssignment({
+  //     name,
+  //     initializer,
+  //   })
+  // }
+  // sourceFile.formatText()
+  //
+  // // const updated = await formatSourceFile(sourceFile)
+  // console.log(vitestFilePath, sourceFile.getText())
 }
 
 export async function setupTsTypes() {
