@@ -85,7 +85,7 @@ export function parseJsonObject(initializer: Expression<ts.Expression>) {
   //     }
   //   }
   // })
-  const parsedObject: Record<string, any> = Object.fromEntries(
+  const parsedObject: Record<string, unknown> = Object.fromEntries(
     properties
       .filter((property): property is PropertyAssignment =>
         property.isKind(SyntaxKind.PropertyAssignment)
