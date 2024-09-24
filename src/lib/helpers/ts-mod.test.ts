@@ -4,7 +4,7 @@ import * as path from 'path'
 import { Project, SyntaxKind } from 'ts-morph'
 
 import { createSourceFile, formatSourceFile, parseJsonObject } from './ts-mod'
-import { getViteConfigPlugins, getViteConfigTest } from './vite-config-parser'
+import { getViteConfigPlugins, getVitestConfigTest } from './vite-config-parser'
 
 describe('File operations', () => {
   let tempFilePath: string
@@ -111,7 +111,7 @@ describe('File operations', () => {
 
     const project = new Project({ useInMemoryFileSystem: true })
     const sourceFile = project.createSourceFile('__test___vi___.ts', sourceCode)
-    const testSection = getViteConfigTest(sourceFile)
+    const testSection = getVitestConfigTest(sourceFile)
     testSection.addPropertyAssignment({
       name: 'newProperty',
       initializer: "'new_value'",

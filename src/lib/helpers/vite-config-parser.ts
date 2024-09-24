@@ -45,7 +45,7 @@ export function getViteConfigPlugins(sourceFile: SourceFile) {
     .getInitializerIfKindOrThrow(ts.SyntaxKind.ArrayLiteralExpression)
 }
 
-export function getViteConfigTest(sourceFile: SourceFile) {
+export function getVitestConfigTest(sourceFile: SourceFile) {
   const configObject = getViteDefineConfigCallOptions(sourceFile)
   return configObject
     .getPropertyOrThrow('test')
@@ -69,4 +69,23 @@ export function getImportsToViteConfig(sourceFile: SourceFile) {
     moduleSpecifier: decl.getModuleSpecifierValue(),
     namedImports: decl.getNamedImports().map((namedImport) => namedImport.getName()),
   }))
+}
+
+export function addVitestDepsForReact(sourceFile: SourceFile) {
+  const config = {
+    environment: 'jsdom',
+    setupFiles: './src/testing/setup-tests.ts',
+    // exclude: ['**/node_modules/**', '**/e2e/**'],
+    // coverage: {
+    //   include: ['src/**'],
+    // },
+  }
+  const testObjLiteral = getVitestConfigTest(sourceFile)
+  for (const [name, value] of Object.entries(config)) {
+    testObjLiteral.insertPropertyAssignment(0, {
+      name,
+      initializer: `'${value}'`,
+    })
+  }
+  return sourceFile
 }

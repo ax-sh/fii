@@ -1,15 +1,13 @@
 import * as path from 'node:path'
 import * as prettier from 'prettier'
-import {
+import type {
   Expression,
+  LiteralExpression,
   ObjectLiteralExpression,
-  Project,
   PropertyAssignment,
-  ScriptKind,
-  type SourceFile,
-  SyntaxKind,
   ts,
 } from 'ts-morph'
+import { Project, ScriptKind, type SourceFile, SyntaxKind } from 'ts-morph'
 
 export function openAsSourceFile(filePath: string) {
   const project = new Project({ compilerOptions: {} })
@@ -45,12 +43,12 @@ export async function createSourceFile(tempFile: string, input: string) {
   return sourceFile
 }
 
-export const parseValue = (value: Expression): unknown => {
+export const parseValue = (value: LiteralExpression): unknown => {
   switch (value.getKind()) {
     case SyntaxKind.NumericLiteral:
       return Number(value.getText())
     case SyntaxKind.StringLiteral:
-      return (value as any).getLiteralText()
+      return value.getLiteralText()
     case SyntaxKind.TrueKeyword:
       return true
     case SyntaxKind.FalseKeyword:
@@ -93,7 +91,8 @@ export function parseJsonObject(initializer: Expression<ts.Expression>) {
       .map((property) => {
         const name = property.getName()
         const value = property.getInitializer()
-        return [name, value ? parseValue(value) : undefined]
+        console.log(22222, value.getType())
+        return [name, value ? parseValue(value as LiteralExpression) : undefined]
       })
   )
 
