@@ -10,12 +10,12 @@ const command: GluegunCommand<ExtendedToolbox> = {
 
     const spinner = print.spin(`Adding react testing lib`)
     const rt = await import('../../lib/helpers/react-utils')
-    // await reactTesting.addDeps()
+    await rt.addDeps()
+
     await rt.addRTLToVitest()
 
-    // await reactTesting.setupTsTypes()
-
     spinner.succeed(`Added react testing lib testing`)
+    await rt.setupTsTypes()
   },
 }
 

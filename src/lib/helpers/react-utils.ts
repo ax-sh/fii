@@ -1,8 +1,9 @@
 import { filesystem, system } from 'gluegun'
-import { SyntaxKind } from 'ts-morph'
 
 import { KnownError } from '../../types'
+import { addVitestReactTypesToTsconfig } from '../add-vitest-types-to-tsconfig'
 import { openAsSourceFile } from './ts-mod'
+import { addVitestDepsForReact } from './vite-config-parser'
 
 export async function addSetupTestsFile() {
   const setupTestsFilePath = 'src/testing/setup-tests.ts'
@@ -17,22 +18,14 @@ export async function addSetupTestsFile() {
 export async function addRTLToVitest() {
   const vitestFilePath = 'vitest.config.ts'
   const sourceFile = openAsSourceFile(vitestFilePath)
-  const objLiteral = sourceFile.getFirstDescendantByKindOrThrow(SyntaxKind.ObjectLiteralExpression)
-  // Find the "test" property
-  const testProp = objLiteral.getPropertyOrThrow('test')
-  // Get the object literal inside "test"
-  const testObjLiteral = testProp.getFirstDescendantByKindOrThrow(
-    SyntaxKind.ObjectLiteralExpression
-  )
-  // Add a new property and format the result
-  testObjLiteral.addPropertyAssignment({
-    name: 'newProp',
-    initializer: "'newValue'",
-  })
+
+  addVitestDepsForReact(sourceFile)
   // Format the entire file to ensure no extra commas
   sourceFile.formatText()
 
   console.log(sourceFile.getText())
+  sourceFile.formatText()
+  sourceFile.saveSync()
 
   // const hasVitestConfig = filesystem.isFile(vitestFilePath)
   // if (!hasVitestConfig) {
@@ -61,11 +54,11 @@ export async function addRTLToVitest() {
 }
 
 export async function setupTsTypes() {
-  throw new KnownError('not implemented')
+  return addVitestReactTypesToTsconfig('tsconfig.app.json')
 }
 
 export async function addDeps() {
-  await system.run('ni -D @testing-library/react @testing-library/jest-dom')
+  await system.run('ni -D @testing-library/react @testing-library/jest-dom jsdom')
 }
 
 export function setupVitest() {
