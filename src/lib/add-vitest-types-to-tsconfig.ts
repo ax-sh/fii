@@ -1,5 +1,8 @@
 import { filesystem } from 'gluegun'
 import { applyEdits, modify, parse } from 'jsonc-parser'
+import { bgRed } from 'kolorist'
+
+import { KnownError } from '../types'
 
 export const sanityTest = `
 function sum(a: number, b: number) { return a + b }
@@ -42,6 +45,9 @@ export async function addVitestTypesToTsconfig(tsconfigPath: string) {
 }
 
 export async function addVitestReactTypesToTsconfig(tsconfigPath: string) {
+  if (filesystem.isNotFile(tsconfigPath)) {
+    throw new KnownError([bgRed('tsconfigPath does not exist'), tsconfigPath])
+  }
   const data = filesystem.read(tsconfigPath)
   const tsconfig: TsconfigContent = parse(data) as TsconfigContent
   const types = tsconfig.compilerOptions?.types
