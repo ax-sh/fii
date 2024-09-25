@@ -26,7 +26,7 @@ export async function addRTLToVitest() {
   console.log(sourceFile.getText())
   sourceFile.formatText()
   sourceFile.saveSync()
-
+  // work in progress for
   // const hasVitestConfig = filesystem.isFile(vitestFilePath)
   // if (!hasVitestConfig) {
   //   console.log('No Vitest config found.')

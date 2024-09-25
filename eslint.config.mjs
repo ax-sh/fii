@@ -22,7 +22,7 @@ const unicorn = {
     'unicorn/better-regex': 'error',
     '@typescript-eslint/consistent-type-imports': 'error',
     'sonarjs/todo-tag': 'off', // in production release maybe turn it on
-    'sonarjs/sonar-no-fallthrough': 'off',
+    'sonarjs/jsx-no-useless-fragment': 'off',
   },
 }
 
@@ -36,6 +36,14 @@ const eslintConfigs = [
   eslintConfigPrettier,
   {
     ignores: ['.config/*', 'build/', 'dist/', '.xo-config.js', '.*.js'],
+  },
+  {
+    // This configuration will only apply to the specific file
+    files: ['**/ts-mod.test.ts', '**/ts-mod.ts', '**/lib/cli.ts'],
+    rules: {
+      'security/detect-non-literal-fs-filename': 'off',
+      'sonarjs/sonar-no-fallthrough': 'off',
+    },
   },
 ]
 
