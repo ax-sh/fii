@@ -6,7 +6,7 @@ import { openAsSourceFile } from './ts-mod'
 import { addVitestDepsForReact } from './vite-config-parser'
 
 export async function addSetupTestsFile() {
-  const setupTestsFilePath = 'src/testing/setup-tests.ts'
+  const setupTestsFilePath = './src/testing/setup-tests.ts'
   const hasFile = filesystem.isFile(setupTestsFilePath)
   if (hasFile) {
     throw new KnownError(`File ${setupTestsFilePath} already exists`)
@@ -50,9 +50,8 @@ export async function addRTLToVitest() {
   //
   // sourceFile.formatText()
   // const testProp = getViteConfigTest(sourceFile)
-  // const setupTestsFile = await addSetupTestsFile()
-  // const o = { environment: 'jsdom', setupFiles: setupTestsFile }
-  //
+  await addSetupTestsFile()
+
   // for (const name in o) {
   //   const initializer = `'${o[name]}'`
   //   testProp.addPropertyAssignment({
