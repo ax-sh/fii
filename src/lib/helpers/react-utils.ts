@@ -51,7 +51,7 @@ export async function addRTLToVitest() {
   // sourceFile.formatText()
   // const testProp = getViteConfigTest(sourceFile)
   await addSetupTestsFile()
-
+  // loop over config
   // for (const name in o) {
   //   const initializer = `'${o[name]}'`
   //   testProp.addPropertyAssignment({
