@@ -4,10 +4,60 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🚀 Features
+
+- *(react-testing)* Add RTL setup for Vitest configuration
+- Add kolorist package for better error handling
+- Add getViteConfigTest function and tests
+- *(fii)* Update success message for development tools
+- Update eslint.config.mjs
+- *(react-testing)* Add setup tests file creation function
+- *(react-testing)* Add support for react testing library
+- *(tests)* Add Text component and its test cases
+- Add error handling for non-existent tsconfig path
+- Enhance setup tests file with cleanup function
+- Update todo
+
+### 🐛 Bug Fixes
+
+- *(cli)* Handle unknown package manager commands
+
+### 🚜 Refactor
+
+- *(cli)* Use variable for package manager command
+- Update react testing lib to use async/await
+- Simplify Vite config handling and import method
+- Move formatSourceFile to ts-mod module
+- Reorganize imports and rename test files
+- *(react-testing)* Simplify import and improve logging
+- *(react-utils)* Remove unused import and clean up code
+- *(ts-mod)* Change type from 'any' to 'unknown'
+- Streamline react testing library setup process
+
+### 🧪 Testing
+
+- *(vite-config-parser)* Improve test setup with path module
+- *(vite-config-parser)* Update project initialization options
+- Add unit tests for file operations and ts-mod
+- *(ts-mod)* Add tests for JSON parsing functionality
+- *(react-utils)* Update tests for vitest configuration logic
+- *(react-utils)* Add memory source file creation test
+- Add Vitest config tests for React setup
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+- Update package dependencies to latest versions
+- Rename test and component files to .ejs format
+- Update dependencies and fix file path reference
+
+## [0.85.0] - 2024-09-22
+
 ### ⚙️ Miscellaneous Tasks
 
 - Update dependencies in package.json
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.84.0] - 2024-09-22
 
