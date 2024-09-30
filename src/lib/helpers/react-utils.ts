@@ -11,7 +11,20 @@ export async function addSetupTestsFile() {
   if (hasFile) {
     throw new KnownError(`File ${setupTestsFilePath} already exists`)
   }
-  filesystem.write(setupTestsFilePath, `import '@testing-library/jest-dom/vitest';`)
+  filesystem.write(
+    setupTestsFilePath,
+    `
+    import '@testing-library/jest-dom/vitest';
+    
+    import { afterEach } from 'vitest';
+    import { cleanup } from '@testing-library/react'
+
+    // runs a clean after each test case (e.g. clearing jsdom)
+    afterEach(() => {
+      cleanup();
+    })
+  `
+  )
   return setupTestsFilePath
 }
 
