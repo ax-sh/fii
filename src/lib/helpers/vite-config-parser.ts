@@ -47,8 +47,15 @@ export function getViteConfigPlugins(sourceFile: SourceFile) {
 
 export function getViteConfigServer(sourceFile: SourceFile) {
   const configObject = getViteDefineConfigCallOptions(sourceFile)
-  return configObject
-    .getPropertyOrThrow('server')
+  let serverProp = configObject.getProperty('server')
+  if (!serverProp) {
+    // Create the server property if it doesn't exist
+    serverProp = configObject.addPropertyAssignment({
+      name: 'server',
+      initializer: '{}',
+    })
+  }
+  return serverProp
     .asKindOrThrow(ts.SyntaxKind.PropertyAssignment)
     .getInitializerIfKindOrThrow(ts.SyntaxKind.ObjectLiteralExpression)
 }
