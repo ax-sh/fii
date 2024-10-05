@@ -4,6 +4,7 @@ import { type ExtendedToolbox } from '../../types'
 
 const command: GluegunCommand<ExtendedToolbox> = {
   name: 'testing',
+  alias: ['test'],
   description: 'Adds react testing lib with vitest',
   run: async (toolbox) => {
     const { print } = toolbox
