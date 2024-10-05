@@ -18,6 +18,9 @@ All notable changes to this project will be documented in this file.
 - Enhance setup tests file with cleanup function
 - Update todo
 - Add function to list NPM packages from GitHub
+- *(add vitest)* Format TypeScript file before writing config
+- *(react/testing)* Add alias for testing command
+- Add RTL test generation functionality
 
 ### 🐛 Bug Fixes
 
@@ -34,6 +37,9 @@ All notable changes to this project will be documented in this file.
 - *(react-utils)* Remove unused import and clean up code
 - *(ts-mod)* Change type from 'any' to 'unknown'
 - Streamline react testing library setup process
+- Initialize types array if undefined
+- *(react-utils)* Streamline Vitest configuration logic
+- *(vite-config-parser)* Streamline property assignment logic
 
 ### 🧪 Testing
 
@@ -55,6 +61,12 @@ All notable changes to this project will be documented in this file.
 - Update package dependencies to latest versions
 - Format code with Prettier
 - Update bun.lockb binary file
+- Format code with Prettier
+- Add CHANGELOG
+- Add todo for environment check in vite config parser
+- Remove commented code from react-utils.ts
+- Format code with Prettier
+- Format code with Prettier
 - Format code with Prettier
 
 ## [0.85.0] - 2024-09-22
