@@ -1,9 +1,10 @@
-import { Project } from 'ts-morph'
+import * as path from 'node:path'
+import { Project, ScriptKind } from 'ts-morph'
 
+import { formatSourceFile } from './ts-mod'
 import {
   addBasePropertyToDefineConfig,
   addImportsToViteConfig,
-  formatSourceFile,
   getImportsToViteConfig,
   getViteConfigPlugins,
   getViteDefineConfigCall,
@@ -19,9 +20,13 @@ function makeBasicSourceFile() {
     plugins: [react()]
   })
   `
-  const project = new Project()
-  return project.createSourceFile('./__test__vite__config__.ts', code, {
+  const resolvedPath = './__test__vite__config__.ts'
+  const project = new Project({ compilerOptions: {} })
+  return project.createSourceFile(resolvedPath, code, {
     overwrite: true,
+    // Note: .js and .mjs can still be valid for TS projects.
+    // We can't infer TypeScript from config.tsx.
+    scriptKind: path.extname(resolvedPath) === '.ts' ? ScriptKind.TS : ScriptKind.JS,
   })
 }
 

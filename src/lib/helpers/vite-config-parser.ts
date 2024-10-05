@@ -1,4 +1,3 @@
-import * as prettier from 'prettier'
 import {
   type CallExpression,
   type ObjectLiteralExpression,
@@ -46,6 +45,14 @@ export function getViteConfigPlugins(sourceFile: SourceFile) {
     .getInitializerIfKindOrThrow(ts.SyntaxKind.ArrayLiteralExpression)
 }
 
+export function getVitestConfigTest(sourceFile: SourceFile) {
+  const configObject = getViteDefineConfigCallOptions(sourceFile)
+  return configObject
+    .getPropertyOrThrow('test')
+    .asKindOrThrow(ts.SyntaxKind.PropertyAssignment)
+    .getInitializerIfKindOrThrow(ts.SyntaxKind.ObjectLiteralExpression)
+}
+
 export function addImportsToViteConfig(
   sourceFile: SourceFile,
   newImports: { name: string; moduleSpecifier: string }[]
@@ -64,8 +71,21 @@ export function getImportsToViteConfig(sourceFile: SourceFile) {
   }))
 }
 
-export function formatSourceFile(sourceFile: SourceFile) {
-  return prettier.format(sourceFile.getFullText(), {
-    parser: 'typescript',
-  })
+export function addVitestDepsForReact(sourceFile: SourceFile) {
+  const config = {
+    environment: 'jsdom',
+    setupFiles: './src/testing/setup-tests.ts',
+    // exclude: ['**/node_modules/**', '**/e2e/**'],
+    // coverage: {
+    //   include: ['src/**'],
+    // },
+  }
+  const testObjLiteral = getVitestConfigTest(sourceFile)
+  for (const [name, value] of Object.entries(config)) {
+    testObjLiteral.insertPropertyAssignment(0, {
+      name,
+      initializer: `'${value}'`,
+    })
+  }
+  return sourceFile
 }

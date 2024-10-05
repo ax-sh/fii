@@ -1,5 +1,8 @@
 import { filesystem } from 'gluegun'
 import { applyEdits, modify, parse } from 'jsonc-parser'
+import { bgRed } from 'kolorist'
+
+import { KnownError } from '../types'
 
 export const sanityTest = `
 function sum(a: number, b: number) { return a + b }
@@ -39,4 +42,23 @@ export async function addVitestTypesToTsconfig(tsconfigPath: string) {
     const updatedData = applyEdits(data, edits)
     filesystem.write(tsconfigPath, updatedData)
   }
+}
+
+export async function addVitestReactTypesToTsconfig(tsconfigPath: string) {
+  if (filesystem.isNotFile(tsconfigPath)) {
+    throw new KnownError([bgRed('tsconfigPath does not exist'), tsconfigPath])
+  }
+  const data = filesystem.read(tsconfigPath)
+  const tsconfig: TsconfigContent = parse(data) as TsconfigContent
+  const types = tsconfig.compilerOptions?.types
+
+  const newTypes = ['@testing-library/jest-dom']
+
+  // Prepare the edits to add the new property
+  const edits = modify(data, ['compilerOptions', 'types'], [...types, ...newTypes], {
+    formattingOptions: { insertSpaces: true, tabSize: 2 },
+  })
+  // Apply the edits to the original JSONC data
+  const updatedData = applyEdits(data, edits)
+  filesystem.write(tsconfigPath, updatedData)
 }
