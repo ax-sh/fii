@@ -43,25 +43,11 @@ export async function addRTLToVitest() {
   sourceFile.formatText()
   console.log(sourceFile.getText())
   sourceFile.saveSync()
-  // // work in progress for
 
-  // // const sourceFile = openAsSourceFile(vitestFilePath)
-  // //
-  // // sourceFile.formatText()
   // // const testProp = getViteConfigTest(sourceFile)
-  // await addSetupTestsFile()
-  // // loop over config
-  // // for (const name in o) {
-  // //   const initializer = `'${o[name]}'`
-  // //   testProp.addPropertyAssignment({
-  // //     name,
-  // //     initializer,
-  // //   })
-  // // }
-  // // sourceFile.formatText()
-  // //
-  // // // const updated = await formatSourceFile(sourceFile)
-  // // console.log(vitestFilePath, sourceFile.getText())
+  await addSetupTestsFile()
+
+  console.log(vitestFilePath, sourceFile.getText())
 }
 
 export async function setupTsTypes() {
