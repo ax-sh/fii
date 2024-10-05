@@ -45,6 +45,21 @@ export function getViteConfigPlugins(sourceFile: SourceFile) {
     .getInitializerIfKindOrThrow(ts.SyntaxKind.ArrayLiteralExpression)
 }
 
+export function getViteConfigServer(sourceFile: SourceFile) {
+  const configObject = getViteDefineConfigCallOptions(sourceFile)
+  let serverProp = configObject.getProperty('server')
+  if (!serverProp) {
+    // Create the server property if it doesn't exist
+    serverProp = configObject.addPropertyAssignment({
+      name: 'server',
+      initializer: '{}',
+    })
+  }
+  return serverProp
+    .asKindOrThrow(ts.SyntaxKind.PropertyAssignment)
+    .getInitializerIfKindOrThrow(ts.SyntaxKind.ObjectLiteralExpression)
+}
+
 export function getVitestConfigTest(sourceFile: SourceFile) {
   const configObject = getViteDefineConfigCallOptions(sourceFile)
   return configObject
@@ -83,12 +98,15 @@ export function addVitestDepsForReact(sourceFile: SourceFile) {
 
   const testObjLiteral = getVitestConfigTest(sourceFile)
   for (const [name, value] of Object.entries(config)) {
-    const existingProperty = testObjLiteral.getProperty(name)
-    if (existingProperty) {
-      // for now replacing environment
-      // Replace the existing property with the new one
-      existingProperty.replaceWithText(`${name}: '${value}'`)
-    } else {
+    try {
+      const existingProperty = testObjLiteral.getPropertyOrThrow(name)
+      if (existingProperty) {
+        // for now replacing environment
+        // Replace the existing property with the new one
+        existingProperty.replaceWithText(`${name}: '${value}'`)
+      }
+    } catch (e) {
+      console.log('Error:', e, name, 'does not exist adding')
       testObjLiteral.insertPropertyAssignment(0, {
         name,
         initializer: `'${value}'`,

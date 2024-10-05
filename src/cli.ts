@@ -16,7 +16,8 @@ async function run(argv) {
       description: 'Output the version number',
       dashed: true,
       run: async (toolbox) => {
-        toolbox.print.info(toolbox.meta.version())
+        const localVersion = toolbox.meta.version()
+        toolbox.print.info(localVersion)
         const user = 'ax-sh'
         const repo = 'fii'
         // const remoteVersion = await toolbox.system.run(
@@ -28,7 +29,8 @@ async function run(argv) {
           .get(url)
         const remoteVersion = resp.data.version
         console.log()
-        toolbox.print.success(`Version on remote ${remoteVersion}`)
+        toolbox.print.success(`Remote ${remoteVersion}`)
+        toolbox.print.success(`Local  ${localVersion}`)
       },
     }) // provides default for version, v, --version, -v
     .create()

@@ -6,6 +6,28 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- *(add/threejs)* Add leva to threejs libs installation
+- *(commands)* Add vite-qr command for QR code support
+- Add getViteConfigServer function and update imports
+
+### 🐛 Bug Fixes
+
+- *(vite-config-parser)* Handle missing properties gracefully
+
+### 🚜 Refactor
+
+- *(add vite-qr)* Optimize imports for better performance
+- *(vite-qr)* Improve import statements and structure
+- *(cli)* Simplify version output handling
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.87.0] - 2024-10-05
+
+### 🚀 Features
+
 - *(react-testing)* Add RTL setup for Vitest configuration
 - Add kolorist package for better error handling
 - Add getViteConfigTest function and tests
@@ -68,6 +90,7 @@ All notable changes to this project will be documented in this file.
 - Format code with Prettier
 - Format code with Prettier
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.85.0] - 2024-09-22
 
