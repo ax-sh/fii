@@ -1,9 +1,17 @@
+import type { GluegunTemplate } from 'gluegun'
 import { filesystem, system } from 'gluegun'
 
 import { KnownError } from '../../types'
 import { addVitestReactTypesToTsconfig } from '../add-vitest-types-to-tsconfig'
 import { openAsSourceFile } from './ts-mod'
 import { addVitestDepsForReact } from './vite-config-parser'
+
+export async function addRTLTest(template: GluegunTemplate) {
+  await template.generate({
+    template: `CONFIGS/react-testing/Text.test.tsx.ejs`,
+    target: filesystem.path('.', 'src', 'Text.test.tsx'),
+  })
+}
 
 export async function addSetupTestsFile() {
   const setupTestsFilePath = './src/testing/setup-tests.ts'
@@ -30,39 +38,24 @@ export async function addSetupTestsFile() {
 
 export async function addRTLToVitest() {
   const vitestFilePath = 'vitest.config.ts'
+  const hasVitestConfig = filesystem.isFile(vitestFilePath)
+  if (!hasVitestConfig) {
+    console.log('No Vitest config found.')
+    console.log('Creating Vitest configuration with defaults')
+    await setupVitest()
+  }
   const sourceFile = openAsSourceFile(vitestFilePath)
 
   addVitestDepsForReact(sourceFile)
   // Format the entire file to ensure no extra commas
   sourceFile.formatText()
-
   console.log(sourceFile.getText())
-  sourceFile.formatText()
   sourceFile.saveSync()
-  // work in progress for
-  // const hasVitestConfig = filesystem.isFile(vitestFilePath)
-  // if (!hasVitestConfig) {
-  //   console.log('No Vitest config found.')
-  //   console.log('Creating Vitest configuration with defaults')
-  //   await setupVitest()
-  // }
-  // const sourceFile = openAsSourceFile(vitestFilePath)
-  //
-  // sourceFile.formatText()
-  // const testProp = getViteConfigTest(sourceFile)
+
+  // // const testProp = getViteConfigTest(sourceFile)
   await addSetupTestsFile()
-  // loop over config
-  // for (const name in o) {
-  //   const initializer = `'${o[name]}'`
-  //   testProp.addPropertyAssignment({
-  //     name,
-  //     initializer,
-  //   })
-  // }
-  // sourceFile.formatText()
-  //
-  // // const updated = await formatSourceFile(sourceFile)
-  // console.log(vitestFilePath, sourceFile.getText())
+
+  console.log(vitestFilePath, sourceFile.getText())
 }
 
 export async function setupTsTypes() {
