@@ -83,12 +83,15 @@ export function addVitestDepsForReact(sourceFile: SourceFile) {
 
   const testObjLiteral = getVitestConfigTest(sourceFile)
   for (const [name, value] of Object.entries(config)) {
-    const existingProperty = testObjLiteral.getProperty(name)
-    if (existingProperty) {
-      // for now replacing environment
-      // Replace the existing property with the new one
-      existingProperty.replaceWithText(`${name}: '${value}'`)
-    } else {
+    try {
+      const existingProperty = testObjLiteral.getPropertyOrThrow(name)
+      if (existingProperty) {
+        // for now replacing environment
+        // Replace the existing property with the new one
+        existingProperty.replaceWithText(`${name}: '${value}'`)
+      }
+    } catch (e) {
+      console.log('Error:', e, name, 'does not exist adding')
       testObjLiteral.insertPropertyAssignment(0, {
         name,
         initializer: `'${value}'`,
