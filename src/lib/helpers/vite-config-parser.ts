@@ -45,6 +45,14 @@ export function getViteConfigPlugins(sourceFile: SourceFile) {
     .getInitializerIfKindOrThrow(ts.SyntaxKind.ArrayLiteralExpression)
 }
 
+export function getViteConfigServer(sourceFile: SourceFile) {
+  const configObject = getViteDefineConfigCallOptions(sourceFile)
+  return configObject
+    .getPropertyOrThrow('server')
+    .asKindOrThrow(ts.SyntaxKind.PropertyAssignment)
+    .getInitializerIfKindOrThrow(ts.SyntaxKind.ObjectLiteralExpression)
+}
+
 export function getVitestConfigTest(sourceFile: SourceFile) {
   const configObject = getViteDefineConfigCallOptions(sourceFile)
   return configObject

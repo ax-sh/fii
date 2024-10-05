@@ -11,14 +11,24 @@ const command: GluegunCommand<ExtendedToolbox> = {
 
     await system.run('ni -D vite-plugin-qrcode')
     const { openAsSourceFile } = await import('../../lib/helpers/ts-mod')
-    const { addImportsToViteConfig, getViteConfigPlugins } = await import(
-      '../../lib/helpers/vite-config-parser'
-    )
+    const {
+      addImportsToViteConfig,
+      getViteConfigPlugins,
+      // getViteConfigServer
+    } = await import('../../lib/helpers/vite-config-parser')
     const viteConfigPath = 'vite.config.ts'
     const sourceFile = openAsSourceFile(viteConfigPath)
     const pluginsArray = getViteConfigPlugins(sourceFile)
     addImportsToViteConfig(sourceFile, [{ name: 'qrcode', moduleSpecifier: 'vite-plugin-qrcode' }])
     pluginsArray.addElement('qrcode()')
+    // todo check and create if not exist
+    // const server = getViteConfigServer(sourceFile)
+    // server.addPropertyAssignment({
+    //   name: 'host',
+    //   initializer: `"0.0.0.0"`,
+    // })
+    // console.log(server)
+
     sourceFile.formatText()
     sourceFile.saveSync()
 
