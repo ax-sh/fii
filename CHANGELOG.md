@@ -17,6 +17,7 @@ All notable changes to this project will be documented in this file.
 - Add error handling for non-existent tsconfig path
 - Enhance setup tests file with cleanup function
 - Update todo
+- Add function to list NPM packages from GitHub
 
 ### 🐛 Bug Fixes
 
@@ -50,6 +51,11 @@ All notable changes to this project will be documented in this file.
 - Update package dependencies to latest versions
 - Rename test and component files to .ejs format
 - Update dependencies and fix file path reference
+- Update CHANGELOG with recent changes and features
+- Update package dependencies to latest versions
+- Format code with Prettier
+- Update bun.lockb binary file
+- Format code with Prettier
 
 ## [0.85.0] - 2024-09-22
 
