@@ -28,7 +28,7 @@ const command: GluegunCommand<ExtendedToolbox> = {
       return
     }
 
-    filesystem.write(vitestConfigPath, formatTsFile(vitestConfigContent))
+    filesystem.write(vitestConfigPath, await formatTsFile(vitestConfigContent))
     filesystem.write('sum.test.ts', sanityTest)
 
     await toolbox.addScriptToPackageJson('test', 'dotenv -- vitest run')
