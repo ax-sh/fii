@@ -105,3 +105,9 @@ export function formatSourceFile(sourceFile: SourceFile) {
     parser: 'typescript',
   })
 }
+
+export function formatTsFile(script: string) {
+  return prettier.format(script, {
+    parser: 'typescript',
+  })
+}
