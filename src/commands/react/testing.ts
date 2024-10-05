@@ -7,13 +7,14 @@ const command: GluegunCommand<ExtendedToolbox> = {
   alias: ['test'],
   description: 'Adds react testing lib with vitest',
   run: async (toolbox) => {
-    const { print } = toolbox
+    const { print, template } = toolbox
 
     const spinner = print.spin(`Adding react testing lib`)
     const rt = await import('../../lib/helpers/react-utils')
     await rt.addDeps()
     await rt.setupTsTypes()
     await rt.addRTLToVitest()
+    await rt.addRTLTest(template)
 
     spinner.succeed(`Added react testing lib testing`)
   },

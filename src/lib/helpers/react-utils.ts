@@ -1,9 +1,17 @@
+import type { GluegunTemplate } from 'gluegun'
 import { filesystem, system } from 'gluegun'
 
 import { KnownError } from '../../types'
 import { addVitestReactTypesToTsconfig } from '../add-vitest-types-to-tsconfig'
 import { openAsSourceFile } from './ts-mod'
 import { addVitestDepsForReact } from './vite-config-parser'
+
+export async function addRTLTest(template: GluegunTemplate) {
+  await template.generate({
+    template: `CONFIGS/react-testing/Text.test.tsx.ejs`,
+    target: filesystem.path('.', 'src', 'Text.test.tsx'),
+  })
+}
 
 export async function addSetupTestsFile() {
   const setupTestsFilePath = './src/testing/setup-tests.ts'
