@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🐛 Bug Fixes
+
+- *(commands)* Await formatTsFile in add command
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.88.0] - 2024-10-05
+
 ### 🚀 Features
 
 - *(add/threejs)* Add leva to threejs libs installation
@@ -23,6 +33,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.87.0] - 2024-10-05
 
