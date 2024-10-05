@@ -80,6 +80,7 @@ export function addVitestDepsForReact(sourceFile: SourceFile) {
     //   include: ['src/**'],
     // },
   }
+  // todo check if environment exists and replace
   const testObjLiteral = getVitestConfigTest(sourceFile)
   for (const [name, value] of Object.entries(config)) {
     testObjLiteral.insertPropertyAssignment(0, {
