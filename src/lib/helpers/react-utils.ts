@@ -30,39 +30,38 @@ export async function addSetupTestsFile() {
 
 export async function addRTLToVitest() {
   const vitestFilePath = 'vitest.config.ts'
+  const hasVitestConfig = filesystem.isFile(vitestFilePath)
+  if (!hasVitestConfig) {
+    console.log('No Vitest config found.')
+    console.log('Creating Vitest configuration with defaults')
+    await setupVitest()
+  }
   const sourceFile = openAsSourceFile(vitestFilePath)
 
   addVitestDepsForReact(sourceFile)
   // Format the entire file to ensure no extra commas
   sourceFile.formatText()
-
   console.log(sourceFile.getText())
-  sourceFile.formatText()
   sourceFile.saveSync()
-  // work in progress for
-  // const hasVitestConfig = filesystem.isFile(vitestFilePath)
-  // if (!hasVitestConfig) {
-  //   console.log('No Vitest config found.')
-  //   console.log('Creating Vitest configuration with defaults')
-  //   await setupVitest()
-  // }
-  // const sourceFile = openAsSourceFile(vitestFilePath)
-  //
-  // sourceFile.formatText()
-  // const testProp = getViteConfigTest(sourceFile)
-  await addSetupTestsFile()
-  // loop over config
-  // for (const name in o) {
-  //   const initializer = `'${o[name]}'`
-  //   testProp.addPropertyAssignment({
-  //     name,
-  //     initializer,
-  //   })
-  // }
-  // sourceFile.formatText()
-  //
-  // // const updated = await formatSourceFile(sourceFile)
-  // console.log(vitestFilePath, sourceFile.getText())
+  // // work in progress for
+
+  // // const sourceFile = openAsSourceFile(vitestFilePath)
+  // //
+  // // sourceFile.formatText()
+  // // const testProp = getViteConfigTest(sourceFile)
+  // await addSetupTestsFile()
+  // // loop over config
+  // // for (const name in o) {
+  // //   const initializer = `'${o[name]}'`
+  // //   testProp.addPropertyAssignment({
+  // //     name,
+  // //     initializer,
+  // //   })
+  // // }
+  // // sourceFile.formatText()
+  // //
+  // // // const updated = await formatSourceFile(sourceFile)
+  // // console.log(vitestFilePath, sourceFile.getText())
 }
 
 export async function setupTsTypes() {
