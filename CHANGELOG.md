@@ -6,8 +6,22 @@ All notable changes to this project will be documented in this file.
 
 ### ⚙️ Miscellaneous Tasks
 
+- Update changelog command in release-it config
+- Format code with biome
+- Update bun.lockb file
+- Format code with biome
+
+### Build
+
+- Add git-cliff dependency to package.json
+
+## [0.92.0] - 2024-10-06
+
+### ⚙️ Miscellaneous Tasks
+
 - Update package.json and refactor import path
 - Format code with biome
+- Add CHANGELOG
 
 ## [0.91.0] - 2024-10-06
 
