@@ -1,6 +1,6 @@
 {
   "name": "fii",
-  "version": "0.91.0",
+  "version": "0.92.0",
   "description": "fii CLI",
   "private": true,
   "types": "build/types/types.d.ts",
@@ -24,7 +24,8 @@
     "db:gen": "bunx drizzle-kit generate --dialect pglite --schema ./src/lib/db/schema.ts",
     "test": "vitest run",
     "lint": "eslint",
-    "lint:fix": "eslint --fix"
+    "lint:fix": "eslint --fix",
+    "lint:types": "tsc --noEmit"
   },
   "files": [
     "build",
