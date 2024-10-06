@@ -15,9 +15,8 @@ module.exports = {
     'before:init': [
       'git fetch --all --tags --prune',
       'which git-cliff',
-      'nr prettier:fix',
-      'git commit  --allow-empty -am "ci: format code with Prettier"',
-      'nr eslint',
+      'nr format',
+      'git commit  --allow-empty -am "ci: format code with biome"',
       'nr test',
     ],
     'before:beforeBump': [
