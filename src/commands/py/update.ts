@@ -20,6 +20,8 @@ const command: GluegunCommand<ExtendedToolbox> = {
     print.info(out)
     out = await system.run('pip install tqdm pandas pillow numpy -U')
     print.info(out)
+    out = await system.run('pip install jupyterlab streamlit -U')
+    print.info(out)
 
     spinner.succeed(`Pip libs updated`)
   },

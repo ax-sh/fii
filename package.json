@@ -1,6 +1,6 @@
 {
   "name": "fii",
-  "version": "0.89.0",
+  "version": "0.90.0",
   "description": "fii CLI",
   "private": true,
   "types": "build/types/types.d.ts",
@@ -9,14 +9,16 @@
   },
   "scripts": {
     "release": "dotenv -v GIT_MERGE_AUTOEDIT=no release-it -- minor --ci",
-    "released": "dotenv -v GIT_MERGE_AUTOEDIT=no release-it -- minor --no-git.push --no-git.requireUpstream --ci",
+    "release-local-ci": "dotenv -v GIT_MERGE_AUTOEDIT=no release-it -- minor --no-git.push --no-git.requireUpstream --ci",
     "clean-build": "rimraf -rf ./build",
     "compile": "tsc -p .",
     "copy-templates": "copyfiles ./src/templates/* ./build/templates",
     "build": "bun clean-build && bun compile && bun copy-templates",
-    "prepublishOnly": "yarn build",
-    "format": "eslint --fix && prettier \"**/*.{js,jsx,ts,tsx,json}\" --write",
-    "upp": "bunx npm-check-updates -i",
+    "prepublishOnly": "nr build",
+    "format:old": "eslint --fix && prettier \"**/*.{js,jsx,ts,tsx,json}\" --write",
+    "format": "nr biome check --write",
+    "upp:old": "bunx npm-check-updates -i",
+    "upp": "bun update --latest",
     "pretty": "pretty-quick",
     "prettier:fix": "prettier . --write",
     "db:gen": "bunx drizzle-kit generate --dialect pglite --schema ./src/lib/db/schema.ts",
@@ -57,9 +59,10 @@
     "rimraf": "^6.0.1",
     "simple-git": "^3.27.0",
     "tough-cookie": "^5.0.0",
-    "ts-morph": "^23.0.0"
+    "ts-morph": "^24.0.0"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.9.3",
     "@eslint/js": "^9.12.0",
     "@playwright/test": "^1.47.2",
     "@release-it/conventional-changelog": "^8.0.2",

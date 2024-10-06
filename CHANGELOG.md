@@ -4,6 +4,37 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🚀 Features
+
+- *(py/update)* Add installation of jupyterlab and streamlit to update command
+- *(gh-pages)* Add alias for gh-pages command
+
+### 🐛 Bug Fixes
+
+- *(add)* Update deploy script to use nr command
+
+### 🚜 Refactor
+
+- *(biome.json)* Update linter rules and configurations for improved code quality
+
+### 🎨 Styling
+
+- *(biome.json)* Update formatting options and ignore patterns in configuration file
+- *(biome.json)* Format whitespace and improve readability in biome.json configuration
+
+### ⚙️ Miscellaneous Tasks
+
+- Update CHANGELOG and increment version to 0.89.0 with various improvements and fixes
+- Format code with Prettier
+- Update package scripts and dependencies in package.json, enhance code imports and formatting
+- Update ts-morph dependency version in package.json
+- *(package.json)* Update npm-check-updates command to use bun update --latest
+- Update prepublishOnly script to use nr build instead of yarn build
+- Format code with Prettier
+- Format code with Prettier
+
+## [0.89.0] - 2024-10-05
+
 ### 🐛 Bug Fixes
 
 - *(commands)* Await formatTsFile in add command
@@ -11,6 +42,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.88.0] - 2024-10-05
 
@@ -91,6 +123,7 @@ All notable changes to this project will be documented in this file.
 - Rename test and component files to .ejs format
 - Update dependencies and fix file path reference
 - Update CHANGELOG with recent changes and features
+- Update bun.lockb with latest changes
 - Update package dependencies to latest versions
 - Format code with Prettier
 - Update bun.lockb binary file
