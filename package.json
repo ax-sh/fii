@@ -24,15 +24,10 @@
     "db:gen": "bunx drizzle-kit generate --dialect pglite --schema ./src/lib/db/schema.ts",
     "test": "vitest run",
     "lint": "eslint",
-    "lint:fix": "eslint --fix"
+    "lint:fix": "eslint --fix",
+    "lint:types": "tsc --noEmit"
   },
-  "files": [
-    "build",
-    "LICENSE",
-    "readme.md",
-    "docs",
-    "bin"
-  ],
+  "files": ["build", "LICENSE", "readme.md", "docs", "bin"],
   "license": "MIT",
   "dependencies": {
     "@ax-sh/browser-cookies": "^0.13.0",
