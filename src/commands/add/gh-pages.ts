@@ -4,6 +4,7 @@ import type { ExtendedToolbox } from '../../types'
 
 const command: GluegunCommand<ExtendedToolbox> = {
   name: 'gh-pages',
+  alias: ['gh-page'],
   run: async (toolbox) => {
     const { print, system, filesystem } = toolbox
     const spinner = print.spin('Adding gh-pages')
@@ -21,8 +22,13 @@ const command: GluegunCommand<ExtendedToolbox> = {
     }
 
     await system.run('ni -D gh-pages')
+    try {
+      await addBaseOnViteConfig(filesystem.path(viteConfigPath))
+    } catch (e) {
+      spinner.fail(e.message)
+      return
+    }
 
-    await addBaseOnViteConfig(filesystem.path(viteConfigPath))
     await toolbox.addScriptToPackageJson('deploy', 'nr build && gh-pages -d dist')
     spinner.succeed('Added gh-pages')
   },
