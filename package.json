@@ -14,7 +14,7 @@
     "compile": "tsc -p .",
     "copy-templates": "copyfiles ./src/templates/* ./build/templates",
     "build": "bun clean-build && bun compile && bun copy-templates",
-    "prepublishOnly": "yarn build",
+    "prepublishOnly": "nr build",
     "format:old": "eslint --fix && prettier \"**/*.{js,jsx,ts,tsx,json}\" --write",
     "format": "nr biome check --write",
     "upp:old": "bunx npm-check-updates -i",
