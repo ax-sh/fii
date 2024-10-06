@@ -26,13 +26,7 @@
     "lint": "eslint",
     "lint:fix": "eslint --fix"
   },
-  "files": [
-    "build",
-    "LICENSE",
-    "readme.md",
-    "docs",
-    "bin"
-  ],
+  "files": ["build", "LICENSE", "readme.md", "docs", "bin"],
   "license": "MIT",
   "dependencies": {
     "@ax-sh/browser-cookies": "^0.13.0",
