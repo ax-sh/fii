@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### ⚙️ Miscellaneous Tasks
+
+- Update formatting commands and imports in files
+- Format code with biome
+
+## [0.90.0] - 2024-10-06
+
 ### 🚀 Features
 
 - *(py/update)* Add installation of jupyterlab and streamlit to update command
@@ -32,6 +39,7 @@ All notable changes to this project will be documented in this file.
 - Update prepublishOnly script to use nr build instead of yarn build
 - Format code with Prettier
 - Format code with Prettier
+- Add CHANGELOG
 
 ## [0.89.0] - 2024-10-05
 
