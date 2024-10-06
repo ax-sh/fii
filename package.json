@@ -9,13 +9,14 @@
   },
   "scripts": {
     "release": "dotenv -v GIT_MERGE_AUTOEDIT=no release-it -- minor --ci",
-    "released": "dotenv -v GIT_MERGE_AUTOEDIT=no release-it -- minor --no-git.push --no-git.requireUpstream --ci",
+    "release-local-ci": "dotenv -v GIT_MERGE_AUTOEDIT=no release-it -- minor --no-git.push --no-git.requireUpstream --ci",
     "clean-build": "rimraf -rf ./build",
     "compile": "tsc -p .",
     "copy-templates": "copyfiles ./src/templates/* ./build/templates",
     "build": "bun clean-build && bun compile && bun copy-templates",
     "prepublishOnly": "yarn build",
-    "format": "eslint --fix && prettier \"**/*.{js,jsx,ts,tsx,json}\" --write",
+    "format:old": "eslint --fix && prettier \"**/*.{js,jsx,ts,tsx,json}\" --write",
+    "format": "nr biome check --write",
     "upp": "bunx npm-check-updates -i",
     "pretty": "pretty-quick",
     "prettier:fix": "prettier . --write",
@@ -24,13 +25,7 @@
     "lint": "eslint",
     "lint:fix": "eslint --fix"
   },
-  "files": [
-    "build",
-    "LICENSE",
-    "readme.md",
-    "docs",
-    "bin"
-  ],
+  "files": ["build", "LICENSE", "readme.md", "docs", "bin"],
   "license": "MIT",
   "dependencies": {
     "@ax-sh/browser-cookies": "^0.13.0",
@@ -60,6 +55,7 @@
     "ts-morph": "^23.0.0"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.9.3",
     "@eslint/js": "^9.12.0",
     "@playwright/test": "^1.47.2",
     "@release-it/conventional-changelog": "^8.0.2",
