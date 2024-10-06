@@ -1,5 +1,6 @@
 import type { GluegunCommand } from 'gluegun'
 
+import { formatTsFile } from '../../lib/helpers/ts-mod'
 import type { ExtendedToolbox } from '../../types'
 
 const command: GluegunCommand<ExtendedToolbox> = {
@@ -27,7 +28,7 @@ const command: GluegunCommand<ExtendedToolbox> = {
       return
     }
 
-    filesystem.write(vitestConfigPath, vitestConfigContent)
+    filesystem.write(vitestConfigPath, await formatTsFile(vitestConfigContent))
     filesystem.write('sum.test.ts', sanityTest)
 
     await toolbox.addScriptToPackageJson('test', 'dotenv -- vitest run')

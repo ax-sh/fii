@@ -10,7 +10,7 @@ const command: GluegunCommand<ExtendedToolbox> = {
 
     const spinner = print.spin(`Adding threejs libs`)
 
-    await system.run('ni three @types/three @react-three/fiber @react-three/drei')
+    await system.run('ni three @types/three @react-three/fiber @react-three/drei leva')
 
     spinner.succeed(`Added threejs `)
   },

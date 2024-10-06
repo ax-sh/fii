@@ -50,7 +50,7 @@ export async function addVitestReactTypesToTsconfig(tsconfigPath: string) {
   }
   const data = filesystem.read(tsconfigPath)
   const tsconfig: TsconfigContent = parse(data) as TsconfigContent
-  const types = tsconfig.compilerOptions?.types
+  const types = tsconfig.compilerOptions?.types || []
 
   const newTypes = ['@testing-library/jest-dom']
 

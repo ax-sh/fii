@@ -4,6 +4,39 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🐛 Bug Fixes
+
+- *(commands)* Await formatTsFile in add command
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+
+## [0.88.0] - 2024-10-05
+
+### 🚀 Features
+
+- *(add/threejs)* Add leva to threejs libs installation
+- *(commands)* Add vite-qr command for QR code support
+- Add getViteConfigServer function and update imports
+
+### 🐛 Bug Fixes
+
+- *(vite-config-parser)* Handle missing properties gracefully
+
+### 🚜 Refactor
+
+- *(add vite-qr)* Optimize imports for better performance
+- *(vite-qr)* Improve import statements and structure
+- *(cli)* Simplify version output handling
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with Prettier
+- Add CHANGELOG
+
+## [0.87.0] - 2024-10-05
+
 ### 🚀 Features
 
 - *(react-testing)* Add RTL setup for Vitest configuration
@@ -17,6 +50,10 @@ All notable changes to this project will be documented in this file.
 - Add error handling for non-existent tsconfig path
 - Enhance setup tests file with cleanup function
 - Update todo
+- Add function to list NPM packages from GitHub
+- *(add vitest)* Format TypeScript file before writing config
+- *(react/testing)* Add alias for testing command
+- Add RTL test generation functionality
 
 ### 🐛 Bug Fixes
 
@@ -33,6 +70,9 @@ All notable changes to this project will be documented in this file.
 - *(react-utils)* Remove unused import and clean up code
 - *(ts-mod)* Change type from 'any' to 'unknown'
 - Streamline react testing library setup process
+- Initialize types array if undefined
+- *(react-utils)* Streamline Vitest configuration logic
+- *(vite-config-parser)* Streamline property assignment logic
 
 ### 🧪 Testing
 
@@ -50,6 +90,18 @@ All notable changes to this project will be documented in this file.
 - Update package dependencies to latest versions
 - Rename test and component files to .ejs format
 - Update dependencies and fix file path reference
+- Update CHANGELOG with recent changes and features
+- Update package dependencies to latest versions
+- Format code with Prettier
+- Update bun.lockb binary file
+- Format code with Prettier
+- Add CHANGELOG
+- Add todo for environment check in vite config parser
+- Remove commented code from react-utils.ts
+- Format code with Prettier
+- Format code with Prettier
+- Format code with Prettier
+- Add CHANGELOG
 
 ## [0.85.0] - 2024-09-22
 
