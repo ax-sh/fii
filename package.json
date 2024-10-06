@@ -52,7 +52,7 @@
     "rimraf": "^6.0.1",
     "simple-git": "^3.27.0",
     "tough-cookie": "^5.0.0",
-    "ts-morph": "^23.0.0"
+    "ts-morph": "^24.0.0"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.3",
