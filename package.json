@@ -1,6 +1,6 @@
 {
   "name": "fii",
-  "version": "0.92.0",
+  "version": "0.93.0",
   "description": "fii CLI",
   "private": true,
   "types": "build/types/types.d.ts",
@@ -47,6 +47,7 @@
     "eslint-plugin-sonarjs": "^2.0.3",
     "execa": "^9.4.0",
     "fs-jetpack": "^5.1.0",
+    "git-cliff": "^2.6.1",
     "gluegun": "^5.2.0",
     "jsonc-parser": "^3.3.1",
     "kolorist": "^1.8.0",
