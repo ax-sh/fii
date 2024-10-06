@@ -6,8 +6,16 @@ All notable changes to this project will be documented in this file.
 
 ### ⚙️ Miscellaneous Tasks
 
+- Update package.json and refactor import path
+- Format code with biome
+
+## [0.91.0] - 2024-10-06
+
+### ⚙️ Miscellaneous Tasks
+
 - Update formatting commands and imports in files
 - Format code with biome
+- Add CHANGELOG
 
 ## [0.90.0] - 2024-10-06
 
