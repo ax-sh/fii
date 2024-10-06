@@ -1,6 +1,6 @@
 {
   "name": "fii",
-  "version": "0.90.0",
+  "version": "0.91.0",
   "description": "fii CLI",
   "private": true,
   "types": "build/types/types.d.ts",
@@ -26,7 +26,13 @@
     "lint": "eslint",
     "lint:fix": "eslint --fix"
   },
-  "files": ["build", "LICENSE", "readme.md", "docs", "bin"],
+  "files": [
+    "build",
+    "LICENSE",
+    "readme.md",
+    "docs",
+    "bin"
+  ],
   "license": "MIT",
   "dependencies": {
     "@ax-sh/browser-cookies": "^0.13.0",
