@@ -9,14 +9,13 @@
 /** @type {import('release-it').Config} */
 module.exports = {
   git: {
-    changelog: 'git cliff --unreleased',
+    changelog: 'nr git-cliff --unreleased --strip header',
   },
   hooks: {
     'before:init': [
       'git fetch --all --tags --prune',
-      'which git-cliff',
       'nr format',
-      'git commit  --allow-empty -am "ci: format code with biome"',
+      'git commit --allow-empty -am "ci: format code with biome"',
       'nr test',
     ],
     'before:beforeBump': [
@@ -24,7 +23,7 @@ module.exports = {
       'echo \uD83D\uDC4A before:bump latestVersion=v${version} previousVersion=v${latestVersion}',
     ],
     'after:bump': [
-      'git cliff -o CHANGELOG.md && git add CHANGELOG.md',
+      'nr git-cliff -o CHANGELOG.md && git add CHANGELOG.md',
       'git commit  --allow-empty -am "ci: add CHANGELOG"',
       'git flow release publish',
       'git flow release finish v${version} -m "Release v${version}" -n -p -F --keepremote',
