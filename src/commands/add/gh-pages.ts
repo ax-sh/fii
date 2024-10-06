@@ -23,7 +23,7 @@ const command: GluegunCommand<ExtendedToolbox> = {
     await system.run('ni -D gh-pages')
 
     await addBaseOnViteConfig(filesystem.path(viteConfigPath))
-    await toolbox.addScriptToPackageJson('deploy', 'pnpm build && gh-pages -d dist')
+    await toolbox.addScriptToPackageJson('deploy', 'nr build && gh-pages -d dist')
     spinner.succeed('Added gh-pages')
   },
 }
