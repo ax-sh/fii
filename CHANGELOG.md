@@ -4,12 +4,39 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🚀 Features
+
+- *(repo)* Add command to view pull request details
+
+### 🐛 Bug Fixes
+
+- *(pr)* Add jq option to gh pr view command
+
+### 🚜 Refactor
+
+- *(pr)* Improve command to trim Git branch output
+
+### 🎨 Styling
+
+- *(seed.ts)* Comment out unused imports and code
+
+### ⚙️ Miscellaneous Tasks
+
+- Update dependencies in package.json
+- Update package.json scripts and format files list
+- Format code with biome
+- Update bun.lockb file
+- Format code with biome
+
+## [0.93.0] - 2024-10-06
+
 ### ⚙️ Miscellaneous Tasks
 
 - Update changelog command in release-it config
 - Format code with biome
 - Update bun.lockb file
 - Format code with biome
+- Add CHANGELOG
 
 ### Build
 
