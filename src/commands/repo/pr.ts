@@ -9,7 +9,7 @@ const command: GluegunCommand<ExtendedToolbox> = {
     const { print, system } = toolbox
     const branch = await system.run('git rev-parse --abbrev-ref HEAD', { trim: true })
     try {
-      const hasPr = await system.run(`gh pr view "${branch}"`, { trim: true })
+      const hasPr = await system.run(`gh pr view "${branch}" --jq`, { trim: true })
       print.info(hasPr)
     } catch (e) {
       console.log(new KnownError([e.cmd, e.stderr]))
