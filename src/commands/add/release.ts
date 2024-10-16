@@ -13,7 +13,9 @@ const command: GluegunCommand<ExtendedToolbox> = {
       'release',
       'dotenv -v DEBUG=1 release-it -- minor --no-git.push --no-git.requireUpstream --ci'
     )
-    await system.run('ni -D dotenv-cli release-it @release-it/conventional-changelog')
+
+    await toolbox.addScriptToPackageJson('changelog:latest', 'nr git-cliff -l')
+    await system.run('ni -D dotenv-cli release-it @release-it/conventional-changelog git-cliff')
     const fileName = '.release-it.mjs'
     await template.generate({
       template: `/CONFIGS/release-it/${fileName}`,
