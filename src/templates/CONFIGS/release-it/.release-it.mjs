@@ -40,7 +40,6 @@ export default {
   },
   hooks: {
     'before:init': [
-      'which git-cliff',
       'nr prettier:fix',
       'git commit --allow-empty -am "ci: format files before release"',
       'nr lint',
