@@ -16,7 +16,7 @@ export default {
   },
   git: {
     // changelog: 'git log --pretty=format:"* %s (%h)" ${from}...${to}',
-    changelog: 'git cliff --unreleased',
+    changelog: 'nr git-cliff --unreleased',
     requireCleanWorkingDir: true,
     requireBranch: false,
     requireUpstream: true,
@@ -40,7 +40,6 @@ export default {
   },
   hooks: {
     'before:init': [
-      'which git-cliff',
       'nr prettier:fix',
       'git commit --allow-empty -am "ci: format files before release"',
       'nr lint',
@@ -50,7 +49,7 @@ export default {
       'echo \uD83D\uDC4A ${name} before:bump latestVersion=v${version} previousVersion=v${latestVersion}',
     ],
     'after:bump': [
-      'git cliff -o CHANGELOG.md && git add CHANGELOG.md',
+      'nr git-cliff -o CHANGELOG.md && git add CHANGELOG.md',
       'git commit  --allow-empty -am "ci: add CHANGELOG"',
       'git flow release finish -n',
       // equivalent 'git flow release finish v${version} -m "Release v${version}" -n -p -F --keepremote',
