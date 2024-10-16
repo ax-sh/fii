@@ -6,6 +6,21 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- *(release)* Update changelog generation script and config
+
+### 🎨 Styling
+
+- *(package.json)* Format files array for consistency
+
+### ⚙️ Miscellaneous Tasks
+
+- Remove unnecessary command from release-it config
+- Format code with biome
+
+## [0.94.0] - 2024-10-15
+
+### 🚀 Features
+
 - *(repo)* Add command to view pull request details
 
 ### 🐛 Bug Fixes
@@ -27,6 +42,7 @@ All notable changes to this project will be documented in this file.
 - Format code with biome
 - Update bun.lockb file
 - Format code with biome
+- Add CHANGELOG
 
 ## [0.93.0] - 2024-10-06
 
