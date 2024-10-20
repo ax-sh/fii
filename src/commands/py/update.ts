@@ -18,7 +18,7 @@ const command: GluegunCommand<ExtendedToolbox> = {
     print.info(out)
     out = await system.run('pip install ell-ai -U')
     print.info(out)
-    out = await system.run('pip install tqdm pandas pillow numpy -U')
+    out = await system.run('pip install tqdm pandas pillow numpy matplotlib -U')
     print.info(out)
     out = await system.run('pip install jupyterlab streamlit -U')
     print.info(out)
