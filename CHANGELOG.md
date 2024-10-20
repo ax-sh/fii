@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### ⚙️ Miscellaneous Tasks
+
+- Update package.json dependencies and versions
+- Format code with biome
+- Update bun.lockb file
+- Format code with biome
+
+## [0.98.0] - 2024-10-20
+
 ### 🚜 Refactor
 
 - *(go-utils)* Improve goInstall logging and output handling
@@ -11,6 +20,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with biome
+- Add CHANGELOG
 
 ## [0.97.0] - 2024-10-20
 
