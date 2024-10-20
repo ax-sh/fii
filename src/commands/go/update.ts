@@ -22,11 +22,16 @@ const command: GluegunCommand<ExtendedToolbox> = {
     print.info(out)
     out = await system.run('go install github.com/ciehanski/libgen-cli@latest')
     print.info(out)
+    // dev deps
     out = await system.run('go install mvdan.cc/gofumpt@latest')
+    print.info(out)
+    out = await system.run('go install github.com/air-verse/air@latest')
     print.info(out)
     out = await system.run('go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest')
     print.info(out)
-
+    out = await system.run('go install honnef.co/go/tools/cmd/staticcheck@latest')
+    print.info(out)
+    // dev deps
     spinner.succeed(`Pip libs updated`)
   },
 }
