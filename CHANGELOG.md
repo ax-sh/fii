@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🚜 Refactor
+
+- *(go-utils)* Improve goInstall logging and output handling
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with biome
+
+## [0.97.0] - 2024-10-20
+
 ### 🎨 Styling
 
 - *(go-utils)* Add newline in success message
@@ -11,6 +21,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with biome
+- Add CHANGELOG
 
 ## [0.96.0] - 2024-10-20
 
