@@ -6,10 +6,18 @@ All notable changes to this project will be documented in this file.
 
 ### ⚙️ Miscellaneous Tasks
 
+- *(py)* Update dependencies to include matplotlib
+- Format code with biome
+
+## [0.99.0] - 2024-10-20
+
+### ⚙️ Miscellaneous Tasks
+
 - Update package.json dependencies and versions
 - Format code with biome
 - Update bun.lockb file
 - Format code with biome
+- Add CHANGELOG
 
 ## [0.98.0] - 2024-10-20
 
