@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🎨 Styling
+
+- *(go-utils)* Add newline in success message
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with biome
+
+## [0.96.0] - 2024-10-20
+
 ### 🚀 Features
 
 - *(commands)* Add update command for Go packages
@@ -17,6 +27,7 @@ All notable changes to this project will be documented in this file.
 
 - Clean up package.json file list formatting
 - Format code with biome
+- Add CHANGELOG
 
 ## [0.95.0] - 2024-10-16
 
