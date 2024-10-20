@@ -1,6 +1,8 @@
 import { print, system } from 'gluegun'
 
-export function goInstall(mod: string) {
+export async function goInstall(mod: string) {
   print.info(`Go Installing: ${mod}`)
-  return system.run(mod)
+  const out = await system.run(mod)
+  print.success(`Go DONE Installing: ${mod}`)
+  return out
 }
