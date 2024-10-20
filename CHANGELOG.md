@@ -6,6 +6,22 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- *(commands)* Add update command for Go packages
+- *(go-utils)* Make goInstall function asynchronous
+
+### 🚜 Refactor
+
+- *(go)* Simplify package installation process
+
+### ⚙️ Miscellaneous Tasks
+
+- Clean up package.json file list formatting
+- Format code with biome
+
+## [0.95.0] - 2024-10-16
+
+### 🚀 Features
+
 - *(release)* Update changelog generation script and config
 
 ### 🎨 Styling
@@ -16,6 +32,7 @@ All notable changes to this project will be documented in this file.
 
 - Remove unnecessary command from release-it config
 - Format code with biome
+- Add CHANGELOG
 
 ## [0.94.0] - 2024-10-15
 
