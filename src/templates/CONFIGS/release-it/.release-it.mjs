@@ -7,7 +7,7 @@
  **/
 
 /** @type {import('release-it').Config} */
-export default {
+module.exports = {
   github: {
     release: false,
   },
