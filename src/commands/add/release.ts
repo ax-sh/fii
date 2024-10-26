@@ -9,6 +9,7 @@ const command: GluegunCommand<ExtendedToolbox> = {
   run: async (toolbox) => {
     const { print, system, template, filesystem } = toolbox
     const spinner = print.spin('Adding release-it')
+    // NOTE option --no-git.push --no-git.requireUpstream makes it work locally without internet
     await toolbox.addScriptToPackageJson(
       'release',
       'dotenv -v DEBUG=1 release-it -- minor --no-git.push --no-git.requireUpstream --ci'
