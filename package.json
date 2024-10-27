@@ -31,11 +31,9 @@
   "files": ["build", "LICENSE", "readme.md", "docs", "bin"],
   "license": "MIT",
   "dependencies": {
-    "@ax-sh/browser-cookies": "^0.13.0",
     "@cspell/eslint-plugin": "^8.15.4",
     "@faker-js/faker": "^9.0.3",
     "axios": "^1.7.7",
-    "axios-cookiejar-support": "^5.0.3",
     "dayjs": "^1.11.13",
     "drizzle-orm": "^0.35.3",
     "eslint-plugin-compat": "^6.0.1",
