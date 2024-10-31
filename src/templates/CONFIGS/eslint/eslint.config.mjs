@@ -13,7 +13,7 @@ import tseslint from 'typescript-eslint'
 // bunx @eslint/migrate-config .eslintrc.json
 
 // typescript-eslint
-const unicorn = {
+const unicornEslintConfig = {
   languageOptions: {
     ecmaVersion: 2024,
     globals: {
@@ -29,12 +29,12 @@ const unicorn = {
     '@typescript-eslint/consistent-type-imports': 'error',
   },
 }
-const tailwindConfig = {
+const tailwindEslintConfig = {
   files: ['tailwind.config.js'],
   rules: { '@typescript-eslint/no-require-imports': 'off' },
 }
 
-const testConfig = {
+const testEslintConfig = {
   files: ['/*.test.ts', '/*.spec.ts', 'tests//*.ts', '__tests__//*.ts'],
   rules: {
     // Disable the require-imports rule specifically for test files
@@ -54,11 +54,11 @@ const eslintConfigs = [
   ...tseslint.configs.recommended,
   sonarjs.configs.recommended,
   pluginSecurity.configs.recommended,
-  unicorn,
+  unicornEslintConfig,
   eslintPluginPrettierRecommended,
   eslintConfigPrettier,
-  tailwindConfig,
-  testConfig,
+  tailwindEslintConfig,
+  testEslintConfig,
   {
     ignores: ['.config/*', 'build/', 'dist/', '.xo-config.js', '.*.js', 'out/'],
   },
