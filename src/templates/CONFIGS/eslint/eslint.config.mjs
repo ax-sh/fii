@@ -9,8 +9,11 @@ import eslintPluginUnicorn from 'eslint-plugin-unicorn'
 import globals from 'globals'
 import tseslint from 'typescript-eslint'
 
+// for migrating from eslint v8
+// bunx @eslint/migrate-config .eslintrc.json
+
 // typescript-eslint
-const unicorn = {
+const unicornEslintConfig = {
   languageOptions: {
     ecmaVersion: 2024,
     globals: {
@@ -26,6 +29,23 @@ const unicorn = {
     '@typescript-eslint/consistent-type-imports': 'error',
   },
 }
+const tailwindEslintConfig = {
+  files: ['tailwind.config.js'],
+  rules: { '@typescript-eslint/no-require-imports': 'off' },
+}
+
+const testEslintConfig = {
+  files: ['/*.test.ts', '/*.spec.ts', 'tests//*.ts', '__tests__//*.ts'],
+  rules: {
+    // Disable the require-imports rule specifically for test files
+    '@typescript-eslint/no-require-imports': 'off',
+
+    // Example: disable rules that might be irrelevant in tests
+    'no-console': 'off',
+    'no-unused-expressions': 'off',
+    // Add more test-specific rules if needed
+  },
+}
 
 const eslintConfigs = [
   cspellConfigs.recommended,
@@ -34,11 +54,13 @@ const eslintConfigs = [
   ...tseslint.configs.recommended,
   sonarjs.configs.recommended,
   pluginSecurity.configs.recommended,
-  unicorn,
+  unicornEslintConfig,
   eslintPluginPrettierRecommended,
   eslintConfigPrettier,
+  tailwindEslintConfig,
+  testEslintConfig,
   {
-    ignores: ['.config/*', 'build/', 'dist/', '.xo-config.js', '.*.js'],
+    ignores: ['.config/*', 'build/', 'dist/', '.xo-config.js', '.*.js', 'out/'],
   },
 ]
 

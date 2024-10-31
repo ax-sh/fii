@@ -4,10 +4,45 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🚀 Features
+
+- *(repo)* Add update or create functionality for PRs
+- *(eslint)* Add test and tailwind configurations
+
+### 🐛 Bug Fixes
+
+- Update eslint config to include new rules and files
+
+### 🚜 Refactor
+
+- *(release-it config)* Switch to CommonJS module export
+- Rename release-it config file extension
+- *(eslint)* Rename eslint config variables for clarity
+
+### 📚 Documentation
+
+- *(release)* Add note for offline release-it usage
+
+### ⚙️ Miscellaneous Tasks
+
+- Update dependencies in package.json to latest versions
+- Streamline package.json and update changelog command
+- Remove unused dependencies from package.json
+- Update package dependencies in package.json
+- Update eslint config for migration guidance
+- Format code with biome
+
+### Build
+
+- Add is-ci dependency and update release-it config
+
+## [0.100.0] - 2024-10-20
+
 ### ⚙️ Miscellaneous Tasks
 
 - *(py)* Update dependencies to include matplotlib
 - Format code with biome
+- Add CHANGELOG
 
 ## [0.99.0] - 2024-10-20
 

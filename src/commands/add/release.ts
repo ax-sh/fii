@@ -9,6 +9,7 @@ const command: GluegunCommand<ExtendedToolbox> = {
   run: async (toolbox) => {
     const { print, system, template, filesystem } = toolbox
     const spinner = print.spin('Adding release-it')
+    // NOTE option --no-git.push --no-git.requireUpstream makes it work locally without internet
     await toolbox.addScriptToPackageJson(
       'release',
       'dotenv -v DEBUG=1 release-it -- minor --no-git.push --no-git.requireUpstream --ci'
@@ -16,13 +17,13 @@ const command: GluegunCommand<ExtendedToolbox> = {
 
     await toolbox.addScriptToPackageJson('changelog:latest', 'nr git-cliff -l')
     await system.run('ni -D dotenv-cli release-it @release-it/conventional-changelog git-cliff')
-    const fileName = '.release-it.mjs'
+    const fileName = '.release-it.cjs'
     await template.generate({
       template: `/CONFIGS/release-it/${fileName}`,
       target: filesystem.path('.', fileName),
     })
 
-    spinner.succeed('Added release')
+    spinner.succeed('Added release-it and its config')
   },
 }
 

@@ -2,12 +2,12 @@
  https://github.com/release-it/release-it/blob/main/config/release-it.json
  https://github.com/release-it/release-it/blob/main/docs/github-releases.md
  @gen token with scope https://github.com/settings/tokens/new?scopes=repo&description=release-it
-
+ NOTE use .cjs or .js for this config .mjs does not work
  @docs docs https://github.com/release-it/release-it/blob/main/docs/configuration.md
  **/
 
 /** @type {import('release-it').Config} */
-export default {
+module.exports = {
   github: {
     release: false,
   },
@@ -16,7 +16,7 @@ export default {
   },
   git: {
     // changelog: 'git log --pretty=format:"* %s (%h)" ${from}...${to}',
-    changelog: 'nr git-cliff --unreleased',
+    changelog: 'nr git-cliff --unreleased --strip all',
     requireCleanWorkingDir: true,
     requireBranch: false,
     requireUpstream: true,
@@ -57,7 +57,7 @@ export default {
     ],
     'after:release': [
       'echo \uD83D\uDE4C Successfully released ${name} v${version} to ${repo.repository}.',
-      // 'git push origin HEAD',
+      'nr is-ci && echo "running in ci" || git push origin HEAD',
       // 'git push origin refs/heads/master:master',
       // 'git push origin refs/heads/develop:develop',
     ],

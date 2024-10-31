@@ -1,7 +1,8 @@
 import type { GluegunCommand } from 'gluegun'
 
 import { type ExtendedToolbox, KnownError } from '../../types'
-// todo
+
+// todo add ability to update if exist create if not
 // https://claude.ai/chat/d2f5a84d-3e57-4bb5-b098-c277954aa055
 const command: GluegunCommand<ExtendedToolbox> = {
   name: 'pr',
