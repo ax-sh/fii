@@ -9,6 +9,9 @@ import eslintPluginUnicorn from 'eslint-plugin-unicorn'
 import globals from 'globals'
 import tseslint from 'typescript-eslint'
 
+// for migrating from eslint v8
+// bunx @eslint/migrate-config .eslintrc.json
+
 // typescript-eslint
 const unicorn = {
   languageOptions: {
