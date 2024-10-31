@@ -38,7 +38,11 @@ const eslintConfigs = [
   eslintPluginPrettierRecommended,
   eslintConfigPrettier,
   {
-    ignores: ['.config/*', 'build/', 'dist/', '.xo-config.js', '.*.js'],
+    files: ['tailwind.config.js'],
+    rules: { '@typescript-eslint/no-require-imports': 'off' },
+  },
+  {
+    ignores: ['.config/*', 'build/', 'dist/', '.xo-config.js', '.*.js', 'out/'],
   },
 ]
 
