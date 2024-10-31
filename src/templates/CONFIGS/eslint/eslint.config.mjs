@@ -26,6 +26,23 @@ const unicorn = {
     '@typescript-eslint/consistent-type-imports': 'error',
   },
 }
+const tailwindConfig = {
+  files: ['tailwind.config.js'],
+  rules: { '@typescript-eslint/no-require-imports': 'off' },
+}
+
+const testConfig = {
+  files: ['/*.test.ts', '/*.spec.ts', 'tests//*.ts', '__tests__//*.ts'],
+  rules: {
+    // Disable the require-imports rule specifically for test files
+    '@typescript-eslint/no-require-imports': 'off',
+
+    // Example: disable rules that might be irrelevant in tests
+    'no-console': 'off',
+    'no-unused-expressions': 'off',
+    // Add more test-specific rules if needed
+  },
+}
 
 const eslintConfigs = [
   cspellConfigs.recommended,
@@ -37,10 +54,8 @@ const eslintConfigs = [
   unicorn,
   eslintPluginPrettierRecommended,
   eslintConfigPrettier,
-  {
-    files: ['tailwind.config.js'],
-    rules: { '@typescript-eslint/no-require-imports': 'off' },
-  },
+  tailwindConfig,
+  testConfig,
   {
     ignores: ['.config/*', 'build/', 'dist/', '.xo-config.js', '.*.js', 'out/'],
   },
