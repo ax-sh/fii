@@ -28,13 +28,7 @@
     "lint:types": "tsc --noEmit",
     "changelog:latest": "nr git-cliff -l"
   },
-  "files": [
-    "build",
-    "LICENSE",
-    "readme.md",
-    "docs",
-    "bin"
-  ],
+  "files": ["build", "LICENSE", "readme.md", "docs", "bin"],
   "license": "MIT",
   "dependencies": {
     "@cspell/eslint-plugin": "^8.15.5",
