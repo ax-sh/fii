@@ -8,20 +8,27 @@ const command: GluegunCommand<ExtendedToolbox> = {
   run: async (toolbox) => {
     const { print, system } = toolbox
     const spinner = print.spin(`Pip updating packages`)
+    const filterOutput = (line: string): boolean => {
+      return !line.startsWith('Requirement already satisfied')
+    }
+    const printFilterOutput = (out: string) => {
+      return out.split('\n').filter(filterOutput).join('\n')
+    }
 
     let out: string
     out = await system.run('pip install yt-dlp gallery_dl -U')
-    print.info(out)
+
+    print.info(printFilterOutput(out))
     out = await system.run('pip install uv ruff pytest jupyter -U')
-    print.info(out)
+    print.info(printFilterOutput(out))
     out = await system.run('pip install pipx SQLAlchemy Faker -U')
-    print.info(out)
+    print.info(printFilterOutput(out))
     out = await system.run('pip install ell-ai -U')
-    print.info(out)
+    print.info(printFilterOutput(out))
     out = await system.run('pip install tqdm pandas pillow numpy matplotlib -U')
-    print.info(out)
+    print.info(printFilterOutput(out))
     out = await system.run('pip install jupyterlab streamlit -U')
-    print.info(out)
+    print.info(printFilterOutput(out))
 
     spinner.succeed(`Pip libs updated`)
   },

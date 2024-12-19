@@ -10,7 +10,7 @@ const command: GluegunCommand<ExtendedToolbox> = {
     const spinner = print.spin(`Adding py ${name}`)
 
     print.info(`Todo py ${name}`)
-    await system.run('echo ni -D husky')
+    await system.run('echo python')
 
     spinner.succeed(`Added py ${name}`)
   },
