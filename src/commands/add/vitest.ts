@@ -34,6 +34,7 @@ const command: GluegunCommand<ExtendedToolbox> = {
     await toolbox.addScriptToPackageJson('test', 'dotenv -- vitest run')
     // await toolbox.addScriptToPackageJson('test', 'vitest run')
     await toolbox.addScriptToPackageJson('test:watch', 'vitest')
+    await toolbox.addScriptToPackageJson('test:snapupdate', 'vitest -u')
     await toolbox.addScriptToPackageJson('coverage', 'vitest run --coverage')
 
     spinner.succeed('Added vitest')
