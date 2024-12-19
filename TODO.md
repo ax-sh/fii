@@ -30,7 +30,4 @@ docker-compose down -v --rmi all
 
 pnpm install git+ssh://git@github.com:ax-sh/browser-cookies.git
 
-```bash
-ni react-hook-form @hookform/error-message @hookform/resolvers zod
 
-```
