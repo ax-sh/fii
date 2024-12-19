@@ -6,12 +6,36 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- Add react hook form subcommand
+
+### 🚜 Refactor
+
+- Streamline error handling and output formatting
+
+### 📚 Documentation
+
+- *(eslint)* Update migration note for eslint v8
+
+### ⚙️ Miscellaneous Tasks
+
+- Update dependencies and improve scripts in package.json
+- Update bun.lockb file
+- Format code with biome
+
+## [0.101.0] - 2024-10-31
+
+### 🚀 Features
+
 - *(repo)* Add update or create functionality for PRs
 - *(eslint)* Add test and tailwind configurations
 
 ### 🐛 Bug Fixes
 
 - Update eslint config to include new rules and files
+
+### 💼 Other
+
+- Add is-ci dependency and update release-it config
 
 ### 🚜 Refactor
 
@@ -31,10 +55,7 @@ All notable changes to this project will be documented in this file.
 - Update package dependencies in package.json
 - Update eslint config for migration guidance
 - Format code with biome
-
-### Build
-
-- Add is-ci dependency and update release-it config
+- Add CHANGELOG
 
 ## [0.100.0] - 2024-10-20
 
@@ -138,6 +159,10 @@ All notable changes to this project will be documented in this file.
 
 ## [0.93.0] - 2024-10-06
 
+### 💼 Other
+
+- Add git-cliff dependency to package.json
+
 ### ⚙️ Miscellaneous Tasks
 
 - Update changelog command in release-it config
@@ -145,10 +170,6 @@ All notable changes to this project will be documented in this file.
 - Update bun.lockb file
 - Format code with biome
 - Add CHANGELOG
-
-### Build
-
-- Add git-cliff dependency to package.json
 
 ## [0.92.0] - 2024-10-06
 
@@ -367,6 +388,10 @@ All notable changes to this project will be documented in this file.
 - *(react/testing)* Add react testing library support
 - Add update command
 
+### 💼 Other
+
+- Add simple-git dependency to package.json
+
 ### 🚜 Refactor
 
 - Simplify import addition in vite config parser
@@ -386,10 +411,6 @@ All notable changes to this project will be documented in this file.
 - Add changelog command for git cliff
 - Format code with Prettier
 - Add CHANGELOG
-
-### Build
-
-- Add simple-git dependency to package.json
 
 ## [0.80.0] - 2024-09-21
 
@@ -430,6 +451,10 @@ All notable changes to this project will be documented in this file.
 - *(add tailwind)* Update command to use nlx for init
 - *(gh-pages)* Correct error message for vite project check
 
+### 💼 Other
+
+- Add vitest dependency and update tsconfig types
+
 ### 🚜 Refactor
 
 - Clean up code and update comments across files
@@ -451,10 +476,6 @@ All notable changes to this project will be documented in this file.
 - Format code with Prettier
 - Format code with Prettier
 - Add CHANGELOG
-
-### Build
-
-- Add vitest dependency and update tsconfig types
 
 ## [0.78.0] - 2024-09-18
 
