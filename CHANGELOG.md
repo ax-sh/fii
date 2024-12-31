@@ -6,6 +6,22 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- *(py/update)* Add open-webui installation to update command
+- *(py/update)* Add pip upgrade command to update script
+
+### 🚜 Refactor
+
+- *(py/update)* Improve output filtering logic
+- *(py/update)* Improve output filtering logic
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with biome
+
+## [0.103.0] - 2024-12-31
+
+### 🚀 Features
+
 - *(repo)* Add 'gh' command for GitHub API access
 
 ### 🚜 Refactor
@@ -17,6 +33,7 @@ All notable changes to this project will be documented in this file.
 - Format code with biome
 - Format code with biome
 - Format code with biome
+- Add CHANGELOG
 
 ## [0.102.0] - 2024-12-19
 
