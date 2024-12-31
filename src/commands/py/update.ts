@@ -11,10 +11,11 @@ const command: GluegunCommand<ExtendedToolbox> = {
     const excludedPrefixes = [
       'Requirement already satisfied',
       'Using cached',
+      'Collecting',
       // Add more conditions as needed
     ]
     const filterOutput = (line: string): boolean => {
-      return !excludedPrefixes.some((prefix) => line.startsWith(prefix))
+      return !excludedPrefixes.some((prefix) => line.includes(prefix))
       // return !line.startsWith('Requirement already satisfied')
     }
     const printFilterOutput = (out: string) => {
