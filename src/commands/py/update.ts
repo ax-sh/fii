@@ -8,8 +8,14 @@ const command: GluegunCommand<ExtendedToolbox> = {
   run: async (toolbox) => {
     const { print, system } = toolbox
     const spinner = print.spin(`Pip updating packages`)
+    const excludedPrefixes = [
+      'Requirement already satisfied',
+      'Using cached',
+      // Add more conditions as needed
+    ]
     const filterOutput = (line: string): boolean => {
-      return !line.startsWith('Requirement already satisfied')
+      return !excludedPrefixes.some((prefix) => line.startsWith(prefix))
+      // return !line.startsWith('Requirement already satisfied')
     }
     const printFilterOutput = (out: string) => {
       return out.split('\n').filter(filterOutput).join('\n')
