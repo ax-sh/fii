@@ -16,6 +16,9 @@ const command: GluegunCommand<ExtendedToolbox> = {
     }
 
     let out: string
+    out = await system.run('pip install --upgrade pip')
+    print.info(printFilterOutput(out))
+
     out = await system.run('pip install yt-dlp gallery_dl -U')
     print.info(printFilterOutput(out))
 
