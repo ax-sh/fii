@@ -10,7 +10,8 @@ const command: GluegunCommand<ExtendedToolbox> = {
     const tokenPermissions = await system.run(cmd, {
       trim: true,
     })
-    print.info(tokenPermissions)
+    const json = JSON.parse(tokenPermissions)
+    print.info(json)
   },
 }
 
