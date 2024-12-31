@@ -17,8 +17,11 @@ const command: GluegunCommand<ExtendedToolbox> = {
 
     let out: string
     out = await system.run('pip install yt-dlp gallery_dl -U')
-
     print.info(printFilterOutput(out))
+
+    out = await system.run('pip install open-webui')
+    print.info(printFilterOutput(out))
+
     out = await system.run('pip install uv ruff pytest jupyter -U')
     print.info(printFilterOutput(out))
     out = await system.run('pip install pipx SQLAlchemy Faker -U')
