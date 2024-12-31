@@ -6,6 +6,22 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- *(repo)* Add 'gh' command for GitHub API access
+
+### 🚜 Refactor
+
+- *(repo)* Parse token permissions to JSON format
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with biome
+- Format code with biome
+- Format code with biome
+
+## [0.102.0] - 2024-12-19
+
+### 🚀 Features
+
 - Add react hook form subcommand
 
 ### 🚜 Refactor
@@ -21,6 +37,7 @@ All notable changes to this project will be documented in this file.
 - Update dependencies and improve scripts in package.json
 - Update bun.lockb file
 - Format code with biome
+- Add CHANGELOG
 
 ## [0.101.0] - 2024-10-31
 
