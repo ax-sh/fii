@@ -51,6 +51,8 @@
     "jsonc-parser": "^3.3.1",
     "kolorist": "^1.8.0",
     "langchain": "^0.3.8",
+    "npm-registry-client": "^8.6.0",
+    "octokit": "^4.0.3",
     "playwright": "^1.49.1",
     "playwright-extra": "^4.3.6",
     "puppeteer": "^23.11.1",
