@@ -21,7 +21,7 @@ const command: GluegunCommand<ExtendedToolbox> = {
       return
     }
 
-    await system.run('ni -D gh-pages')
+    await system.run('ni -D rimraf gh-pages')
     try {
       await addBaseOnViteConfig(filesystem.path(viteConfigPath))
     } catch (e) {
