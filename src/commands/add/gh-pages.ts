@@ -30,6 +30,7 @@ const command: GluegunCommand<ExtendedToolbox> = {
     }
 
     await toolbox.addScriptToPackageJson('deploy', 'nr build && gh-pages -d dist')
+    await toolbox.addScriptToPackageJson('clean', 'rimraf dist')
     spinner.succeed('Added gh-pages')
   },
 }
