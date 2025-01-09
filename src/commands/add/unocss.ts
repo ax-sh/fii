@@ -34,7 +34,7 @@ const command: GluegunCommand<ExtendedToolbox> = {
     // or import '@unocss/reset/tailwind-compat.css'
     // import 'virtual:uno.css'
 
-    spinner.succeed(`Added unocss ${name}`)
+    spinner.succeed(`Added unocss`)
   },
 }
 

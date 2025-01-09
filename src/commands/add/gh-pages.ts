@@ -1,14 +1,19 @@
 import type { GluegunCommand } from 'gluegun'
 
-import type { ExtendedToolbox } from '../../types'
+import { ExtendedToolbox, KnownError } from '../../types'
 
 const command: GluegunCommand<ExtendedToolbox> = {
   name: 'gh-pages',
   alias: ['gh-page'],
   run: async (toolbox) => {
     const { print, system, filesystem } = toolbox
-    const checkIfPushedToRemote = await system.run('git ls-remote')
-    console.log({ checkIfPushedToRemote })
+    try {
+      const checkIfPushedToRemote = await system.run('git ls-remote')
+      console.log({ checkIfPushedToRemote })
+    } catch (e) {
+      throw new KnownError(['Repo doesnt have associated github repo online', e.stderr])
+    }
+
     const spinner = print.spin('Adding gh-pages')
 
     const { addBaseOnViteConfig } = await import('../../lib/add-base-on-vite-config')
