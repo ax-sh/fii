@@ -7,6 +7,8 @@ const command: GluegunCommand<ExtendedToolbox> = {
   alias: ['gh-page'],
   run: async (toolbox) => {
     const { print, system, filesystem } = toolbox
+    const checkIfPushedToRemote = await system.run('git ls-remote')
+    console.log({ checkIfPushedToRemote })
     const spinner = print.spin('Adding gh-pages')
 
     const { addBaseOnViteConfig } = await import('../../lib/add-base-on-vite-config')
