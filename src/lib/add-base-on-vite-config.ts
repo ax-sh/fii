@@ -10,6 +10,7 @@ export async function addBaseOnViteConfig(viteConfigPath: string) {
 
   const firstArgument = getViteDefineConfigCallOptions(sourceFile)
   const value = await getRepoBaseName()
+  console.log(`https://ax-sh.github.io/${value}/`)
 
   addBasePropertyToDefineConfig(`/${value}/`, firstArgument)
 

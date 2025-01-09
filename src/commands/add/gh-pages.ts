@@ -8,8 +8,8 @@ const command: GluegunCommand<ExtendedToolbox> = {
   run: async (toolbox) => {
     const { print, system, filesystem } = toolbox
     try {
-      const checkIfPushedToRemote = await system.run('git ls-remote')
-      console.log({ checkIfPushedToRemote })
+      const checkIfPushedToRemote = await system.run('git ls-remote', { trim: true })
+      print.info({ checkIfPushedToRemote })
     } catch (e) {
       throw new KnownError(['Repo doesnt have associated github repo online', e.stderr])
     }
