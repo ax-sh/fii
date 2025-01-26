@@ -1,6 +1,5 @@
 import type { GluegunCommand } from 'gluegun'
 
-import { addHomepageToGithubRepoDescription } from '../../lib/helpers/git-utils'
 import { ExtendedToolbox, KnownError } from '../../types'
 
 const command: GluegunCommand<ExtendedToolbox> = {
