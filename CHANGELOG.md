@@ -6,6 +6,58 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- *(commands)* Add 'is-ci' flag to release command
+- *(repo)* Add npm login command implementation
+- Wip
+- Add rimraf
+- Add pkgroll command and clean script to package.json
+- *(gh-pages)* Add remote check before adding gh-pages
+- *(unocss)* Add unocss command for project setup
+- *(unocss)* Add unocss command for project setup
+- Add function to update GitHub repo description
+- Update homepage URL retrieval in git utils function
+- *(gh-pages)* Add GitHub Pages URL retrieval functionality
+- Add function to parse JSON from command output
+- Add cmd-utils for executing commands and parsing JSON
+- *(types)* Add types for JSON structures and values
+- *(cmd-utils)* Add type constraint on getJsonFromCmd function
+
+### 🚜 Refactor
+
+- Update logging and trim output in commands
+- Add trim option to repo edit command
+- *(gh-pages)* Remove unused import statement
+- Rename function for clarity in git-utils
+- Remove unused BrowserCookiesSingleton imports
+- *(github)* Move GitHub related functions to services
+- Update imports and enhance error logging
+
+### 🎨 Styling
+
+- *(package.json)* Format file array for clarity
+- Update import statement to use 'type' keyword
+- Format import statements and align code style
+
+### 🧪 Testing
+
+- *(git)* Update mock resolved value comment in test case
+- Add tests for cmd utils functions
+- *(cmd-utils)* Update test to use mocked function
+- *(github)* Update test to include visibility field
+- Update tests to use expect assertions
+- Add missing tests and improve existing ones
+
+### ⚙️ Miscellaneous Tasks
+
+- Update package versions and add command description
+- Format code with biome
+- Update package dependencies in package.json
+- Format code with biome
+
+## [0.104.0] - 2024-12-31
+
+### 🚀 Features
+
 - *(py/update)* Add open-webui installation to update command
 - *(py/update)* Add pip upgrade command to update script
 
@@ -17,6 +69,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with biome
+- Add CHANGELOG
 
 ## [0.103.0] - 2024-12-31
 
