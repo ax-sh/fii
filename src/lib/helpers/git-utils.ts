@@ -1,4 +1,6 @@
 import { system } from 'gluegun'
+import { MappedString } from '../../types'
+import { getJsonFromCmd } from './cmd-utils'
 
 export async function getRepoUrl() {
   return system.run('git remote get-url origin', { trim: true })
@@ -14,10 +16,20 @@ export async function getGithubPagesUrlForRepo() {
   return homepage
 }
 
-export async function getJsonFromCmd(cmd: string) {
-  const data = await system.run(cmd, { trim: true })
-  const json = JSON.parse(data)
-  return json
+export async function getGithubRepoInfo() {
+  const props = [
+    'url',
+    'name',
+    'createdAt',
+    'description',
+    'homepageUrl',
+    'id',
+    'nameWithOwner',
+    'pushedAt',
+    'sshUrl',
+  ] as const
+  const cmd = `gh repo view --json ${props.join(',')}`
+  return getJsonFromCmd<MappedString<(typeof props)[number]>>(cmd)
 }
 
 export async function setHomepageUrlOnGithubRepoDescription() {

@@ -39,3 +39,8 @@ export type ExtendedToolbox = GluegunToolbox & {
   cliAppDir(...paths: string[]): Promise<FSJetpack>
   loadBrowser: typeof BrowserCookiesSingleton.instance
 }
+
+// Maps a union of string literals (e.g., 'url' | 'name') to an object with keys of those strings.
+export type MappedString<T extends string> = {
+  [K in T]: string // Iterate over each member of the union `T`
+}
