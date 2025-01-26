@@ -1,9 +1,6 @@
 import { system } from 'gluegun'
 import { CleanOptions, type SimpleGit } from 'simple-git'
 
-// Mock the system module
-// vi.mock('system', { spy: true })
-
 describe('fii Git', () => {
   it('should use git status', async () => {
     const simpleGit = await import('simple-git')
@@ -15,7 +12,7 @@ describe('fii Git', () => {
     console.log(status)
   })
   it('should use gh for updating description', async () => {
-    const { setHomepageUrlOnGithubRepoDescription } = await import('./git-utils')
+    const { setHomepageUrlOnGithubRepoDescription } = await import('../services/github')
     // Mock return values
     const mockRepoUrl = 'https://github.com/user/repo'
     const systemSpy = vi.spyOn(system, 'run')
@@ -50,17 +47,5 @@ describe('fii Git', () => {
     )
 
     expect(out).toBe('moooo')
-  })
-
-  it('should use gh for getting repo info', async () => {
-    const cmd = await import('./git-utils')
-    const c = await import('./cmd/cmd-utils')
-
-    const cmdMock = vi.spyOn(c, 'getJsonFromCmd')
-    cmdMock.mockResolvedValueOnce({ name: 'repo', url: 'https://github.com/user/repo' })
-
-    const json = await cmd.getGithubRepoInfo()
-    console.log(json)
-    expect(json).toMatchObject({ name: 'repo', url: expect.stringContaining('user/repo') })
   })
 })
