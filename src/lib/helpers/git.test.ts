@@ -24,7 +24,7 @@ describe('fii Git', () => {
     systemSpy.mockResolvedValueOnce(mockRepoUrl)
 
     // Second call returns success message
-    systemSpy.mockResolvedValueOnce('moooo')
+    systemSpy.mockResolvedValueOnce('moooo') // this will be empty on real one
 
     const githubPageUrl = 'https://example.com'
     const out = await setHomepageUrlOnGithubRepoDescription(githubPageUrl)
