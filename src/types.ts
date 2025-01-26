@@ -1,4 +1,3 @@
-import type { BrowserCookiesSingleton } from '@ax-sh/browser-cookies'
 import type { FSJetpack } from 'fs-jetpack/types'
 import { type GluegunToolbox, print } from 'gluegun'
 import { bgRed, dim, white } from 'kolorist'
@@ -37,5 +36,25 @@ export type ExtendedToolbox = GluegunToolbox & {
   killProcess(killProcess: ProcessOptions): Promise<string>
   mkCd(dirPath: ProcessOptions): Promise<void>
   cliAppDir(...paths: string[]): Promise<FSJetpack>
-  loadBrowser: typeof BrowserCookiesSingleton.instance
 }
+
+// Maps a union of string literals (e.g., 'url' | 'name') to an object with keys of those strings.
+export type MappedString<T extends string> = {
+  [K in T]: string // Iterate over each member of the union `T`
+}
+
+// For unknown/dynamic JSON structure, use these types:
+type JSONPrimitive = string | number | boolean | null
+type JSONArray = JSONValue[]
+type JSONObject = { [key: string]: JSONValue }
+// use this for json
+export type JSONValue = JSONPrimitive | JSONObject | JSONArray
+
+// For typing JSON Schema-like structures
+// interface JSONSchema {
+//   type: 'string' | 'number' | 'boolean' | 'object' | 'array' | 'null';
+//   properties?: Record<string, JSONSchema>;
+//   items?: JSONSchema;
+//   required?: string[];
+//   additionalProperties?: boolean | JSONSchema;
+// }

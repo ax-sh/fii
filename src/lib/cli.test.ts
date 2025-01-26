@@ -20,15 +20,15 @@ describe('cli', () => {
 
     // systemSpy.mockResolvedValueOnce(null)
     const o = await cli.addScriptToPackageJson('hoo', 'dd')
-    console.log(o)
+    expect(o).toBe(undefined)
     systemSpy.mockClear()
   })
   it('check if script exists in package.json', async () => {
     const cli = await import('./cli')
-    vi.mocked(system).run.mockImplementation(() => Promise.resolve('{d}'))
+    vi.mocked(system).run.mockImplementation(() => Promise.resolve('mockedTestScript'))
     const script = cli.packageJsonScript('test')
     const has = await script.isAvailable()
-    console.log(script.get())
+    await expect(script.get()).resolves.toBe('mockedTestScript')
     expect(has).toBeTruthy()
   })
 
@@ -46,7 +46,7 @@ describe('cli', () => {
     const out = system.run('echo fooo', { trim: true })
     expect(systemSpy).toHaveBeenCalledTimes(1)
     expect(systemSpy).toHaveBeenCalledWith('echo fooo', { trim: true })
-    console.log(await out)
+    await expect(out).resolves.toBe(null)
     systemSpy.mockClear()
   })
   it('should check if has all required property ', async () => {

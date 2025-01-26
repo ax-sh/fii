@@ -32,10 +32,6 @@ module.exports = async (toolbox: ExtendedToolbox) => {
 
   toolbox.addScriptToPackageJson = cli.addScriptToPackageJson
 
-  // const { BrowserCookiesSingleton } = await import('@ax-sh/browser-cookies/dist/browser-cookies.js')
-  // console.log(BrowserCookiesSingleton)
-  // toolbox.loadBrowser = BrowserCookiesSingleton.instance
-
   // enable this if you want to read configuration in from
   // the current folder's package.json (in a "fii" property),
   // fii.config.json, etc.

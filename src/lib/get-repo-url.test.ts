@@ -5,7 +5,6 @@ describe('getRepoBaseName', () => {
   it('should correctly get repo url', async () => {
     const baseName = gh.getRepoBaseName()
 
-    console.log(baseName)
     await expect(baseName).resolves.toBe('fii')
   })
   it('should correctly get mocked repo url', async () => {

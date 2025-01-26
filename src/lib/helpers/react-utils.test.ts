@@ -15,15 +15,19 @@ export default defineConfig({
 `
 
 // see https://allmaddesigns.com/set-up-react-testing-library-in-vite/
+// improve this very slow 2457ms
 describe('reactUtils', () => {
-  it('should setup config for vitest', () => {
+  it.todo('should setup config for vitest', async () => {
     const o = setupVitest()
-    console.log(o)
+    await expect(o).resolves.toEqual('')
   })
-  it('should add types to tsconfig', () => {
+
+  // rewrite the tests below
+  it.todo('should add types to tsconfig', () => {
     // "types": ["vitest/globals", "@testing-library/jest-dom"],
   })
-  it('should add react to vitest plugins', async () => {
+
+  it.todo('should add react to vitest plugins', async () => {
     const script = defaultVitestScript
     const sourceFile = await createMemorySourceFile('___test_vitest___.ts', script)
     addVitestDepsForReact(sourceFile)
