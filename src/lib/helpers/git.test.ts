@@ -37,7 +37,10 @@ describe('fii Git', () => {
     // Verify second call to update homepage
     expect(systemSpy).toHaveBeenNthCalledWith(
       2,
-      `gh repo edit ${mockRepoUrl} --homepage ${githubPageUrl}`
+      `gh repo edit ${mockRepoUrl} --homepage ${githubPageUrl}`,
+      {
+        trim: true,
+      }
     )
 
     console.log(out, '<<<')

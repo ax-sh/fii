@@ -11,6 +11,8 @@ export async function gitFlowInit() {
 export async function addHomepageToGithubRepoDescription(githubPageUrl: string) {
   const repoPath = await system.run("gh repo view --json url --jq '.url'", { trim: true })
 
-  const out = await system.run(`gh repo edit ${repoPath} --homepage ${githubPageUrl}`)
+  const out = await system.run(`gh repo edit ${repoPath} --homepage ${githubPageUrl}`, {
+    trim: true,
+  })
   return out
 }
