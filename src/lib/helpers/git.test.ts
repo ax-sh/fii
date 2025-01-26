@@ -24,25 +24,32 @@ describe('fii Git', () => {
     systemSpy.mockResolvedValueOnce(mockRepoUrl)
 
     // Second call returns success message
+    systemSpy.mockResolvedValueOnce('moooo')
+
+    // Third call returns success message
     systemSpy.mockResolvedValueOnce('moooo') // this will be empty on real one
 
-    const githubPageUrl = 'https://example.com'
-    const out = await setHomepageUrlOnGithubRepoDescription(githubPageUrl)
+    const out = await setHomepageUrlOnGithubRepoDescription()
 
     // Verify first call to get repo URL
     expect(systemSpy).toHaveBeenNthCalledWith(1, "gh repo view --json url --jq '.url'", {
       trim: true,
     })
 
-    // Verify second call to update homepage
+    // Verify second call to get repo name
+    expect(systemSpy).toHaveBeenNthCalledWith(2, `gh repo view --json name -q '.name'`, {
+      trim: true,
+    })
+
+    // Verify third call to update homepage
     expect(systemSpy).toHaveBeenNthCalledWith(
-      2,
-      `gh repo edit ${mockRepoUrl} --homepage ${githubPageUrl}`,
+      3,
+      `gh repo edit ${mockRepoUrl} --homepage https://ax-sh.github.io/moooo`,
       {
         trim: true,
       }
     )
 
-    console.log(out, '<<<')
+    expect(out).toBe('moooo')
   })
 })

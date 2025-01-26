@@ -8,10 +8,12 @@ export async function gitFlowInit() {
   return system.run('git flow init -d && git add . && git commit -m init', { trim: true })
 }
 
-export async function setHomepageUrlOnGithubRepoDescription(githubPageUrl: string) {
+export async function setHomepageUrlOnGithubRepoDescription() {
   const repoPath = await system.run("gh repo view --json url --jq '.url'", { trim: true })
+  const repoName = await system.run("gh repo view --json name -q '.name'", { trim: true })
+  const homepage = `https://ax-sh.github.io/${repoName}`
 
-  const out = await system.run(`gh repo edit ${repoPath} --homepage ${githubPageUrl}`, {
+  const out = await system.run(`gh repo edit ${repoPath} --homepage ${homepage}`, {
     trim: true,
   })
   return out
