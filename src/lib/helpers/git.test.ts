@@ -40,7 +40,6 @@ describe('fii Git', () => {
     expect(systemSpy).toHaveBeenNthCalledWith(2, `gh repo view --json name -q '.name'`, {
       trim: true,
     })
-
     // Verify third call to update homepage
     expect(systemSpy).toHaveBeenNthCalledWith(
       3,

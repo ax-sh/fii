@@ -48,7 +48,7 @@ type JSONPrimitive = string | number | boolean | null
 type JSONArray = JSONValue[]
 type JSONObject = { [key: string]: JSONValue }
 // use this for json
-type JSONValue = JSONPrimitive | JSONObject | JSONArray
+export type JSONValue = JSONPrimitive | JSONObject | JSONArray
 
 // For typing JSON Schema-like structures
 // interface JSONSchema {

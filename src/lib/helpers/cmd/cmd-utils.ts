@@ -1,6 +1,8 @@
 import { system } from 'gluegun'
 
-export async function getJsonFromCmd<T>(cmd: string) {
+import { type JSONValue } from '../../../types'
+
+export async function getJsonFromCmd<T extends JSONValue>(cmd: string) {
   const data = await system.run(cmd, { trim: true })
   const json = JSON.parse(data) as T
   return json
