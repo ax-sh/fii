@@ -15,7 +15,7 @@ describe('fii Git', () => {
     console.log(status)
   })
   it('should use gh for updating description', async () => {
-    const { addHomepageToGithubRepoDescription } = await import('./git-utils')
+    const { setHomepageUrlOnGithubRepoDescription } = await import('./git-utils')
     // Mock return values
     const mockRepoUrl = 'https://github.com/user/repo'
     const systemSpy = vi.spyOn(system, 'run')
@@ -27,7 +27,7 @@ describe('fii Git', () => {
     systemSpy.mockResolvedValueOnce('moooo')
 
     const githubPageUrl = 'https://example.com'
-    const out = await addHomepageToGithubRepoDescription(githubPageUrl)
+    const out = await setHomepageUrlOnGithubRepoDescription(githubPageUrl)
 
     // Verify first call to get repo URL
     expect(systemSpy).toHaveBeenNthCalledWith(1, "gh repo view --json url --jq '.url'", {

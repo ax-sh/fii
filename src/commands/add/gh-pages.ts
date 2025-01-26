@@ -39,9 +39,9 @@ const command: GluegunCommand<ExtendedToolbox> = {
     await toolbox.addScriptToPackageJson('deploy', 'nr build && gh-pages -d dist')
     await toolbox.addScriptToPackageJson('clean', 'rimraf dist')
     spinner.succeed('Added gh-pages')
-    const { addHomepageToGithubRepoDescription } = await import('../../lib/helpers/git-utils')
+    const { setHomepageUrlOnGithubRepoDescription } = await import('../../lib/helpers/git-utils')
     // todo need to get the url correctly
-    await addHomepageToGithubRepoDescription('homepage')
+    await setHomepageUrlOnGithubRepoDescription('homepage')
   },
 }
 
