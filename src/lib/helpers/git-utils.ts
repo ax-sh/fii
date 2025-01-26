@@ -14,6 +14,12 @@ export async function getGithubPagesUrlForRepo() {
   return homepage
 }
 
+export async function getJsonFromCmd(cmd: string) {
+  const data = await system.run(cmd, { trim: true })
+  const json = JSON.parse(data)
+  return json
+}
+
 export async function setHomepageUrlOnGithubRepoDescription() {
   const repoPath = await system.run("gh repo view --json url --jq '.url'", { trim: true })
   const homepage = await getGithubPagesUrlForRepo()
