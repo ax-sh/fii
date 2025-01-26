@@ -55,7 +55,7 @@ describe('fii Git', () => {
 
   it('should use gh for getting repo info', async () => {
     const cmd = await import('./git-utils')
-    const c = await import('./cmd-utils')
+    const c = await import('./cmd/cmd-utils')
 
     const cmdMock = vi.spyOn(c, 'getJsonFromCmd')
     cmdMock.mockResolvedValueOnce({ name: 'repo', url: 'https://github.com/user/repo' })

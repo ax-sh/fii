@@ -1,6 +1,7 @@
 import { system } from 'gluegun'
+
 import { type MappedString } from '../../types'
-import { getJsonFromCmd } from './cmd-utils'
+import { getJsonFromCmd } from './cmd/cmd-utils'
 
 export async function getRepoUrl() {
   return system.run('git remote get-url origin', { trim: true })
