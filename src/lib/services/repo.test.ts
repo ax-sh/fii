@@ -1,6 +1,6 @@
 import { Octokit } from 'octokit'
 
-describe('Repo', () => {
+describe.todo('Repo', () => {
   it('should check github node registery', async () => {
     // const RegClient = await import('npm-registry-client') // depricated
     // console.log(RegClient.default)

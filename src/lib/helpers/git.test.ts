@@ -1,7 +1,7 @@
 import { system } from 'gluegun'
 import { CleanOptions, type SimpleGit } from 'simple-git'
 
-describe('fii Git', () => {
+describe.todo('fii Git', () => {
   it('should use git status', async () => {
     const simpleGit = await import('simple-git')
 

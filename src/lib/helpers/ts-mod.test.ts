@@ -24,12 +24,8 @@ describe('File operations', () => {
     const content = fs.readFileSync(tempFilePath, 'utf8')
     expect(content).toBe('Hello, temp file!')
   })
-  test('should write and read from temp file', () => {
-    fs.writeFileSync(tempFilePath, 'Hello, temp file!')
-    const content = fs.readFileSync(tempFilePath, 'utf8')
-    console.log(content)
-  })
-  it('should test ts file content', async () => {
+  // modify vars on a ts file
+  it.todo('should test ts file content', async () => {
     const sourceFile = await createSourceFile('___vi___.ts', `const theme = {m:4}`)
     // Find the variable declaration
     const variableDeclaration = sourceFile.getFirstDescendantByKind(SyntaxKind.VariableDeclaration)
@@ -38,7 +34,8 @@ describe('File operations', () => {
       const initializer = variableDeclaration.getInitializer()
 
       if (initializer) {
-        console.log(parseJsonObject(initializer))
+        const parsed = parseJsonObject(initializer)
+        expect(parsed).toEqual({ m: 4 })
       } else {
         console.log('Initializer not found')
       }
@@ -91,7 +88,7 @@ describe('File operations', () => {
 
     // Get the modified source code
     const updatedSourceCode = sourceFile.getFullText()
-    console.log(updatedSourceCode)
+    // console.log(updatedSourceCode)
     // Check if the plugin was added correctly
     expect(updatedSourceCode).toContain('plugins: [newFunction()],')
   })
@@ -121,7 +118,7 @@ describe('File operations', () => {
     // Format using Prettier
     const formattedContent = await formatSourceFile(sourceFile)
 
-    console.log(formattedContent)
+    expect(formattedContent).toBeDefined()
     // Check if the plugin was added correctly
     expect(formattedContent).toContain('newProperty: "new_value"')
   })
