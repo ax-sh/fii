@@ -1,4 +1,3 @@
-import type { BrowserCookiesSingleton } from '@ax-sh/browser-cookies'
 import type { FSJetpack } from 'fs-jetpack/types'
 import { type GluegunToolbox, print } from 'gluegun'
 import { bgRed, dim, white } from 'kolorist'
@@ -37,7 +36,6 @@ export type ExtendedToolbox = GluegunToolbox & {
   killProcess(killProcess: ProcessOptions): Promise<string>
   mkCd(dirPath: ProcessOptions): Promise<void>
   cliAppDir(...paths: string[]): Promise<FSJetpack>
-  loadBrowser: typeof BrowserCookiesSingleton.instance
 }
 
 // Maps a union of string literals (e.g., 'url' | 'name') to an object with keys of those strings.
