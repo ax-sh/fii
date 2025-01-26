@@ -8,7 +8,7 @@ vi.mock(
   { spy: true }
 )
 
-describe.only('test gh cli', () => {
+describe('test gh cli', () => {
   it('should use gh for getting repo info', async () => {
     const cmdMock = vi.mocked(getJsonFromCmd)
 

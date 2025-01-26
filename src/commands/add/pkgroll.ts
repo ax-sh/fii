@@ -17,7 +17,9 @@ const command: GluegunCommand<ExtendedToolbox> = {
     await toolbox.addScriptToPackageJson('pub:dry', 'nr pub --dry-run')
     try {
       await toolbox.addScriptToPackageJson('clean', 'rimraf dist')
-    } catch (e) {}
+    } catch (e: unknown) {
+      console.error('addScriptToPackageJson error adding clean command', e)
+    }
 
     spinner.succeed(`Added pkgroll `)
   },

@@ -1,6 +1,5 @@
 import type { GluegunCommand } from 'gluegun'
 
-import { getGithubPagesUrlForRepo } from '../../lib/services/github'
 import { type ExtendedToolbox, KnownError } from '../../types'
 
 const command: GluegunCommand<ExtendedToolbox> = {
@@ -41,7 +40,7 @@ const command: GluegunCommand<ExtendedToolbox> = {
     await toolbox.addScriptToPackageJson('clean', 'rimraf dist')
     spinner.succeed('Added gh-pages')
     const { setHomepageUrlOnGithubRepoDescription, getGithubPagesUrlForRepo } = await import(
-      '../../lib/helpers/git-utils'
+      '../../lib/services/github'
     )
     const homepage = await getGithubPagesUrlForRepo()
     print.info(`set homepage to ${homepage}`)
