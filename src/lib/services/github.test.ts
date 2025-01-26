@@ -20,7 +20,11 @@ describe('test gh cli', () => {
     })
 
     const json = await getGithubRepoInfo()
-    console.log(json)
-    expect(json).toMatchObject({ name: 'repo', url: expect.stringContaining('user/repo') })
+
+    expect(json).toEqual({
+      name: 'repo',
+      url: expect.stringContaining('user/repo'),
+      visibility: 'PUBLIC',
+    })
   })
 })
