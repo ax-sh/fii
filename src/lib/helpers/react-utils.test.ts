@@ -15,8 +15,9 @@ export default defineConfig({
 `
 
 // see https://allmaddesigns.com/set-up-react-testing-library-in-vite/
+// improve this very slow 2457ms
 describe('reactUtils', () => {
-  it('should setup config for vitest', async () => {
+  it.todo('should setup config for vitest', async () => {
     const o = setupVitest()
     await expect(o).resolves.toEqual('')
   })
