@@ -1,5 +1,5 @@
 import { system } from 'gluegun'
-import { MappedString } from '../../types'
+import { type MappedString } from '../../types'
 import { getJsonFromCmd } from './cmd-utils'
 
 export async function getRepoUrl() {
