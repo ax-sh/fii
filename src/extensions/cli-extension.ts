@@ -32,6 +32,9 @@ module.exports = async (toolbox: ExtendedToolbox) => {
 
   toolbox.addScriptToPackageJson = cli.addScriptToPackageJson
 
+  const { getJsonFromCmd } = await import('../lib/helpers/cmd/cmd-utils')
+  toolbox.getJsonFromCmd = getJsonFromCmd
+
   // enable this if you want to read configuration in from
   // the current folder's package.json (in a "fii" property),
   // fii.config.json, etc.

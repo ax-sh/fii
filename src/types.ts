@@ -36,6 +36,7 @@ export type ExtendedToolbox = GluegunToolbox & {
   killProcess(killProcess: ProcessOptions): Promise<string>
   mkCd(dirPath: ProcessOptions): Promise<void>
   cliAppDir(...paths: string[]): Promise<FSJetpack>
+  getJsonFromCmd(cmd: string): Promise<JSONValue>
 }
 
 // Maps a union of string literals (e.g., 'url' | 'name') to an object with keys of those strings.
