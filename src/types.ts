@@ -3,7 +3,7 @@ import { type GluegunToolbox, print } from 'gluegun'
 import { bgRed, dim, white } from 'kolorist'
 
 // import { version } from '../pa'
-import type { addScriptToPackageJson } from './lib/cli'
+import type { addScriptToPackageJson } from './lib/helpers/cmd/cli'
 
 export class KnownError extends Error {
   constructor(message: string | string[]) {

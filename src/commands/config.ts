@@ -1,7 +1,6 @@
 import type { GluegunCommand } from 'gluegun'
 
 import { cliProjectPath } from '../lib'
-
 import { type ExtendedToolbox } from '../types'
 
 const command: GluegunCommand<ExtendedToolbox> = {

@@ -1,6 +1,7 @@
 import { system } from 'gluegun'
 
-import { KnownError } from '../types'
+import { KnownError } from '../../../types'
+import { type JSONValue } from '../../../types'
 
 export function packageJsonScript(commandName: string) {
   const pm: 'npm' | 'pnpm' = 'npm'
@@ -36,4 +37,10 @@ export async function addScriptToPackageJson(scriptName: string, cmd: string) {
   }
 
   return script.set(cmd)
+}
+
+export async function getJsonFromCmd<T extends JSONValue>(cmd: string) {
+  const data = await system.run(cmd, { trim: true })
+  const json = JSON.parse(data) as T
+  return json
 }

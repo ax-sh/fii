@@ -7,7 +7,7 @@ module.exports = async (toolbox: ExtendedToolbox) => {
   const hasNi = toolbox.system.which('ni')
   const hasNr = toolbox.system.which('nr')
   const hasPython = toolbox.system.which('python')
-  const cli = await import('../lib/cli')
+  const cli = await import('../lib/helpers/cmd/cli')
 
   if (hasPython) {
     process.env.PYTHON_BIN = hasPython
