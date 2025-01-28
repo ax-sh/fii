@@ -6,11 +6,14 @@ import { type ExtendedToolbox } from '../types'
 const command: GluegunCommand<ExtendedToolbox> = {
   name: 'config',
   run: async (toolbox) => {
-    const { print } = toolbox
+    const { print, system } = toolbox
 
     print.info(`FII config`)
     print.info(cliProjectPath)
-    // await system.run('echo ni -D husky')
+    const pc = await system.run('system_profiler SPPowerDataType | grep "Cycle Count"', {
+      trim: true,
+    })
+    print.info(pc)
   },
 }
 
