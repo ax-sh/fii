@@ -42,6 +42,8 @@ const command: GluegunCommand<ExtendedToolbox> = {
     print.info(printFilterOutput(out))
     out = await system.run('pip install jupyterlab streamlit -U')
     print.info(printFilterOutput(out))
+    out = await system.run('pip install ollama -U')
+    print.info(printFilterOutput(out))
 
     spinner.succeed(`Pip libs updated`)
   },
