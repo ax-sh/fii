@@ -6,6 +6,27 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- *(config)* Add system command to display cycle count
+- *(config)* Add getJsonFromCmd to config command
+- *(py/update)* Add installation of ollama package
+
+### 🚜 Refactor
+
+- Reorganize file structure and imports
+- Update import path for getJsonFromCmd function
+
+### 🎨 Styling
+
+- *(tests)* Format commented-out test cases in index.test.ts
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with biome
+
+## [0.105.0] - 2025-01-26
+
+### 🚀 Features
+
 - *(commands)* Add 'is-ci' flag to release command
 - *(repo)* Add npm login command implementation
 - Wip
@@ -53,6 +74,7 @@ All notable changes to this project will be documented in this file.
 - Format code with biome
 - Update package dependencies in package.json
 - Format code with biome
+- Add CHANGELOG
 
 ## [0.104.0] - 2024-12-31
 
