@@ -6,11 +6,15 @@ import { type ExtendedToolbox } from '../types'
 const command: GluegunCommand<ExtendedToolbox> = {
   name: 'config',
   run: async (toolbox) => {
-    const { print } = toolbox
+    const { print, getJsonFromCmd } = toolbox
 
     print.info(`FII config`)
     print.info(cliProjectPath)
-    // await system.run('echo ni -D husky')
+
+    const pc = await getJsonFromCmd(
+      "system_profiler SPPowerDataType -json | jq '.SPPowerDataType[0].sppower_battery_health_info'"
+    )
+    console.info(pc)
   },
 }
 

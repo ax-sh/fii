@@ -1,6 +1,6 @@
-import { getJsonFromCmd } from './cmd-utils'
+import { getJsonFromCmd } from './cli'
 
-vi.mock('./cmd-utils')
+vi.mock('./cli')
 describe('cmd utils', () => {
   // it('should use spyon does the same as below', async () => {
   //   const cmd = await import('./cmd-utils')

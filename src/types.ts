@@ -3,7 +3,7 @@ import { type GluegunToolbox, print } from 'gluegun'
 import { bgRed, dim, white } from 'kolorist'
 
 // import { version } from '../pa'
-import type { addScriptToPackageJson } from './lib/cli'
+import type { addScriptToPackageJson } from './lib/helpers/cmd/cli'
 
 export class KnownError extends Error {
   constructor(message: string | string[]) {
@@ -36,6 +36,7 @@ export type ExtendedToolbox = GluegunToolbox & {
   killProcess(killProcess: ProcessOptions): Promise<string>
   mkCd(dirPath: ProcessOptions): Promise<void>
   cliAppDir(...paths: string[]): Promise<FSJetpack>
+  getJsonFromCmd(cmd: string): Promise<JSONValue>
 }
 
 // Maps a union of string literals (e.g., 'url' | 'name') to an object with keys of those strings.

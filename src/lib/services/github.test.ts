@@ -1,9 +1,9 @@
-import { getJsonFromCmd } from '../helpers/cmd/cmd-utils'
+import { getJsonFromCmd } from '../helpers/cmd/cli'
 import { getGithubRepoInfo } from './github'
 
 // Mock the system module
 vi.mock(
-  '../helpers/cmd/cmd-utils',
+  '../helpers/cmd/cli',
   // this allows pass through when not using implementation
   { spy: true }
 )

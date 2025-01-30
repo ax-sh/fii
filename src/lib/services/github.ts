@@ -1,7 +1,7 @@
 import { system } from 'gluegun'
 
 import type { MappedString } from '../../types'
-import { getJsonFromCmd } from '../helpers/cmd/cmd-utils'
+import { getJsonFromCmd } from '../helpers/cmd/cli'
 
 export async function getGithubPagesUrlForRepo() {
   const repoName = await system.run("gh repo view --json name -q '.name'", { trim: true })
