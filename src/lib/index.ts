@@ -1,5 +1,5 @@
-import * as os from 'node:os'
 import * as jetpack from 'fs-jetpack'
+import * as os from 'node:os'
 
 // dayjs import caused error fix later
 // import { type FSJetpack } from 'fs-jetpack/types'
