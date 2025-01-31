@@ -1,16 +1,25 @@
 import { system } from 'gluegun'
 import { CleanOptions, type SimpleGit } from 'simple-git'
 
-describe.todo('fii Git', () => {
+import { searchStringInUnpushedCommits } from './git'
+
+describe('fii simpleGit', () => {
   it('should use git status', async () => {
     const simpleGit = await import('simple-git')
+    const baseDir = process.cwd()
 
-    const git: SimpleGit = simpleGit.simpleGit({ baseDir: process.cwd() }).clean(CleanOptions.FORCE)
-    console.log(process.cwd())
+    const git: SimpleGit = simpleGit.simpleGit({ baseDir }).clean(CleanOptions.FORCE)
+    console.log(baseDir)
     const status = await git.status()
     expect(status).toBeDefined()
     console.log(status)
   })
+  it('should search unpushed commits', async () => {
+    console.log(await searchStringInUnpushedCommits('gh'))
+  })
+})
+
+describe.todo('fii Git', () => {
   it('should use gh for updating description', async () => {
     const { setHomepageUrlOnGithubRepoDescription } = await import('../services/github')
     // Mock return values
