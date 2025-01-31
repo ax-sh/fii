@@ -1,6 +1,8 @@
 import { system } from 'gluegun'
 import { CleanOptions, type SimpleGit } from 'simple-git'
 
+import { searchStringInUnpushedCommits } from './git'
+
 describe('fii simpleGit', () => {
   it('should use git status', async () => {
     const simpleGit = await import('simple-git')
@@ -11,6 +13,9 @@ describe('fii simpleGit', () => {
     const status = await git.status()
     expect(status).toBeDefined()
     console.log(status)
+  })
+  it('should search unpushed commits', async () => {
+    console.log(await searchStringInUnpushedCommits('gh'))
   })
 })
 
