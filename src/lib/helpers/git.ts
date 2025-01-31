@@ -1,6 +1,12 @@
 import { system } from 'gluegun'
 import simpleGit from 'simple-git'
 
+export async function searchStringInAllCommits(str: string) {
+  const out = await system.run(`git log -S"${str}" --all -p`, { trim: true })
+
+  return out
+}
+
 export const git = simpleGit()
 
 // To search for a string in unpushed commits, you can use git log with the difference between your local branch and the remote branch. Here's how:
@@ -19,6 +25,6 @@ export const git = simpleGit()
 // Would you like me to explain the difference between -G and -S searching?
 export async function searchStringInUnpushedCommits(str: string) {
   const out = await system.run(`git log @{u}.. -S"${str}" -p`, { trim: true })
-  console.log(out)
+
   return out
 }
