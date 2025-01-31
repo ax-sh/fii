@@ -2,7 +2,9 @@ import { system } from 'gluegun'
 import simpleGit from 'simple-git'
 
 export async function searchStringInAllCommits(str: string) {
-  const out = await system.run(`git log -S"${str}" --all -p`, { trim: true })
+  const cmd = `git log -S"${str}" --all -p`
+  console.log('Running', cmd)
+  const out = await system.run(cmd, { trim: true })
 
   return out
 }
@@ -24,7 +26,9 @@ export const git = simpleGit()
 // bashCopygit log @{u}.. -S"registered" -p
 // Would you like me to explain the difference between -G and -S searching?
 export async function searchStringInUnpushedCommits(str: string) {
-  const out = await system.run(`git log @{u}.. -S"${str}" -p`, { trim: true })
+  const cmd = `git log @{u}.. -S"${str}" -p`
+  console.log('Running', cmd)
+  const out = await system.run(cmd, { trim: true })
 
   return out
 }
