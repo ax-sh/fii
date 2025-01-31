@@ -19,6 +19,6 @@ export const git = simpleGit()
 // Would you like me to explain the difference between -G and -S searching?
 export async function searchStringInUnpushedCommits(str: string) {
   const out = await system.run(`git log @{u}.. -S"${str}" -p`, { trim: true })
-  
+  console.log(out)
   return out
 }
