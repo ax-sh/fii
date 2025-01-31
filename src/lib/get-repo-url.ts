@@ -1,5 +1,5 @@
-import axios from 'axios'
 import * as path from 'node:path'
+import axios from 'axios'
 
 import { getRepoUrl } from './helpers/git-utils'
 
