@@ -6,6 +6,27 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- *(pytest)* Add pytest command with detailed documentation
+- Add search-unpushed command for unpushed commits
+- Add function to search string in all commits
+
+### 🎨 Styling
+
+- Format code and organize imports properly
+
+### 🧪 Testing
+
+- *(git)* Update describe name and refactor baseDir usage
+- *(git)* Add test for searching unpushed commits
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with biome
+
+## [0.106.0] - 2025-01-30
+
+### 🚀 Features
+
 - *(config)* Add system command to display cycle count
 - *(config)* Add getJsonFromCmd to config command
 - *(py/update)* Add installation of ollama package
@@ -22,6 +43,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with biome
+- Add CHANGELOG
 
 ## [0.105.0] - 2025-01-26
 
