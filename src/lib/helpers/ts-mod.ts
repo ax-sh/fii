@@ -91,7 +91,7 @@ export function parseJsonObject(initializer: Expression<ts.Expression>) {
       .map((property) => {
         const name = property.getName()
         const value = property.getInitializer()
-        console.log(22222, value.getType())
+        console.log(22222, value?.getType())
         return [name, value ? parseValue(value as LiteralExpression) : undefined]
       })
   )
