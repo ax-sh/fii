@@ -3,8 +3,7 @@ import { system } from 'gluegun'
 import { KnownError } from '../../../types'
 import { type JSONValue } from '../../../types'
 
-export function packageJsonScript(commandName: string) {
-  const pm: 'npm' | 'pnpm' = 'npm'
+export function packageJsonScript(commandName: string, pm: 'npm' | 'pnpm' = 'npm') {
   const opts = { trim: true }
   function set(cmd: string) {
     return system.run(`${pm} pkg set scripts.${commandName}="${cmd}"`, opts)

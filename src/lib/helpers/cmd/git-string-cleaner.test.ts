@@ -1,4 +1,4 @@
-import { exec, execSync } from 'child_process'
+import { exec } from 'child_process'
 import * as fs from 'fs'
 import * as path from 'path'
 import { promisify } from 'util'
@@ -88,6 +88,7 @@ describe('test cheaner', () => {
     const searchString = 'user'
     const repoPath = '/Users/axm/Desktop/CODE/own-social-api'
     const cleaner = new GitStringCleaner(searchString, { repoPath })
+    console.log(cleaner)
   })
 })
 //
