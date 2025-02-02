@@ -6,6 +6,32 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- *(cli)* Add default package manager to script function
+- Wip
+- Add service generation to extend add command
+- Add async wait function to run service task
+
+### 🐛 Bug Fixes
+
+- *(ts-mod)* Handle potential null value in getType() call
+
+### 🎨 Styling
+
+- Format function parameters for better readability
+
+### 🧪 Testing
+
+- Add tests for git string cleaner functionality
+- *(git-string-cleaner)* Add tests for GitStringCleaner class
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with biome
+
+## [0.107.0] - 2025-01-31
+
+### 🚀 Features
+
 - *(pytest)* Add pytest command with detailed documentation
 - Add search-unpushed command for unpushed commits
 - Add function to search string in all commits
@@ -22,6 +48,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with biome
+- Add CHANGELOG
 
 ## [0.106.0] - 2025-01-30
 
