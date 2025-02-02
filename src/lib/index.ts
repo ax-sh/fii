@@ -13,3 +13,7 @@ export const fiiUserDirJoin = async (...paths: string[]) =>
   jetpack.dirAsync(jetpack.path(os.homedir(), '.ax-sh/.fii', ...paths))
 
 export const cliProjectPath = jetpack.path(__dirname, '..', '..')
+
+export function appRootPathJoin(...path: string[]): string {
+  return jetpack.path(cliProjectPath, ...path)
+}

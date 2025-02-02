@@ -3,8 +3,12 @@ import { system } from 'gluegun'
 import { KnownError } from '../../../types'
 import { type JSONValue } from '../../../types'
 
-export function packageJsonScript(commandName: string) {
-  const pm: 'npm' | 'pnpm' = 'npm'
+export function packageJsonScript(
+  commandName: string,
+  // setting default as npm because pnpm modifies the package.json
+  // for itself as the package manager making it annoying when using bun using nr
+  pm: 'npm' | 'pnpm' = 'npm'
+) {
   const opts = { trim: true }
   function set(cmd: string) {
     return system.run(`${pm} pkg set scripts.${commandName}="${cmd}"`, opts)
