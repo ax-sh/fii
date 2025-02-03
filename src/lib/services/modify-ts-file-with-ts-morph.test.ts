@@ -1,5 +1,6 @@
-import { Project, SourceFile, SyntaxKind } from 'ts-morph'
+import { Project, ScriptKind, SourceFile, SyntaxKind } from 'ts-morph'
 
+import * as path from 'node:path'
 import {
   addImports,
   addImportsToSourceFile,
@@ -17,7 +18,10 @@ describe('Import Management', () => {
   })
 
   const createSource = (code: string) => {
-    sourceFile = project.createSourceFile('test.ts', code)
+    const resolvedPath = 'test.ts'
+    sourceFile = project.createSourceFile(resolvedPath, code, {
+      scriptKind: path.extname(resolvedPath) === '.ts' ? ScriptKind.TS : ScriptKind.JS,
+    })
     return sourceFile
   }
 
@@ -123,7 +127,7 @@ plugins: [UnoCSS(), react()],
     console.log(formatSourceFileToString(modified.getSourceFile()))
   })
 
-  test('should modify plugins', () => {
+  test('should modify plugins without duplicates', () => {
     const sf = createSource(viteConfig)
     const modified = addVitePlugins(sf, ['dff', 'daff'])
 
