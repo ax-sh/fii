@@ -1,4 +1,4 @@
-import { Project, SourceFile } from 'ts-morph'
+import { Project, SourceFile, SyntaxKind } from 'ts-morph'
 
 import {
   addImports,
@@ -83,34 +83,48 @@ import { defineConfig } from 'vite';
 export default defineConfig({
 
 });`)
-    const modified = getDefineConfigFromSourceFile(sf)
-
-    console.log(formatSourceFileToString(modified.getSourceFile()))
+    const configObject = getDefineConfigFromSourceFile(sf)
+    const newBasePath = 'foo'
+    // Check if the `base` property exists
+    const baseProperty = configObject.getProperty('base')
+    if (!baseProperty || !baseProperty.isKind(SyntaxKind.PropertyAssignment)) {
+      // If the `base` property doesn't exist, create it with a default value
+      configObject.addPropertyAssignment({
+        name: 'base',
+        initializer: `"${newBasePath}"`, // Default value for `base`
+      })
+      console.log("`base` property was added with a default value of '/'")
+    } else {
+      // If the `base` property doesn't exist, create it with the new value
+      configObject.addPropertyAssignment({
+        name: 'base',
+        initializer: `"${newBasePath}"`, // Default value for `base`
+      })
+      console.log('`base` property was added with a default value:', newBasePath)
+    }
+    const updatedContent = formatSourceFileToString(configObject.getSourceFile())
+    expect(updatedContent).toContain(`base: "${newBasePath}"`)
+    console.log(updatedContent)
   })
 
-  test('should modify plugins', () => {
-    const sf = createSource(`
+  const viteConfig = `
 import react from '@vitejs/plugin-react';
 import UnoCSS from 'unocss/vite';
 import { defineConfig } from 'vite';
 // https://vite.dev/config/
 export default defineConfig({
 plugins: [UnoCSS(), react()],
-});`)
+});`
+
+  test('should modify plugins', () => {
+    const sf = createSource(viteConfig)
     const modified = getDefineConfigFromSourceFile(sf)
 
     console.log(formatSourceFileToString(modified.getSourceFile()))
   })
 
   test('should modify plugins', () => {
-    const sf = createSource(`
-import react from '@vitejs/plugin-react';
-import UnoCSS from 'unocss/vite';
-import { defineConfig } from 'vite';
-// https://vite.dev/config/
-export default defineConfig({
-plugins: [UnoCSS(), react()],
-});`)
+    const sf = createSource(viteConfig)
     const modified = addVitePlugins(sf, ['dff', 'daff'])
 
     console.log(formatSourceFileToString(modified.getSourceFile()))
