@@ -1,0 +1,69 @@
+import { Project, SourceFile } from 'ts-morph'
+import { addImports, addImportsToSourceFile, formatSourceFileToString } from './parse-ts'
+
+describe('Import Management', () => {
+  let project: Project
+  let sourceFile: SourceFile
+
+  beforeEach(() => {
+    project = new Project({ useInMemoryFileSystem: true })
+  })
+
+  const createSource = (code: string) => {
+    sourceFile = project.createSourceFile('test.ts', code)
+    return sourceFile
+  }
+
+  test('should add new imports to empty file without duplicates', () => {
+    const sf = createSource('const x:number = 3')
+
+    addImportsToSourceFile(sf, [
+      { from: 'react', imports: 'React' },
+      { from: 'react', imports: 'React' },
+      { from: 'react', imports: ['useState'] },
+      { from: 'react', imports: ['useState', 'useEffect'] },
+      { from: 'react', imports: ['useEffect'] },
+    ])
+    const raw = formatSourceFileToString(sf)
+    expect(raw).toMatchSnapshot()
+    const imports = sf.getImportDeclarations()
+
+    expect(imports).toHaveLength(1)
+    expect(imports[0].getModuleSpecifierValue()).toBe('react')
+    expect(imports[0].getDefaultImport()?.getText()).toBe('React')
+  })
+
+  test('should add multiple imports types', () => {
+    const sf = createSource(`export const x = 10;`)
+
+    addImports(sf, [
+      { moduleSpecifier: 'react', defaultImport: 'React' },
+      { moduleSpecifier: 'components', namedImports: ['Button', 'Input'] },
+      { moduleSpecifier: 'lib', defaultImport: 'lib', namedImports: ['util'] },
+    ])
+    const imports = sf.getImportDeclarations()
+    expect(imports).toHaveLength(3)
+    expect(imports[0].getDefaultImport().getText()).toEqual('React')
+    expect(imports[1].getNamedImports()[0].getName()).toEqual('Button')
+    expect(imports[2].getNamedImports()[0].getName()).toEqual('util')
+    const output = sf.getFullText()
+    expect(output).toMatchSnapshot()
+  })
+
+  test('should not duplicate existing imports', () => {
+    const sf = createSource(`
+      import React from 'react';
+      export const x = 10;
+    `)
+
+    addImportsToSourceFile(sf, [
+      { from: 'react', imports: 'React' },
+      { from: 'react', imports: ['useState'] },
+    ])
+    console.log(formatSourceFileToString(sf))
+
+    const imports = sf.getImportDeclarations()
+    expect(imports).toHaveLength(1)
+    expect(imports[0].getNamedImports()[0].getName()).toBe('useState')
+  })
+})
