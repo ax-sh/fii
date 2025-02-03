@@ -1,5 +1,12 @@
 import { Project, SourceFile } from 'ts-morph'
-import { addImports, addImportsToSourceFile, formatSourceFileToString } from './parse-ts'
+
+import {
+  addImports,
+  addImportsToSourceFile,
+  addVitePlugins,
+  formatSourceFileToString,
+  getDefineConfigFromSourceFile,
+} from './parse-ts'
 
 describe('Import Management', () => {
   let project: Project
@@ -65,5 +72,47 @@ describe('Import Management', () => {
     const imports = sf.getImportDeclarations()
     expect(imports).toHaveLength(1)
     expect(imports[0].getNamedImports()[0].getName()).toBe('useState')
+  })
+
+  test('should check if modify plugins property exists', () => {
+    const sf = createSource(`
+import react from '@vitejs/plugin-react';
+import UnoCSS from 'unocss/vite';
+import { defineConfig } from 'vite';
+// https://vite.dev/config/
+export default defineConfig({
+
+});`)
+    const modified = getDefineConfigFromSourceFile(sf)
+
+    console.log(formatSourceFileToString(modified.getSourceFile()))
+  })
+
+  test('should modify plugins', () => {
+    const sf = createSource(`
+import react from '@vitejs/plugin-react';
+import UnoCSS from 'unocss/vite';
+import { defineConfig } from 'vite';
+// https://vite.dev/config/
+export default defineConfig({
+plugins: [UnoCSS(), react()],
+});`)
+    const modified = getDefineConfigFromSourceFile(sf)
+
+    console.log(formatSourceFileToString(modified.getSourceFile()))
+  })
+
+  test('should modify plugins', () => {
+    const sf = createSource(`
+import react from '@vitejs/plugin-react';
+import UnoCSS from 'unocss/vite';
+import { defineConfig } from 'vite';
+// https://vite.dev/config/
+export default defineConfig({
+plugins: [UnoCSS(), react()],
+});`)
+    const modified = addVitePlugins(sf, ['dff', 'daff'])
+
+    console.log(formatSourceFileToString(modified.getSourceFile()))
   })
 })

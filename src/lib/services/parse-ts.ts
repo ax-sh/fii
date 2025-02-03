@@ -1,5 +1,6 @@
 import type * as Parser from 'tree-sitter'
-import { Project, SourceFile, ts } from 'ts-morph'
+import { Project, SourceFile, SyntaxKind, ts } from 'ts-morph'
+
 import SemicolonPreference = ts.SemicolonPreference
 
 export type ParsedTreeSitterNodeResult = { start: number; end: number }
@@ -115,4 +116,47 @@ export function addImportsToSourceFile(
     return { defaultImport: imports, moduleSpecifier: from }
   })
   return addImports(sourceFile, modified)
+}
+
+export function getDefineConfigFromSourceFile(sourceFile: SourceFile) {
+  const funcName = 'defineConfig'
+  // Find the `defineConfig` call expression
+  const defineConfigCall = sourceFile
+    .getDescendantsOfKind(SyntaxKind.CallExpression)
+    .find((callExpr) => callExpr.getExpression().getText() === funcName)
+  if (!defineConfigCall) {
+    throw new Error('Could not find `defineConfig` in the provided file.')
+  }
+  // Get the object literal passed to `defineConfig`
+  const configObject = defineConfigCall.getArguments()[0]
+  if (!configObject || !configObject.isKind(SyntaxKind.ObjectLiteralExpression)) {
+    throw new Error('`defineConfig` does not contain an object literal as its argument.')
+  }
+
+  return configObject
+}
+
+export function addVitePlugins(sourceFile: SourceFile, newPlugins: string[]) {
+  const configObject = getDefineConfigFromSourceFile(sourceFile)
+  // Find the `plugins` property in the object literal
+  const pluginsProperty = configObject.getProperty('plugins')
+  if (!pluginsProperty || !pluginsProperty.isKind(SyntaxKind.PropertyAssignment)) {
+    throw new Error('`plugins` property not found in the `defineConfig` object.')
+  }
+
+  // Get the array literal of the `plugins` property
+  const pluginsArray = pluginsProperty.getInitializer()
+  if (!pluginsArray || !pluginsArray.isKind(SyntaxKind.ArrayLiteralExpression)) {
+    throw new Error('`plugins` property is not initialized with an array.')
+  }
+  // Get the existing plugin names (to avoid duplicates)
+  const existingPlugins = pluginsArray.getElements().map((element) => element.getText())
+
+  // Add new plugins that are not already present
+  for (const newPlugin of newPlugins) {
+    if (!existingPlugins.includes(newPlugin)) {
+      pluginsArray.addElement(newPlugin)
+    }
+  }
+  return sourceFile
 }
