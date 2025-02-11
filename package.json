@@ -48,6 +48,7 @@
     "fs-jetpack": "^5.1.0",
     "git-cliff": "^2.8.0",
     "gluegun": "^5.2.0",
+    "happy-dom": "^17.0.3",
     "jsonc-parser": "^3.3.1",
     "kolorist": "^1.8.0",
     "langchain": "^0.3.13",
