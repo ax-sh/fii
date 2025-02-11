@@ -1,6 +1,7 @@
 import { system } from 'gluegun'
 import { CleanOptions, type SimpleGit } from 'simple-git'
 
+import { getJsonFromCmd } from './cmd/cli'
 import { searchStringInUnpushedCommits } from './git'
 
 describe('fii simpleGit', () => {
@@ -57,4 +58,23 @@ describe.todo('fii Git', () => {
 
     expect(out).toBe('moooo')
   })
+})
+
+async function getPushJson(dryRun: boolean = false) {
+  let mainCmd: string
+  if (dryRun) {
+    mainCmd = `git push --dry-run --porcelain`
+  } else {
+    mainCmd = `git push --porcelain`
+  }
+
+  const cmd = `${mainCmd} 2>/dev/null | awk '/^To / { remote=$2; next } { print remote"|"$0 }' | jq -R 'split("|") | { remote: .[0], status: (.[1]|split("\\t")[0]), source: (.[1]|split("\\t")[1]|split(":")[0]), destination: (.[1]|split("\\t")[1]|split(":")[1]) }' | jq -s`
+  const out = await getJsonFromCmd<string[]>(cmd)
+
+  return out
+}
+
+test('should print in json', async function () {
+  const out = await getPushJson(true)
+  console.log(out)
 })
