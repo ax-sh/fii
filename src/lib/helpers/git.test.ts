@@ -2,7 +2,7 @@ import { system } from 'gluegun'
 import { CleanOptions, type SimpleGit } from 'simple-git'
 
 import { getJsonFromCmd } from './cmd/cli'
-import { searchStringInUnpushedCommits } from './git'
+import { gitPushInfoJson, searchStringInUnpushedCommits } from './git'
 
 describe('fii simpleGit', () => {
   it('should use git status', async () => {
@@ -60,7 +60,7 @@ describe.todo('fii Git', () => {
   })
 })
 
-async function getPushJson(dryRun: boolean = false) {
+async function gitPushJson(dryRun: boolean = false) {
   let mainCmd: string
   if (dryRun) {
     mainCmd = `git push --dry-run --porcelain`
@@ -75,6 +75,11 @@ async function getPushJson(dryRun: boolean = false) {
 }
 
 test('should print in json', async function () {
-  const out = await getPushJson(true)
+  const out = await gitPushJson(true)
+  console.log(out)
+})
+
+test('should print git push in json', async function () {
+  const out = await gitPushInfoJson()
   console.log(out)
 })
