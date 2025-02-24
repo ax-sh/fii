@@ -6,6 +6,45 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Features
 
+- *(github)* Add function to list npm packages from GitHub
+
+### 💼 Other
+
+- Add tree-sitter dependencies and test file
+
+### 🚜 Refactor
+
+- Clean up code and remove unused function
+- Optimize imports in TypeScript files
+
+### 🎨 Styling
+
+- *(package.json)* Format files array for readability
+
+### 🧪 Testing
+
+- *(parse-ts)* Add tests for parseTsSourceCode function
+- *(parse-ts)* Add test for variable renaming functionality
+- Add unit tests for import management functions
+- Add tests for Vite plugins management functions
+- Add base property to Vite config if missing
+- Update tests for import management functionality
+- Add tests for git push command and happydom setup
+- Add gitPushInfoJson function and related tests
+- *(happy)* Add tests for happy-dom functionality
+- Add todos for logging unpushed commits
+- Add spy for jetpack.dirAsync in index test
+
+### ⚙️ Miscellaneous Tasks
+
+- Update dependencies and clean up tests
+- Format code with biome
+- Format code with biome
+
+## [0.108.0] - 2025-02-02
+
+### 🚀 Features
+
 - *(cli)* Add default package manager to script function
 - Wip
 - Add service generation to extend add command
@@ -27,6 +66,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - Format code with biome
+- Add CHANGELOG
 
 ## [0.107.0] - 2025-01-31
 
