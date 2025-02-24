@@ -1,4 +1,5 @@
 import { faker } from '@faker-js/faker/locale/ar'
+
 import { getJsonFromCmd } from '../helpers/cmd/cli'
 import { getGithubRepoInfo, listNPMPackagesFromGithubRegistry } from './github'
 

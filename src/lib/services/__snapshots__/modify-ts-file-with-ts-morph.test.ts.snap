@@ -1,0 +1,30 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Import Management > should add multiple imports types 1`] = `
+"import React from "react";
+import { Button, Input } from "components";
+import lib, { util } from "lib";
+
+export const x = 10;"
+`;
+
+exports[`Import Management > should add new imports to empty file 1`] = `
+"import React, { useState, useEffect } from "react";
+
+const x: number = 3;
+"
+`;
+
+exports[`Import Management > should add new imports to empty file 2`] = `
+"import React from "react";
+
+const test = 3;
+"
+`;
+
+exports[`Import Management > should add new imports to empty file without duplicates 1`] = `
+"import React, { useState, useEffect } from "react";
+
+const x: number = 3;
+"
+`;
