@@ -11,6 +11,7 @@ vi.mock('node:os', () => ({
 }))
 describe('Lib Index', () => {
   it('should test fii project dir', async () => {
+    const spy = vi.spyOn(jetpack, 'dirAsync')
     const lib = await import('./index')
 
     const dir = lib.fiiUserDirJoin('aa', 'bb')
@@ -18,7 +19,8 @@ describe('Lib Index', () => {
     await expect(dir).resolves.toEqual('/home/user/.ax-sh/.fii/aa/bb')
     expect(jetpack.dirAsync).toHaveBeenCalledTimes(1)
     expect(jetpack.dirAsync).toHaveResolvedTimes(1)
-    expect(vi.spyOn(jetpack, 'dirAsync')).toHaveResolvedTimes(1)
+    expect(jetpack.dirAsync).toHaveResolvedTimes(1)
+    expect(spy).toHaveResolvedTimes(1)
   })
   //
   // it.todo('should test fii project dir using spy', async () => {
