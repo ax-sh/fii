@@ -29,20 +29,27 @@ describe('test gh cli', () => {
     })
   })
   it('should use gh for getting npm packages from github registry', async () => {
-    // const cmdMock = vi.mocked(getJsonFromCmd)
-    //
-    // cmdMock.mockResolvedValueOnce(
-    //   faker.helpers.multiple(() => ({
-    //     name: faker.helpers.arrayElement(['a', 'b', 'c', 'd']),
-    //   }))
-    // )
+    const cmdMock = vi.mocked(getJsonFromCmd)
 
-    const arr = await listNPMPackagesFromGithubRegistry()
+    cmdMock.mockResolvedValueOnce(
+      faker.helpers.multiple(() => ({
+        name: faker.helpers.arrayElement(['a', 'b', 'c', 'd']),
+      }))
+    )
+    // uncomment above to use the real thing
+
+    const out = await listNPMPackagesFromGithubRegistry()
+    const arr = out.map((i) => {
+      delete i.owner
+      return i
+    })
     console.log(arr)
     expect(arr).toHaveLength(3)
     console.log(arr.map((i) => i.name))
     expect(arr.length).toEqual(3)
+    const [pkg] = arr
 
-    // console.log(arr[0].owner)
+    console.log(pkg.owner)
+    console.log(pkg.package_type)
   })
 })
