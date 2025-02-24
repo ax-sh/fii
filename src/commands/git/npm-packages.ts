@@ -10,8 +10,8 @@ const command: GluegunCommand<ExtendedToolbox> = {
     const { listNPMPackagesFromGithubRegistry } = await import('../../lib/services/github')
     const spinner = print.spin(`fetching npm packages on github registry `)
     const out = await listNPMPackagesFromGithubRegistry()
-    //
-    spinner.succeed(`Result for unpushed commit with  string `)
+
+    spinner.succeed(`Result for npm packages in npm registry`)
     console.table(
       out.map((i) => {
         delete i.owner
