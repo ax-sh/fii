@@ -1,6 +1,8 @@
 import { system } from 'gluegun'
 import simpleGit from 'simple-git'
 
+import { getJsonFromCmd } from './cmd/cli'
+
 // todo add git log @{u}.. -S"__user" --oneline | wc -l
 
 export async function searchStringInAllCommits(str: string) {
@@ -32,5 +34,52 @@ export async function searchStringInUnpushedCommits(str: string) {
   console.log('Running', cmd, '[Add -p on the cmd for showing the diff]')
   const out = await system.run(cmd, { trim: true })
 
+  return out
+}
+
+export interface GitPushJSON {
+  branches: Branch[]
+  tags: string[]
+  errors: string[]
+  warnings: string[]
+}
+
+export interface Branch {
+  local: string
+  remote: string
+  status: string
+}
+
+export async function gitPushInfoJson() {
+  const cmd = `git push --dry-run --porcelain | awk '
+BEGIN {
+    print "{"
+    print "\\"branches\\": ["
+    first = 1
+}
+/^[^ ]/ {
+    if (!first) {
+        print "    },"
+    }
+    branch = $1
+    remote = $2
+    print "    {"
+    print "        \\"local\\": \\"" branch "\\","
+    print "        \\"remote\\": \\"" remote "\\","
+    print "        \\"status\\": \\"pending\\""
+    first = 0
+}
+END {
+    if (!first) {
+        print "    }"
+    }
+    print "],"
+    print "\\"tags\\": [],"
+    print "\\"errors\\": [],"
+    print "\\"warnings\\": []"
+    print "}"
+}
+' | jq .`
+  const out = (await getJsonFromCmd(cmd)) as unknown as GitPushJSON
   return out
 }

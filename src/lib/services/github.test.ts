@@ -1,5 +1,7 @@
+import { faker } from '@faker-js/faker/locale/ar'
+
 import { getJsonFromCmd } from '../helpers/cmd/cli'
-import { getGithubRepoInfo } from './github'
+import { getGithubRepoInfo, listNPMPackagesFromGithubRegistry } from './github'
 
 // Mock the system module
 vi.mock(
@@ -26,5 +28,29 @@ describe('test gh cli', () => {
       url: expect.stringContaining('user/repo'),
       visibility: 'PUBLIC',
     })
+  })
+  it('should use gh for getting npm packages from github registry', async () => {
+    const cmdMock = vi.mocked(getJsonFromCmd)
+
+    cmdMock.mockResolvedValueOnce(
+      faker.helpers.multiple(() => ({
+        name: faker.helpers.arrayElement(['a', 'b', 'c', 'd']),
+      }))
+    )
+    // uncomment above to use the real thing
+
+    const out = await listNPMPackagesFromGithubRegistry()
+    const arr = out.map((i) => {
+      delete i.owner
+      return i
+    })
+    console.log(arr)
+    expect(arr).toHaveLength(3)
+    console.log(arr.map((i) => i.name))
+    expect(arr.length).toEqual(3)
+    const [pkg] = arr
+
+    console.log(pkg.owner)
+    console.log(pkg.package_type)
   })
 })

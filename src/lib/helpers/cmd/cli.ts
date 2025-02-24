@@ -43,7 +43,7 @@ export async function addScriptToPackageJson(scriptName: string, cmd: string) {
   return script.set(cmd)
 }
 
-export async function getJsonFromCmd<T extends JSONValue>(cmd: string) {
+export async function getJsonFromCmd<T = JSONValue>(cmd: string) {
   const data = await system.run(cmd, { trim: true })
   const json = JSON.parse(data) as T
   return json
