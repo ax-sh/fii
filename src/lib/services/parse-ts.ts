@@ -1,5 +1,6 @@
 import type * as Parser from 'tree-sitter'
-import { Project, SourceFile, SyntaxKind, ts } from 'ts-morph'
+import type { SourceFile } from 'ts-morph'
+import { Project, SyntaxKind, ts } from 'ts-morph'
 
 import SemicolonPreference = ts.SemicolonPreference
 
