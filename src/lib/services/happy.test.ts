@@ -40,7 +40,6 @@ describe('happy-dom test parse variable', () => {
 })
 
 describe('happy-dom test', () => {
-  it('should test happy-dom', () => {})
   it('should test happy-dom to parse application/json', () => {
     // Create a new Window instance
     const window = new Window()

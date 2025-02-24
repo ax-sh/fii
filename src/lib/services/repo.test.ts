@@ -5,9 +5,10 @@
 // git log $(git rev-parse --abbrev-ref --symbolic-full-name @{u})..HEAD --oneline
 //
 describe.todo('Repo', () => {
-  it('should check github node registery', async () => {
+  it('should check github node register', async () => {
     //     // const RegClient = await import('npm-registry-client') // depricated
-    //     // console.log(RegClient.default)
+
+    console.log('RegClient.default')
     //
     //     // Octokit.js
     //     // https://github.com/octokit/core.js#readme
