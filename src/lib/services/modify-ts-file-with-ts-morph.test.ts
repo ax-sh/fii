@@ -1,6 +1,6 @@
+import * as path from 'node:path'
 import { Project, ScriptKind, SourceFile, SyntaxKind } from 'ts-morph'
 
-import * as path from 'node:path'
 import {
   addImports,
   addImportsToSourceFile,

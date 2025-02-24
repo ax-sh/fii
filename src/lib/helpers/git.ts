@@ -1,5 +1,6 @@
 import { system } from 'gluegun'
 import simpleGit from 'simple-git'
+
 import { getJsonFromCmd } from './cmd/cli'
 
 // todo add git log @{u}.. -S"__user" --oneline | wc -l
