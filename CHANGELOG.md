@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🚜 Refactor
+
+- Update spinner success message for clarity
+
+### ⚙️ Miscellaneous Tasks
+
+- Format code with biome
+
+## [0.109.0] - 2025-02-24
+
 ### 🚀 Features
 
 - *(github)* Add function to list npm packages from GitHub
@@ -40,6 +50,7 @@ All notable changes to this project will be documented in this file.
 - Update dependencies and clean up tests
 - Format code with biome
 - Format code with biome
+- Add CHANGELOG
 
 ## [0.108.0] - 2025-02-02
 
