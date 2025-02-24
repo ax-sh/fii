@@ -1,5 +1,9 @@
 import { Octokit } from 'octokit'
 
+// todo logs all unpushed log
+// git log origin/master..HEAD --oneline
+// git log $(git rev-parse --abbrev-ref --symbolic-full-name @{u})..HEAD --oneline
+
 describe.todo('Repo', () => {
   it('should check github node registery', async () => {
     // const RegClient = await import('npm-registry-client') // depricated
