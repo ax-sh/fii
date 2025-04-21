@@ -96,7 +96,7 @@
     "release-it": "^18.1.2",
     "ts-node": "^10.9.2",
     "tsx": "^4.19.3",
-    "typescript": "~5.7.3",
+    "typescript": "~5.8.0",
     "typescript-eslint": "^8.25.0",
     "vitest": "^3.0.7",
     "xo": "^0.60.0"
